@@ -105,7 +105,7 @@ namespace AppLTI
                             var describeResult = client.RunCommand(describeCommand);
 
                             // Print the result of the second command
-                            authToken = describeResult.Result;
+                            authToken = describeResult.Result.Trim();
 
                             // Disconnect from the SSH session
                             client.Disconnect();

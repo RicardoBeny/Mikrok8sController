@@ -38,14 +38,14 @@ namespace AppLTI
 
         private void mainPage_Load(object sender, EventArgs e)
         {
-            textBoxIP.Text = username + " - " + routerIp + Environment.NewLine + porto;
+            textBoxIP.Text = username + " - " + routerIp+":"+porto;
         }
 
         private void btnTerminal_Click(object sender, EventArgs e)
         {
-            sshMikrotik sshMikrotik = new sshMikrotik();
-            sshMikrotik.SetCredentials(routerIp, username, password, porto);
-            sshMikrotik.Show();
+            sshConection sshConection = new sshConection();
+            sshConection.SetCredentials(routerIp, username, password, porto);
+            sshConection.Show();
             this.Dispose();
         }
        
