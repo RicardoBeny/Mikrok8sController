@@ -14,6 +14,9 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using System.Net;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
+using System.Net.NetworkInformation;
+using Renci.SshNet;
 
 namespace AppLTI
 {
@@ -51,16 +54,42 @@ namespace AppLTI
             }
         }
 
-        private async void Login(string routerIp, string username, string password, string porto)
+        private void Login(string routerIp, string username, string password, string porto)
         {
-            if (routerIp == "" || username == "" || password == "" || porto == "")
+            if (routerIp == "")
             {
+                MessageBox.Show("Preencha o ip do server.");
+                return;
+            }
+
+            string pattern = @"^(0|[1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$";
+
+            if ( porto == "")
+            {
+                MessageBox.Show("Preencha o porto do ip do server.");
+                return;
+
+            }else if(!Regex.IsMatch(porto, pattern))
+            {
+                MessageBox.Show("O porto tem o formato incorreto.");
+                return;
+            }
+
+            if (username == "")
+            {
+                MessageBox.Show("Preencha o username.");
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Preencha a password.");
                 return;
             }
 
             try
             {
-                using (var client = new SshClient(routerIp, porto, username, password))
+                using (var client = new SshClient(routerIp, int.Parse(porto), username, password))
                 {
                     try
                     {
