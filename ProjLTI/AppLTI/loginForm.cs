@@ -20,6 +20,7 @@ namespace AppLTI
     public partial class loginForm : Form
     {
         private List<Credential> credentials;
+        private string authToken;
 
         string baseURI = @"http://localhost:11755";
         RestClient restClient = null;
@@ -57,59 +58,51 @@ namespace AppLTI
                 return;
             }
 
-            using (HttpClient client = new HttpClient())
+            try
             {
-                var base64Credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{username}:{password}"));
-                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", base64Credentials);
-                HttpResponseMessage response = await client.GetAsync($"http://{routerIp}/rest/system/resource");
-
-                if (response.IsSuccessStatusCode)
+                using (var client = new SshClient(routerIp, porto, username, password))
                 {
-
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    JObject jsonObject = JObject.Parse(responseBody);
-                    string boardName = (string)jsonObject["board-name"];
-                    string platform = (string)jsonObject["platform"];
-
-                    bool flag = checkBoxGuardarCredencias.Checked;
-
-                    Credential credential = new Credential
+                    try
                     {
-                        Ip = routerIp,
-                        Username = username,
-                        Password = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password)),
-                        Porto = porto
-                    };
+                        client.Connect();
+                        if (client.IsConnected)
+                        {
+                            // Execute the first command to get the token
+                            var tokenCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system get secret | grep default-token | cut -d \" \" -f1";
+                            var tokenResult = client.RunCommand(tokenCommand);
 
-                    var request = new RestRequest("api/credentials", Method.Post);
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddObject(credential);
+                            // Execute the second command using the extracted token
+                            var describeCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system describe secret $token | awk '/^token:/ {{print $2}}'";
+                            var describeResult = client.RunCommand(describeCommand);
 
-                    var responseRequest = restClient.Execute(request);
+                            // Print the result of the second command
+                            authToken = describeResult.Result;
 
-                    if (responseRequest.StatusCode != HttpStatusCode.OK)
-                    {
-                        MessageBox.Show("Erro Interno - Login Falhou.");
-                        return;
+                            // Disconnect from the SSH session
+                            client.Disconnect();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login falhou, verifica as Credenciais e tenta de novo.");
+                        }
                     }
-
-                    // store credenciais na db
-
-                    mainPage mainPageForm = new mainPage();
-                    checkBoxGuardarCredencias.Checked = false;
-                    clearTextBoxes();
-                    mainPageForm.SetCredentials(routerIp, username, password, porto);
-                    mainPageForm.Show();
-                    MessageBox.Show("Login efetuado com sucesso!");
-                    listCredentials();
-                }
-                else
-                {
-                    MessageBox.Show("Login falhou, verifica as Credenciais e tenta de novo.");
-
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An error occurred: {ex.Message}");
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            mainPage mainPageForm = new mainPage();
+            checkBoxGuardarCredencias.Checked = false;
+            clearTextBoxes();
+            mainPageForm.SetCredentials(routerIp, username, password, porto);
+            mainPageForm.Show();
+            MessageBox.Show("Login efetuado com sucesso!");
+            listCredentials();
         }
 
         private void buttonSeePassword_Click(object sender, EventArgs e)
