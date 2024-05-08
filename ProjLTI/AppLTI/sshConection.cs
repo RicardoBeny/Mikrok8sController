@@ -19,19 +19,21 @@ namespace AppLTI
         private string routerIp;
         private string username;
         private string password;
-        private string porto;
+        private string portoSSH;
+        private string portoAPI;
 
         public sshConection()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string porto)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI)
         {
             this.routerIp = routerIp;
             this.username = username;
             this.password = password;
-            this.porto = porto;
+            this.portoSSH = portoSSH;
+            this.portoAPI = portoAPI;
         }
 
         private void btnSensCommand_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace AppLTI
                 return;
             }
 
-            using (var client = new SshClient(routerIp, int.Parse(porto), username, password))
+            using (var client = new SshClient(routerIp, int.Parse(portoSSH), username, password))
             {
                 client.Connect();
 
@@ -88,7 +90,7 @@ namespace AppLTI
 
         private void sshMikrotik_Load(object sender, EventArgs e)
         {
-            textBoxIP.Text = username + " - " + routerIp + ":" + porto;
+            textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
             textBoxCommand.KeyPress += textBoxCommand_KeyPress;
         }
 
@@ -100,7 +102,7 @@ namespace AppLTI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, porto);
+            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI);
             mainPage.Show();
             this.Dispose();
         }

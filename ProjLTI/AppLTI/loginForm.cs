@@ -17,6 +17,8 @@ using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using System.Net.NetworkInformation;
 using Renci.SshNet;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Net.Http.Headers;
 
 namespace AppLTI
 {
@@ -42,73 +44,93 @@ namespace AppLTI
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async Task<bool> VerifyAPI(string maquinaIP, string portoAPI, string authToken)
         {
             try
             {
-                Login(textBoxRouterIP.Text, textBoxUsername.Text, textBoxPassword.Text, textBoxPorto.Text);
+                string url = $"https://{maquinaIP}:{portoAPI}/api";
+
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    HttpResponseMessage response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                MessageBox.Show("Ocorreu um erro ao verificar na API: " + ex.Message);
+                return false;
             }
         }
 
-        private void Login(string routerIp, string username, string password, string porto)
+
+
+        private async Task sshConnection(string routerIp, string portoSSH, string username, string password, string portoAPI)
         {
-            if (routerIp == "")
-            {
-                MessageBox.Show("Preencha o ip do server.");
-                return;
-            }
-
-            string pattern = @"^(0|[1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$";
-
-            if ( porto == "")
-            {
-                MessageBox.Show("Preencha o porto do ip do server.");
-                return;
-
-            }else if(!Regex.IsMatch(porto, pattern))
-            {
-                MessageBox.Show("O porto tem o formato incorreto.");
-                return;
-            }
-
-            if (username == "")
-            {
-                MessageBox.Show("Preencha o username.");
-                return;
-            }
-
-            if (password == "")
-            {
-                MessageBox.Show("Preencha a password.");
-                return;
-            }
-
             try
             {
-                using (var client = new SshClient(routerIp, int.Parse(porto), username, password))
+                using (var client = new SshClient(routerIp, int.Parse(portoSSH), username, password))
                 {
                     try
                     {
                         client.Connect();
                         if (client.IsConnected)
                         {
-                            // Execute the first command to get the token
                             var tokenCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system get secret | grep default-token | cut -d \" \" -f1";
                             var tokenResult = client.RunCommand(tokenCommand);
 
-                            // Execute the second command using the extracted token
-                            var describeCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system describe secret $token | awk '/^token:/ {{print $2}}'";
+                            if (tokenResult.ExitStatus != 0)
+                            {
+                                Console.WriteLine("Falha na execução do comando para guardar o token.");
+                                MessageBox.Show("Login falhou.");
+                                return;
+                            }
+
+                            var token = tokenResult.Result.Trim();
+
+                            var describeCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system describe secret {token} | awk '/^token:/ {{print $2}}'";
                             var describeResult = client.RunCommand(describeCommand);
 
-                            // Print the result of the second command
-                            authToken = describeResult.Result.Trim();
+                            if (describeResult.ExitStatus != 0)
+                            {
+                                Console.WriteLine("Falha na execução do comando para obter o token.");
+                                MessageBox.Show("Login falhou.");
+                                return;
+                            }
 
-                            // Disconnect from the SSH session
+                            var authToken = describeResult.Result.Trim();
+
                             client.Disconnect();
+
+                            bool flagVerifyAPI = await VerifyAPI(routerIp, portoAPI, authToken);
+
+                            if (flagVerifyAPI)
+                            {
+                                mainPage mainPageForm = new mainPage();
+                                checkBoxGuardarCredencias.Checked = false;
+                                clearTextBoxes();
+                                mainPageForm.SetCredentials(routerIp.Trim(), username, password, portoSSH, portoAPI);
+                                mainPageForm.Show();
+                                MessageBox.Show("Login efetuado com sucesso!");
+                                listCredentials();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Login falhou, porto da API incorreto.");
+                            }
                         }
                         else
                         {
@@ -125,13 +147,66 @@ namespace AppLTI
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
-            mainPage mainPageForm = new mainPage();
-            checkBoxGuardarCredencias.Checked = false;
-            clearTextBoxes();
-            mainPageForm.SetCredentials(routerIp, username, password, porto);
-            mainPageForm.Show();
-            MessageBox.Show("Login efetuado com sucesso!");
-            listCredentials();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Login(textBoxRouterIP.Text, textBoxUsername.Text, textBoxPassword.Text, textBoxPortoSSH.Text, textBoxPortoAPI.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+            }
+        }
+
+        private async void Login(string routerIp, string username, string password, string portoSSH, string portoAPI)
+        {
+            if (routerIp == "")
+            {
+                MessageBox.Show("Preencha o ip do server.");
+                return;
+            }
+
+            string pattern = @"^(0|[1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$";
+
+            if (portoSSH == "")
+            {
+                MessageBox.Show("Preencha o porto SSH do ip do server.");
+                return;
+
+            }else if(!Regex.IsMatch(portoSSH, pattern))
+            {
+                MessageBox.Show("O porto SSH tem o formato incorreto.");
+                return;
+            }
+
+            if (portoAPI == "")
+            {
+                MessageBox.Show("Preencha o porto API do ip do server.");
+                return;
+
+            }
+            else if (!Regex.IsMatch(portoAPI, pattern))
+            {
+                MessageBox.Show("O porto API tem o formato incorreto.");
+                return;
+            }
+
+            if (username == "")
+            {
+                MessageBox.Show("Preencha o username.");
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Preencha a password.");
+                return;
+            }
+
+            await sshConnection(routerIp, portoSSH, username, password, portoAPI);
         }
 
         private void buttonSeePassword_Click(object sender, EventArgs e)
@@ -200,7 +275,7 @@ namespace AppLTI
             textBoxRouterIP.Clear();
             textBoxUsername.Clear();
             textBoxPassword.Clear();
-            textBoxPorto.Clear();
+            textBoxPortoSSH.Clear();
         }
 
     }
