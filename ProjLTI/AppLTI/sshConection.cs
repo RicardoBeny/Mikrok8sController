@@ -21,19 +21,21 @@ namespace AppLTI
         private string password;
         private string portoSSH;
         private string portoAPI;
+        private string authKey;
 
         public sshConection()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
         {
             this.routerIp = routerIp;
             this.username = username;
             this.password = password;
             this.portoSSH = portoSSH;
             this.portoAPI = portoAPI;
+            this.authKey = authKey;
         }
 
         private void btnSensCommand_Click(object sender, EventArgs e)
@@ -102,7 +104,7 @@ namespace AppLTI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI);
+            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             mainPage.Show();
             this.Dispose();
         }

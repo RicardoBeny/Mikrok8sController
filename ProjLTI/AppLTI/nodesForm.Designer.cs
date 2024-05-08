@@ -65,6 +65,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 181;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureUsername
             // 
@@ -103,13 +104,13 @@
             // listBoxNodes
             // 
             this.listBoxNodes.BackColor = System.Drawing.Color.White;
-            this.listBoxNodes.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxNodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxNodes.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listBoxNodes.FormattingEnabled = true;
-            this.listBoxNodes.ItemHeight = 23;
+            this.listBoxNodes.ItemHeight = 20;
             this.listBoxNodes.Location = new System.Drawing.Point(60, 200);
             this.listBoxNodes.Name = "listBoxNodes";
-            this.listBoxNodes.Size = new System.Drawing.Size(1135, 441);
+            this.listBoxNodes.Size = new System.Drawing.Size(1135, 424);
             this.listBoxNodes.TabIndex = 183;
             // 
             // buttonListarNodes

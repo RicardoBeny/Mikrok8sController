@@ -25,7 +25,6 @@ namespace AppLTI
     public partial class loginForm : Form
     {
         private List<Credential> credentials;
-        private string authToken;
 
         string baseURI = @"http://localhost:11755";
         RestClient restClient = null;
@@ -69,14 +68,13 @@ namespace AppLTI
                     }
                 }
             }
+            #pragma warning disable CS0168
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao verificar na API: " + ex.Message);
                 return false;
             }
+            #pragma warning restore CS0168
         }
-
-
 
         private async Task sshConnection(string routerIp, string portoSSH, string username, string password, string portoAPI)
         {
@@ -122,7 +120,7 @@ namespace AppLTI
                                 mainPage mainPageForm = new mainPage();
                                 checkBoxGuardarCredencias.Checked = false;
                                 clearTextBoxes();
-                                mainPageForm.SetCredentials(routerIp.Trim(), username, password, portoSSH, portoAPI);
+                                mainPageForm.SetCredentials(routerIp.Trim(), username, password, portoSSH, portoAPI, authToken);
                                 mainPageForm.Show();
                                 MessageBox.Show("Login efetuado com sucesso!");
                                 listCredentials();
@@ -276,6 +274,7 @@ namespace AppLTI
             textBoxUsername.Clear();
             textBoxPassword.Clear();
             textBoxPortoSSH.Clear();
+            textBoxPortoAPI.Clear();
         }
 
     }

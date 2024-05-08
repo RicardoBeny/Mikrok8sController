@@ -23,19 +23,21 @@ namespace AppLTI
         private string password;
         private string portoSSH;
         private string portoAPI;
+        private string authKey;
 
         public mainPage()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
         {
             this.routerIp = routerIp;
             this.username = username;
             this.password = password;
             this.portoSSH = portoSSH;
             this.portoAPI = portoAPI;
+            this.authKey = authKey;
         }
 
         private void mainPage_Load(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace AppLTI
         private void btnTerminal_Click(object sender, EventArgs e)
         {
             sshConection sshConection = new sshConection();
-            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI);
+            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             sshConection.Show();
             this.Dispose();
         }
@@ -54,7 +56,7 @@ namespace AppLTI
         private void buttonNodes_Click(object sender, EventArgs e)
         {
             nodesForm nodesForm = new nodesForm();
-            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI);
+            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             nodesForm.Show();
             this.Dispose();
         }

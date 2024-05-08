@@ -84,6 +84,7 @@
             this.textBoxRouterIP.Name = "textBoxRouterIP";
             this.textBoxRouterIP.Size = new System.Drawing.Size(236, 23);
             this.textBoxRouterIP.TabIndex = 5;
+            this.textBoxRouterIP.Text = "127.0.0.1";
             this.textBoxRouterIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureUsername
@@ -139,6 +140,7 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(236, 23);
             this.textBoxUsername.TabIndex = 10;
+            this.textBoxUsername.Text = "kmaster";
             this.textBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPassword
@@ -156,6 +158,7 @@
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(210, 23);
             this.textBoxPassword.TabIndex = 11;
+            this.textBoxPassword.Text = "123";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLogin
@@ -273,6 +276,7 @@
             this.textBoxPortoSSH.Name = "textBoxPortoSSH";
             this.textBoxPortoSSH.Size = new System.Drawing.Size(236, 23);
             this.textBoxPortoSSH.TabIndex = 20;
+            this.textBoxPortoSSH.Text = "1022";
             this.textBoxPortoSSH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPortoAPI
@@ -289,6 +293,7 @@
             this.textBoxPortoAPI.Name = "textBoxPortoAPI";
             this.textBoxPortoAPI.Size = new System.Drawing.Size(236, 23);
             this.textBoxPortoAPI.TabIndex = 22;
+            this.textBoxPortoAPI.Text = "16443";
             this.textBoxPortoAPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
