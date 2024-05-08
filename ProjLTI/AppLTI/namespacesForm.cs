@@ -115,5 +115,61 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while loading namespaces: " + ex.Message);
             }
         }
+
+        private async void buttonCreateNamespace_Click(object sender, EventArgs e)
+        {
+            await CreateNamespaces(routerIp, portoAPI, authKey);
+        }
+
+        private async Task CreateNamespaces(string routerIp, string portoAPI, string authToken)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxNomeAdd.Text))
+            {
+                MessageBox.Show("Campo nome tem de ser preenchido.");
+                return;
+            }
+
+            var requestBody = new JObject();
+            requestBody["apiVersion"] = "v1";
+            requestBody["kind"] = "Namespace";
+
+            var metadata = new JObject();
+            metadata["name"] = textBoxNomeAdd.Text;
+            requestBody["metadata"] = metadata;
+
+            try
+            {
+                listBoxNamespaces.Items.Clear();
+
+                string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces";
+
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    var content = new StringContent(requestBody.ToString(), Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await client.PostAsync(url, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Namespace adicionado com sucesso.");
+                        await LoadNamespaces(routerIp, portoAPI, authToken);
+                    }
+                    else
+                    {
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Falha ao adicionar namespace . Mensagem de erro: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao adicionar namespace: " + ex.Message);
+            }
+        }
     }
 }

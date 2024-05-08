@@ -36,6 +36,9 @@
             this.PoolLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listBoxNamespaces = new System.Windows.Forms.ListBox();
+            this.textBoxNomeAdd = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonCreateNamespace = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,11 +123,44 @@
             this.listBoxNamespaces.Size = new System.Drawing.Size(788, 342);
             this.listBoxNamespaces.TabIndex = 191;
             // 
+            // textBoxNomeAdd
+            // 
+            this.textBoxNomeAdd.Location = new System.Drawing.Point(109, 584);
+            this.textBoxNomeAdd.Name = "textBoxNomeAdd";
+            this.textBoxNomeAdd.Size = new System.Drawing.Size(334, 20);
+            this.textBoxNomeAdd.TabIndex = 192;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(44, 581);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 23);
+            this.label1.TabIndex = 193;
+            this.label1.Text = "Nome:";
+            // 
+            // buttonCreateNamespace
+            // 
+            this.buttonCreateNamespace.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateNamespace.Location = new System.Drawing.Point(147, 530);
+            this.buttonCreateNamespace.Name = "buttonCreateNamespace";
+            this.buttonCreateNamespace.Size = new System.Drawing.Size(240, 32);
+            this.buttonCreateNamespace.TabIndex = 194;
+            this.buttonCreateNamespace.Text = "Criar Namespace";
+            this.buttonCreateNamespace.UseVisualStyleBackColor = true;
+            this.buttonCreateNamespace.Click += new System.EventHandler(this.buttonCreateNamespace_Click);
+            // 
             // namespacesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 729);
+            this.Controls.Add(this.buttonCreateNamespace);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxNomeAdd);
             this.Controls.Add(this.listBoxNamespaces);
             this.Controls.Add(this.buttonListarNamespaces);
             this.Controls.Add(this.textBoxIP);
@@ -152,5 +188,8 @@
         private System.Windows.Forms.Label PoolLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox listBoxNamespaces;
+        private System.Windows.Forms.TextBox textBoxNomeAdd;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonCreateNamespace;
     }
 }
