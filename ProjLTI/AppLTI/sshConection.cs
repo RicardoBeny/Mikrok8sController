@@ -21,6 +21,11 @@ namespace AppLTI
         private string password;
         private string porto;
 
+        public sshConection()
+        {
+            InitializeComponent();
+        }
+
         public void SetCredentials(string routerIp, string username, string password, string porto)
         {
             this.routerIp = routerIp;
