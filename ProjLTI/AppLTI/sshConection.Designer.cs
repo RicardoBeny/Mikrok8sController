@@ -96,7 +96,7 @@
             // 
             this.pictureUsername.Image = ((System.Drawing.Image)(resources.GetObject("pictureUsername.Image")));
             this.pictureUsername.Location = new System.Drawing.Point(1200, 11);
-            this.pictureUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureUsername.Margin = new System.Windows.Forms.Padding(2);
             this.pictureUsername.Name = "pictureUsername";
             this.pictureUsername.Size = new System.Drawing.Size(39, 41);
             this.pictureUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,10 +182,10 @@
             this.textBoxIP.Enabled = false;
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxIP.Location = new System.Drawing.Point(1041, 11);
+            this.textBoxIP.Location = new System.Drawing.Point(1041, 22);
             this.textBoxIP.Multiline = true;
             this.textBoxIP.Name = "textBoxIP";
-            this.textBoxIP.Size = new System.Drawing.Size(154, 47);
+            this.textBoxIP.Size = new System.Drawing.Size(154, 20);
             this.textBoxIP.TabIndex = 177;
             this.textBoxIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 

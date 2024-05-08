@@ -60,5 +60,13 @@ namespace AppLTI
             nodesForm.Show();
             this.Dispose();
         }
+
+        private void buttonNameSpaces_Click(object sender, EventArgs e)
+        {
+            namespacesForm namespacesForm = new namespacesForm();
+            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            namespacesForm.Show();
+            this.Dispose();
+        }
     }
 }
