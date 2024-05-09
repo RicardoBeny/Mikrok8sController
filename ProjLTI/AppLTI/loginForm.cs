@@ -87,7 +87,7 @@ namespace AppLTI
                         client.Connect();
                         if (client.IsConnected)
                         {
-                            var tokenCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system get secret | grep default-token | cut -d \" \" -f1";
+                            var tokenCommand = $"echo '{password}' | sudo -S kubectl -n kube-system  create token admin-user";
                             var tokenResult = client.RunCommand(tokenCommand);
 
                             if (tokenResult.ExitStatus != 0)
@@ -97,19 +97,7 @@ namespace AppLTI
                                 return;
                             }
 
-                            var token = tokenResult.Result.Trim();
-
-                            var describeCommand = $"echo '{password}' | sudo -S microk8s kubectl -n kube-system describe secret {token} | awk '/^token:/ {{print $2}}'";
-                            var describeResult = client.RunCommand(describeCommand);
-
-                            if (describeResult.ExitStatus != 0)
-                            {
-                                Console.WriteLine("Falha na execução do comando para obter o token.");
-                                MessageBox.Show("Login falhou.");
-                                return;
-                            }
-
-                            var authToken = describeResult.Result.Trim();
+                            var authToken = tokenResult.Result.Trim();
 
                             client.Disconnect();
 
