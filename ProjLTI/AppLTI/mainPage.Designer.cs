@@ -36,6 +36,7 @@
             this.btnTerminal = new System.Windows.Forms.Button();
             this.buttonNodes = new System.Windows.Forms.Button();
             this.buttonNameSpaces = new System.Windows.Forms.Button();
+            this.buttonPods = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.SuspendLayout();
@@ -81,10 +82,10 @@
             this.textBoxIP.Enabled = false;
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxIP.Location = new System.Drawing.Point(1041, 21);
+            this.textBoxIP.Location = new System.Drawing.Point(786, 21);
             this.textBoxIP.Multiline = true;
             this.textBoxIP.Name = "textBoxIP";
-            this.textBoxIP.Size = new System.Drawing.Size(154, 22);
+            this.textBoxIP.Size = new System.Drawing.Size(409, 22);
             this.textBoxIP.TabIndex = 129;
             this.textBoxIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -122,12 +123,24 @@
             this.buttonNameSpaces.UseVisualStyleBackColor = true;
             this.buttonNameSpaces.Click += new System.EventHandler(this.buttonNameSpaces_Click);
             // 
+            // buttonPods
+            // 
+            this.buttonPods.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPods.Location = new System.Drawing.Point(12, 580);
+            this.buttonPods.Name = "buttonPods";
+            this.buttonPods.Size = new System.Drawing.Size(192, 30);
+            this.buttonPods.TabIndex = 135;
+            this.buttonPods.Text = "Pods";
+            this.buttonPods.UseVisualStyleBackColor = true;
+            this.buttonPods.Click += new System.EventHandler(this.buttonPods_Click);
+            // 
             // mainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1250, 729);
+            this.Controls.Add(this.buttonPods);
             this.Controls.Add(this.buttonNameSpaces);
             this.Controls.Add(this.buttonNodes);
             this.Controls.Add(this.btnTerminal);
@@ -157,5 +170,6 @@
         private System.Windows.Forms.Button btnTerminal;
         private System.Windows.Forms.Button buttonNodes;
         private System.Windows.Forms.Button buttonNameSpaces;
+        private System.Windows.Forms.Button buttonPods;
     }
 }

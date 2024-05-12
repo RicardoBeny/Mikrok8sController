@@ -116,22 +116,26 @@ namespace AppLTI
                             else
                             {
                                 MessageBox.Show("Login falhou, porto da API incorreto.");
+                                return;
                             }
                         }
                         else
                         {
                             MessageBox.Show("Login falhou, verifica as Credenciais e tenta de novo.");
+                            return;
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"An error occurred: {ex.Message}");
+                        MessageBox.Show($"Credenciais incorretas: {ex.Message}");
+                        return;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
+                return;
             }
         }
 

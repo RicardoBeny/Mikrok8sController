@@ -68,5 +68,13 @@ namespace AppLTI
             namespacesForm.Show();
             this.Dispose();
         }
+
+        private void buttonPods_Click(object sender, EventArgs e)
+        {
+            podsForm podsForm = new podsForm();
+            podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            podsForm.Show();
+            this.Dispose();
+        }
     }
 }

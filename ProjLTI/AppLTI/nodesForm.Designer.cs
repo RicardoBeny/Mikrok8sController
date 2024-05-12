@@ -48,12 +48,13 @@
             this.textBoxIP.Enabled = false;
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxIP.Location = new System.Drawing.Point(1041, 22);
+            this.textBoxIP.Location = new System.Drawing.Point(730, 22);
             this.textBoxIP.Multiline = true;
             this.textBoxIP.Name = "textBoxIP";
-            this.textBoxIP.Size = new System.Drawing.Size(154, 22);
+            this.textBoxIP.Size = new System.Drawing.Size(465, 22);
             this.textBoxIP.TabIndex = 182;
             this.textBoxIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIP.TextChanged += new System.EventHandler(this.textBoxIP_TextChanged);
             // 
             // pictureBox2
             // 
@@ -77,6 +78,7 @@
             this.pictureUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureUsername.TabIndex = 180;
             this.pictureUsername.TabStop = false;
+            this.pictureUsername.Click += new System.EventHandler(this.pictureUsername_Click);
             // 
             // PoolLabel
             // 
@@ -100,6 +102,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 178;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // listBoxNodes
             // 
@@ -109,9 +112,9 @@
             this.listBoxNodes.FormattingEnabled = true;
             this.listBoxNodes.HorizontalScrollbar = true;
             this.listBoxNodes.ItemHeight = 15;
-            this.listBoxNodes.Location = new System.Drawing.Point(179, 218);
+            this.listBoxNodes.Location = new System.Drawing.Point(116, 215);
             this.listBoxNodes.Name = "listBoxNodes";
-            this.listBoxNodes.Size = new System.Drawing.Size(907, 394);
+            this.listBoxNodes.Size = new System.Drawing.Size(1027, 394);
             this.listBoxNodes.TabIndex = 183;
             // 
             // buttonListarNodes

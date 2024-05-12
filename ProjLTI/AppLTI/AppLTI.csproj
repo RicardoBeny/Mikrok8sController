@@ -135,6 +135,12 @@
     <Compile Include="nodesForm.Designer.cs">
       <DependentUpon>nodesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="podsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="podsForm.Designer.cs">
+      <DependentUpon>podsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nodesForm.resx">
       <DependentUpon>nodesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="podsForm.resx">
+      <DependentUpon>podsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

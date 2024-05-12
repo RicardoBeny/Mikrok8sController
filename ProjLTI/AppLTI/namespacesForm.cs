@@ -60,6 +60,7 @@ namespace AppLTI
             try
             {
                 listBoxNamespaces.Items.Clear();
+                comboBoxNamespaces.Items.Clear();
 
                 string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces";
 
@@ -79,7 +80,7 @@ namespace AppLTI
                         JObject namespacesData = JObject.Parse(responseBody);
                         JArray namespacesArray = (JArray)namespacesData["items"];
 
-                        listBoxNamespaces.Items.Add("Name\t\tPhase\t\tCreated");
+                        listBoxNamespaces.Items.Add("Name\t\t\tPhase\t\tCreated");
 
                         foreach (JObject namespaceObject in namespacesArray)
                         {
@@ -93,13 +94,20 @@ namespace AppLTI
 
                             int nameColumn = name.Length;
 
-                            if (nameColumn > 8)
+                            if(nameColumn > 17)
                             {
                                 listBoxNamespaces.Items.Add($"{name}\t{phase}\t\t{timeAgo}");
+                                comboBoxNamespaces.Items.Add($"Nome: {name}");
+                            }
+                            else if (nameColumn < 9)
+                            {
+                                listBoxNamespaces.Items.Add($"{name}\t\t\t{phase}\t\t{timeAgo}");
+                                comboBoxNamespaces.Items.Add($"Nome: {name}");
                             }
                             else
                             {
                                 listBoxNamespaces.Items.Add($"{name}\t\t{phase}\t\t{timeAgo}");
+                                comboBoxNamespaces.Items.Add($"Nome: {name}");
                             }
                         }
                     }
@@ -171,5 +179,53 @@ namespace AppLTI
                 MessageBox.Show("Ocorreu um erro ao adicionar namespace: " + ex.Message);
             }
         }
+
+        private async void buttonDeleteNamespace_Click(object sender, EventArgs e)
+        {
+            if (comboBoxNamespaces.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
+            string namespacename = selectedItemText.Substring(selectedItemText.IndexOf("Nome:") + 5).Split(';')[0].Trim();
+
+            await DeleteNamespace(routerIp, portoAPI, authKey, namespacename);
+        }
+
+        private async Task DeleteNamespace(string routerIp, string portoAPI, string authToken, string namespaceName)
+        {
+            try
+            {
+                string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces/{namespaceName}";
+
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    HttpResponseMessage response = await client.DeleteAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Namespace eliminado com sucesso.");
+                        await LoadNamespaces(routerIp, portoAPI, authToken);
+                    }
+                    else
+                    {
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Falha ao eliminar namespace. Mensagem de erro: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao eliminar namespace: " + ex.Message);
+            }
+        }
+
     }
 }

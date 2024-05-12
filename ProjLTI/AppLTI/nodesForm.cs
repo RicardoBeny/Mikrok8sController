@@ -67,13 +67,14 @@ namespace AppLTI
                         JObject nodesJson = JObject.Parse(responseBody);
                         JArray items = (JArray)nodesJson["items"];
 
-                        listBoxNodes.Items.Add("Name\tReady\tCPU Capacity (cores)\t" +
-                            "Memory Limits (bytes)\tMemory Capacity (bytes)\tPods\t"+"          "+"Created\tEndereço");
+                        listBoxNodes.Items.Add("Name\t\tReady\tCPU Capacity (cores)\t" +
+                            "Memory Limits (bytes)\tMemory Capacity (bytes)\tPods\t"
+                            +"          "+ "Created\t\tEndereço");
 
                         foreach (var item in items)
                         {
                             string name = (string)item["metadata"]["name"];
-                            string ready = (string)item["status"]["conditions"][4]["status"];
+                            string ready = (string)item["status"]["conditions"][3]["status"];
                             string cpuCapacity = (string)item["status"]["capacity"]["cpu"];
                             string memoryLimits = (string)item["status"]["allocatable"]["memory"];
                             string memoryCapacity = (string)item["status"]["capacity"]["memory"];
@@ -88,7 +89,7 @@ namespace AppLTI
                                 if (type == "InternalIP" || type == "Hostname")
                                 {
                                     ipAddress = (string)addressObject["address"];
-                                    break; // Exit the loop once the IP address is found
+                                    break;
                                 }
                             }
 
@@ -97,7 +98,7 @@ namespace AppLTI
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
                             string nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t"+"          "+
-                                $"{memoryLimits}\t\t\t{memoryCapacity}\t{pods}\t{timeAgo}\t{ipAddress}";
+                                $"{memoryLimits}\t\t\t{memoryCapacity}\t{pods}\t{timeAgo}\t\t{ipAddress}";
 
                             listBoxNodes.Items.Add(nodeInfo);
                         }
@@ -131,6 +132,21 @@ namespace AppLTI
         private void nodesForm_Load(object sender, EventArgs e)
         {
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxIP_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
