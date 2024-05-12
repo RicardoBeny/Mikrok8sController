@@ -111,6 +111,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="deploymentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deploymentsForm.Designer.cs">
+      <DependentUpon>deploymentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <Compile Include="sshConection.Designer.cs">
       <DependentUpon>sshConection.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="deploymentsForm.resx">
+      <DependentUpon>deploymentsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>

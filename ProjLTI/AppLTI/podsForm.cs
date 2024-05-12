@@ -280,6 +280,7 @@ namespace AppLTI
 
                             }
                         }
+
                     }
                     else
                     {
@@ -305,6 +306,7 @@ namespace AppLTI
             string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
             string namespacename = selectedItemText.Trim();
 
+            await LoadDeployments(routerIp, portoAPI, authKey, namespacename);
             await LoadPods(routerIp, portoAPI, authKey, namespacename);
         }
 
@@ -356,7 +358,54 @@ namespace AppLTI
 
         private async void podsForm_Load(object sender, EventArgs e)
         {
+            textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
+
             await LoadNamespaces(routerIp, portoAPI, authKey);
+        }
+
+        private async Task LoadDeployments(string routerIp, string portoAPI, string authToken, string namespacename)
+        {
+            try
+            {
+                string url;
+                comboBoxImage.Items.Clear();
+
+                url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/deployments";
+                
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    HttpResponseMessage response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseBody = await response.Content.ReadAsStringAsync();
+
+                        JObject deploymentsData = JObject.Parse(responseBody);
+                        JArray deploymentsArray = (JArray)deploymentsData["items"];
+
+                        foreach (JObject deploymentObject in deploymentsArray)
+                        {
+                            string containerImage = (string)deploymentObject["spec"]["template"]["spec"]["containers"][0]["image"];
+
+                            comboBoxImage.Items.Add($"{containerImage}");
+                        }
+                    }
+                    else
+                    {
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Failed to load deployments. Error message: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading deployments: " + ex.Message);
+            }
         }
     }
 }
