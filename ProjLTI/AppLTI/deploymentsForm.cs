@@ -122,40 +122,56 @@ namespace AppLTI
         }
         private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename)
         {
-            var requestBody = new JObject();
-            requestBody["apiVersion"] = "apps/v1";
-            requestBody["kind"] = "Deployment";
-
-            var metadata = new JObject();
-            metadata["name"] = textBoxNomeAdd.Text;
-            requestBody["metadata"] = metadata;
-
-            var spec = new JObject();
-            spec["replicas"] = 1;
-
-            var template = new JObject();
-            var templateMetadata = new JObject();
-            templateMetadata["labels"] = new JObject();
-            templateMetadata["labels"]["app"] = textBoxLabelApp.Text;
-            template["metadata"] = templateMetadata;
-
-            var specContainers = new JArray();
-            var container = new JObject();
-            container["name"] = textBoxContainerName.Text;
-            container["image"] = textBoxImage.Text;
-            var ports = new JArray();
-            var port = new JObject();
-            port["containerPort"] = int.Parse(textBoxPorto.Text);
-            ports.Add(port);
-            container["ports"] = ports;
-            specContainers.Add(container);
-
-            template["spec"] = new JObject();
-            template["spec"]["containers"] = specContainers;
-
-            spec["template"] = template;
-
-            requestBody["spec"] = spec;
+            int porto = int.Parse(textBoxPorto.Text);
+            var requestBody = new JObject
+            {
+                ["apiVersion"] = "apps/v1",
+                ["kind"] = "Deployment",
+                ["metadata"] = new JObject
+                {
+                    ["name"] = $"{textBoxNomeAdd.Text}",
+                    ["namespace"] = $"{namespacename}"
+                },
+                ["spec"] = new JObject
+                {
+                    ["selector"] = new JObject
+                    {
+                        ["matchLabels"] = new JObject
+                        {
+                            ["app"] = $"{textBoxLabelApp.Text}"
+                        }
+                    },
+                    ["template"] = new JObject
+                    {
+                        ["metadata"] = new JObject
+                        {
+                            ["labels"] = new JObject
+                            {
+                                ["app"] = $"{textBoxLabelApp.Text}"
+                            }
+                        },
+                        ["spec"] = new JObject
+                        {
+                            ["containers"] = new JArray
+                        {
+                            new JObject
+                            {
+                                ["name"] = $"{textBoxContainerName.Text}",
+                                ["image"] = $"{textBoxImage.Text}",
+                                ["ports"] = new JArray
+                                {
+                                    new JObject
+                                    {
+                                        ["containerPort"] = porto
+                                    }
+                                }
+                            }
+                        }
+                        }
+                    }
+                }
+            };
+            textBox1.Text = requestBody.ToString();
 
             try
             {
@@ -180,6 +196,7 @@ namespace AppLTI
                     else
                     {
                         string errorMessage = await response.Content.ReadAsStringAsync();
+                        textBox2.Text = errorMessage;
                         MessageBox.Show("Failed to create Deployment. Error message: " + errorMessage);
                     }
                 }

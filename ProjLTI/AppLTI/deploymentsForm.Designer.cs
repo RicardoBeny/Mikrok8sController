@@ -52,6 +52,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxImage = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -298,11 +300,27 @@
             this.label.TabIndex = 234;
             this.label.Text = "Image:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(489, 670);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(696, 20);
+            this.textBox1.TabIndex = 236;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(489, 697);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(696, 20);
+            this.textBox2.TabIndex = 237;
+            // 
             // deploymentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 729);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxImage);
             this.Controls.Add(this.label);
             this.Controls.Add(this.textBoxLabelApp);
@@ -362,5 +380,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxImage;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
