@@ -121,32 +121,46 @@ namespace AppLTI
             await LoadNodes(routerIp, portoAPI, authKey);
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            mainPage.Show();
-            this.Dispose();
-        }
-
         private void nodesForm_Load(object sender, EventArgs e)
         {
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void buttonPods_Click(object sender, EventArgs e)
+        {
+            podsForm podsForm = new podsForm();
+            podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            podsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonDeployments_Click(object sender, EventArgs e)
+        {
+            deploymentsForm deploymentsForm = new deploymentsForm();
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            deploymentsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonServices_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureUsername_Click(object sender, EventArgs e)
+        private void buttonNameSpaces_Click(object sender, EventArgs e)
         {
-
+            namespacesForm namespacesForm = new namespacesForm();
+            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            namespacesForm.Show();
+            this.Dispose();
         }
 
-        private void textBoxIP_TextChanged(object sender, EventArgs e)
+        private void btnTerminal_Click(object sender, EventArgs e)
         {
-
+            sshConection sshConection = new sshConection();
+            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            sshConection.Show();
+            this.Dispose();
         }
     }
 }

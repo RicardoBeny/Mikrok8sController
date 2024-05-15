@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,31 +46,7 @@ namespace AppLTI
             textBoxIP.Text = username + " - " + routerIp+":"+portoSSH;
         }
 
-        private void btnTerminal_Click(object sender, EventArgs e)
-        {
-            sshConection sshConection = new sshConection();
-            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            sshConection.Show();
-            this.Dispose();
-        }
-
-        private void buttonNodes_Click(object sender, EventArgs e)
-        {
-            nodesForm nodesForm = new nodesForm();
-            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            nodesForm.Show();
-            this.Dispose();
-        }
-
-        private void buttonNameSpaces_Click(object sender, EventArgs e)
-        {
-            namespacesForm namespacesForm = new namespacesForm();
-            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            namespacesForm.Show();
-            this.Dispose();
-        }
-
-        private void buttonPods_Click(object sender, EventArgs e)
+        private void buttonPods_Click_1(object sender, EventArgs e)
         {
             podsForm podsForm = new podsForm();
             podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
@@ -77,12 +54,41 @@ namespace AppLTI
             this.Dispose();
         }
 
-        private void buttonDeployments_Click(object sender, EventArgs e)
+        private void buttonNodes_Click_1(object sender, EventArgs e)
+        {
+            nodesForm nodesForm = new nodesForm();
+            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            nodesForm.Show();
+            this.Dispose();
+        }
+
+        private void btnTerminal_Click_1(object sender, EventArgs e)
+        {
+            sshConection sshConection = new sshConection();
+            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            sshConection.Show();
+            this.Dispose();
+        }
+
+        private void buttonNameSpaces_Click_1(object sender, EventArgs e)
+        {
+            namespacesForm namespacesForm = new namespacesForm();
+            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            namespacesForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonDeployments_Click_1(object sender, EventArgs e)
         {
             deploymentsForm deploymentsForm = new deploymentsForm();
             deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentsForm.Show();
             this.Dispose();
+        }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

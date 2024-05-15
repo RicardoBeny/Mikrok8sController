@@ -42,14 +42,6 @@ namespace AppLTI
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            mainPage.Show();
-            this.Dispose();
-        }
-
         private async void buttonListarNamespaces_Click(object sender, EventArgs e)
         {
             await LoadNamespaces(routerIp, portoAPI, authKey);
@@ -227,5 +219,41 @@ namespace AppLTI
             }
         }
 
+        private void btnTerminal_Click(object sender, EventArgs e)
+        {
+            sshConection sshConection = new sshConection();
+            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            sshConection.Show();
+            this.Dispose();
+        }
+
+        private void buttonNodes_Click(object sender, EventArgs e)
+        {
+            nodesForm nodesForm = new nodesForm();
+            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            nodesForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDeployments_Click(object sender, EventArgs e)
+        {
+            deploymentsForm deploymentsForm = new deploymentsForm();
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            deploymentsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonPods_Click(object sender, EventArgs e)
+        {
+            podsForm podsForm = new podsForm();
+            podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            podsForm.Show();
+            this.Dispose();
+        }
     }
 }

@@ -30,11 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
-            this.btnRouterIP = new System.Windows.Forms.Button();
             this.textBoxRouterIP = new System.Windows.Forms.TextBox();
-            this.pictureUsername = new System.Windows.Forms.PictureBox();
-            this.picturePassword = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -43,32 +39,17 @@
             this.checkBoxGuardarCredencias = new System.Windows.Forms.CheckBox();
             this.buttonSeePassword = new System.Windows.Forms.Button();
             this.buttonHidePassword = new System.Windows.Forms.Button();
-            this.btnPorto = new System.Windows.Forms.Button();
             this.textBoxPortoSSH = new System.Windows.Forms.TextBox();
             this.textBoxPortoAPI = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.labelIP = new System.Windows.Forms.Label();
+            this.labelSSH = new System.Windows.Forms.Label();
+            this.labelAPI = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnRouterIP
-            // 
-            this.btnRouterIP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRouterIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRouterIP.Enabled = false;
-            this.btnRouterIP.Font = new System.Drawing.Font("Impact", 16.8F);
-            this.btnRouterIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnRouterIP.Location = new System.Drawing.Point(514, 150);
-            this.btnRouterIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnRouterIP.Name = "btnRouterIP";
-            this.btnRouterIP.Size = new System.Drawing.Size(128, 38);
-            this.btnRouterIP.TabIndex = 3;
-            this.btnRouterIP.Text = "Server IP";
-            this.btnRouterIP.UseVisualStyleBackColor = false;
             // 
             // textBoxRouterIP
             // 
@@ -79,52 +60,13 @@
             this.textBoxRouterIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRouterIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRouterIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxRouterIP.Location = new System.Drawing.Point(460, 202);
-            this.textBoxRouterIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxRouterIP.Location = new System.Drawing.Point(194, 206);
+            this.textBoxRouterIP.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRouterIP.Name = "textBoxRouterIP";
             this.textBoxRouterIP.Size = new System.Drawing.Size(236, 23);
             this.textBoxRouterIP.TabIndex = 5;
             this.textBoxRouterIP.Text = "127.0.0.1";
             this.textBoxRouterIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureUsername
-            // 
-            this.pictureUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureUsername.Image = ((System.Drawing.Image)(resources.GetObject("pictureUsername.Image")));
-            this.pictureUsername.Location = new System.Drawing.Point(568, 375);
-            this.pictureUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureUsername.Name = "pictureUsername";
-            this.pictureUsername.Size = new System.Drawing.Size(39, 41);
-            this.pictureUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureUsername.TabIndex = 6;
-            this.pictureUsername.TabStop = false;
-            // 
-            // picturePassword
-            // 
-            this.picturePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picturePassword.Image = ((System.Drawing.Image)(resources.GetObject("picturePassword.Image")));
-            this.picturePassword.Location = new System.Drawing.Point(568, 461);
-            this.picturePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picturePassword.Name = "picturePassword";
-            this.picturePassword.Size = new System.Drawing.Size(39, 41);
-            this.picturePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturePassword.TabIndex = 8;
-            this.picturePassword.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-7, -30);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1171, 726);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
             // 
             // textBoxUsername
             // 
@@ -135,8 +77,8 @@
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxUsername.Location = new System.Drawing.Point(472, 420);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsername.Location = new System.Drawing.Point(461, 310);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(236, 23);
             this.textBoxUsername.TabIndex = 10;
@@ -152,11 +94,11 @@
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(483, 506);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPassword.Location = new System.Drawing.Point(461, 352);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
-            this.textBoxPassword.Size = new System.Drawing.Size(210, 23);
+            this.textBoxPassword.Size = new System.Drawing.Size(211, 23);
             this.textBoxPassword.TabIndex = 11;
             this.textBoxPassword.Text = "123";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -169,10 +111,10 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLogin.Font = new System.Drawing.Font("Impact", 18.8F);
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnLogin.Location = new System.Drawing.Point(508, 583);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Location = new System.Drawing.Point(496, 446);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(161, 41);
+            this.btnLogin.Size = new System.Drawing.Size(163, 41);
             this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -185,10 +127,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxRoutersIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRoutersIP.FormattingEnabled = true;
-            this.comboBoxRoutersIP.Location = new System.Drawing.Point(502, 336);
-            this.comboBoxRoutersIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxRoutersIP.Location = new System.Drawing.Point(496, 245);
+            this.comboBoxRoutersIP.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxRoutersIP.Name = "comboBoxRoutersIP";
-            this.comboBoxRoutersIP.Size = new System.Drawing.Size(168, 25);
+            this.comboBoxRoutersIP.Size = new System.Drawing.Size(163, 25);
             this.comboBoxRoutersIP.TabIndex = 13;
             this.comboBoxRoutersIP.Text = "Credenciais Recentes";
             this.comboBoxRoutersIP.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoutersIP_SelectedIndexChanged);
@@ -199,11 +141,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxGuardarCredencias.AutoSize = true;
-            this.checkBoxGuardarCredencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.checkBoxGuardarCredencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.checkBoxGuardarCredencias.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxGuardarCredencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.checkBoxGuardarCredencias.Location = new System.Drawing.Point(514, 547);
-            this.checkBoxGuardarCredencias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxGuardarCredencias.ForeColor = System.Drawing.Color.White;
+            this.checkBoxGuardarCredencias.Location = new System.Drawing.Point(496, 399);
+            this.checkBoxGuardarCredencias.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxGuardarCredencias.Name = "checkBoxGuardarCredencias";
             this.checkBoxGuardarCredencias.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxGuardarCredencias.Size = new System.Drawing.Size(163, 24);
@@ -222,10 +164,10 @@
             this.buttonSeePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSeePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSeePassword.ForeColor = System.Drawing.Color.White;
-            this.buttonSeePassword.Location = new System.Drawing.Point(697, 506);
-            this.buttonSeePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSeePassword.Location = new System.Drawing.Point(675, 353);
+            this.buttonSeePassword.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSeePassword.Name = "buttonSeePassword";
-            this.buttonSeePassword.Size = new System.Drawing.Size(21, 22);
+            this.buttonSeePassword.Size = new System.Drawing.Size(22, 22);
             this.buttonSeePassword.TabIndex = 17;
             this.buttonSeePassword.UseVisualStyleBackColor = false;
             this.buttonSeePassword.Click += new System.EventHandler(this.buttonSeePassword_Click);
@@ -237,30 +179,13 @@
             this.buttonHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHidePassword.ForeColor = System.Drawing.Color.White;
-            this.buttonHidePassword.Location = new System.Drawing.Point(686, 506);
-            this.buttonHidePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonHidePassword.Location = new System.Drawing.Point(676, 353);
+            this.buttonHidePassword.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHidePassword.Name = "buttonHidePassword";
             this.buttonHidePassword.Size = new System.Drawing.Size(21, 22);
             this.buttonHidePassword.TabIndex = 18;
             this.buttonHidePassword.UseVisualStyleBackColor = false;
             this.buttonHidePassword.Click += new System.EventHandler(this.buttonHidePassword_Click);
-            // 
-            // btnPorto
-            // 
-            this.btnPorto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPorto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPorto.Enabled = false;
-            this.btnPorto.Font = new System.Drawing.Font("Impact", 16.8F);
-            this.btnPorto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnPorto.Location = new System.Drawing.Point(398, 240);
-            this.btnPorto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnPorto.Name = "btnPorto";
-            this.btnPorto.Size = new System.Drawing.Size(128, 38);
-            this.btnPorto.TabIndex = 19;
-            this.btnPorto.Text = "Porto SSH";
-            this.btnPorto.UseVisualStyleBackColor = false;
             // 
             // textBoxPortoSSH
             // 
@@ -271,8 +196,8 @@
             this.textBoxPortoSSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPortoSSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPortoSSH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPortoSSH.Location = new System.Drawing.Point(343, 295);
-            this.textBoxPortoSSH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPortoSSH.Location = new System.Drawing.Point(461, 206);
+            this.textBoxPortoSSH.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPortoSSH.Name = "textBoxPortoSSH";
             this.textBoxPortoSSH.Size = new System.Drawing.Size(236, 23);
             this.textBoxPortoSSH.TabIndex = 20;
@@ -288,30 +213,78 @@
             this.textBoxPortoAPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPortoAPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPortoAPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPortoAPI.Location = new System.Drawing.Point(600, 295);
-            this.textBoxPortoAPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPortoAPI.Location = new System.Drawing.Point(737, 206);
+            this.textBoxPortoAPI.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPortoAPI.Name = "textBoxPortoAPI";
             this.textBoxPortoAPI.Size = new System.Drawing.Size(236, 23);
             this.textBoxPortoAPI.TabIndex = 22;
             this.textBoxPortoAPI.Text = "6443";
             this.textBoxPortoAPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // labelIP
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Impact", 16.8F);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button1.Location = new System.Drawing.Point(600, 240);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 38);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Porto  API";
-            this.button1.UseVisualStyleBackColor = false;
+            this.labelIP.AutoSize = true;
+            this.labelIP.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIP.ForeColor = System.Drawing.Color.White;
+            this.labelIP.Location = new System.Drawing.Point(258, 160);
+            this.labelIP.Name = "labelIP";
+            this.labelIP.Size = new System.Drawing.Size(116, 23);
+            this.labelIP.TabIndex = 23;
+            this.labelIP.Text = "IP do servidor";
+            // 
+            // labelSSH
+            // 
+            this.labelSSH.AutoSize = true;
+            this.labelSSH.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSSH.ForeColor = System.Drawing.Color.White;
+            this.labelSSH.Location = new System.Drawing.Point(534, 160);
+            this.labelSSH.Name = "labelSSH";
+            this.labelSSH.Size = new System.Drawing.Size(87, 23);
+            this.labelSSH.TabIndex = 24;
+            this.labelSSH.Text = "Porto SSH";
+            // 
+            // labelAPI
+            // 
+            this.labelAPI.AutoSize = true;
+            this.labelAPI.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAPI.ForeColor = System.Drawing.Color.White;
+            this.labelAPI.Location = new System.Drawing.Point(814, 160);
+            this.labelAPI.Name = "labelAPI";
+            this.labelAPI.Size = new System.Drawing.Size(80, 23);
+            this.labelAPI.TabIndex = 25;
+            this.labelAPI.Text = "Porto API";
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.ForeColor = System.Drawing.Color.White;
+            this.labelUsername.Location = new System.Drawing.Point(361, 310);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(95, 23);
+            this.labelUsername.TabIndex = 26;
+            this.labelUsername.Text = "Username:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(364, 352);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 23);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Password:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // loginForm
             // 
@@ -319,42 +292,36 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1155, 687);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelUsername);
+            this.Controls.Add(this.labelAPI);
+            this.Controls.Add(this.labelSSH);
+            this.Controls.Add(this.labelIP);
             this.Controls.Add(this.textBoxPortoAPI);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxPortoSSH);
-            this.Controls.Add(this.btnPorto);
             this.Controls.Add(this.buttonSeePassword);
             this.Controls.Add(this.checkBoxGuardarCredencias);
             this.Controls.Add(this.comboBoxRoutersIP);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.picturePassword);
-            this.Controls.Add(this.pictureUsername);
             this.Controls.Add(this.textBoxRouterIP);
-            this.Controls.Add(this.btnRouterIP);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonHidePassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "loginForm";
             this.Text = "SDNController - MikroTik";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnRouterIP;
         private System.Windows.Forms.TextBox textBoxRouterIP;
-        private System.Windows.Forms.PictureBox pictureUsername;
-        private System.Windows.Forms.PictureBox picturePassword;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button btnLogin;
@@ -363,10 +330,14 @@
         private System.Windows.Forms.CheckBox checkBoxGuardarCredencias;
         private System.Windows.Forms.Button buttonSeePassword;
         private System.Windows.Forms.Button buttonHidePassword;
-        private System.Windows.Forms.Button btnPorto;
         private System.Windows.Forms.TextBox textBoxPortoSSH;
         private System.Windows.Forms.TextBox textBoxPortoAPI;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelIP;
+        private System.Windows.Forms.Label labelSSH;
+        private System.Windows.Forms.Label labelAPI;
+        private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

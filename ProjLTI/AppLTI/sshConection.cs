@@ -101,11 +101,40 @@ namespace AppLTI
             textBoxResult.Clear();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void buttonPods_Click(object sender, EventArgs e)
         {
-            mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            mainPage.Show();
+            podsForm podsForm = new podsForm();
+            podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            podsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonDeployments_Click(object sender, EventArgs e)
+        {
+            deploymentsForm deploymentsForm = new deploymentsForm();
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            deploymentsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNameSpaces_Click(object sender, EventArgs e)
+        {
+            namespacesForm namespacesForm = new namespacesForm();
+            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            namespacesForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonNodes_Click(object sender, EventArgs e)
+        {
+            nodesForm nodesForm = new nodesForm();
+            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            nodesForm.Show();
             this.Dispose();
         }
     }

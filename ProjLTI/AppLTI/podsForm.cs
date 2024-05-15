@@ -37,15 +37,6 @@ namespace AppLTI
             this.portoAPI = portoAPI;
             this.authKey = authKey;
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            mainPage.Show();
-            this.Dispose();
-        }
-
         private async void buttonDeletePods_Click(object sender, EventArgs e)
         {
             if (comboBoxNamespaces.SelectedIndex == -1 || (string)comboBoxNamespaces.SelectedItem == "Todos")
@@ -406,6 +397,43 @@ namespace AppLTI
             {
                 MessageBox.Show("An error occurred while loading deployments: " + ex.Message);
             }
+        }
+
+        private void buttonDeployments_Click(object sender, EventArgs e)
+        {
+            deploymentsForm deploymentsForm = new deploymentsForm();
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            deploymentsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNameSpaces_Click(object sender, EventArgs e)
+        {
+            namespacesForm namespacesForm = new namespacesForm();
+            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            namespacesForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonNodes_Click(object sender, EventArgs e)
+        {
+            nodesForm nodesForm = new nodesForm();
+            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            nodesForm.Show();
+            this.Dispose();
+        }
+
+        private void btnTerminal_Click(object sender, EventArgs e)
+        {
+            sshConection sshConection = new sshConection();
+            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            sshConection.Show();
+            this.Dispose();
         }
     }
 }

@@ -38,14 +38,6 @@ namespace AppLTI
             this.authKey = authKey;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            mainPage mainPage = new mainPage();
-            mainPage.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            mainPage.Show();
-            this.Dispose();
-        }
-
         private async void deploymentsForm_Load(object sender, EventArgs e)
         {
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
@@ -123,6 +115,7 @@ namespace AppLTI
         private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename)
         {
             int porto = int.Parse(textBoxPorto.Text);
+            int replicas = int.Parse(textBoxReplicas.Text);
             var requestBody = new JObject
             {
                 ["apiVersion"] = "apps/v1",
@@ -132,8 +125,8 @@ namespace AppLTI
                     ["name"] = $"{textBoxNomeAdd.Text}",
                     ["namespace"] = $"{namespacename}"
                 },
-                ["spec"] = new JObject
-                {
+                ["spec"] = new JObject{
+                    ["replicas"] = replicas, 
                     ["selector"] = new JObject
                     {
                         ["matchLabels"] = new JObject
@@ -171,7 +164,6 @@ namespace AppLTI
                     }
                 }
             };
-            textBox1.Text = requestBody.ToString();
 
             try
             {
@@ -196,7 +188,6 @@ namespace AppLTI
                     else
                     {
                         string errorMessage = await response.Content.ReadAsStringAsync();
-                        textBox2.Text = errorMessage;
                         MessageBox.Show("Failed to create Deployment. Error message: " + errorMessage);
                     }
                 }
@@ -356,6 +347,51 @@ namespace AppLTI
             {
                 MessageBox.Show("Ocorreu um erro ao carregar os namespaces: " + ex.Message);
             }
+        }
+
+        private void btnTerminal_Click(object sender, EventArgs e)
+        {
+            sshConection sshConection = new sshConection();
+            sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            sshConection.Show();
+            this.Dispose();
+        }
+
+        private void buttonNodes_Click(object sender, EventArgs e)
+        {
+            nodesForm nodesForm = new nodesForm();
+            nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            nodesForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonNameSpaces_Click(object sender, EventArgs e)
+        {
+            namespacesForm namespacesForm = new namespacesForm();
+            namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            namespacesForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDeployments_Click(object sender, EventArgs e)
+        {
+            deploymentsForm deploymentsForm = new deploymentsForm();
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            deploymentsForm.Show();
+            this.Dispose();
+        }
+
+        private void buttonPods_Click(object sender, EventArgs e)
+        {
+            podsForm podsForm = new podsForm();
+            podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            podsForm.Show();
+            this.Dispose();
         }
     }
 }
