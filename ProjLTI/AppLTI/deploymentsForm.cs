@@ -202,6 +202,8 @@ namespace AppLTI
         {
             try
             {
+                MessageBox.Show(namespaceName);
+                MessageBox.Show(deploymentname);
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespaceName}/deployments/{deploymentname}";
 
                 var handler = new HttpClientHandler();
@@ -286,7 +288,7 @@ namespace AppLTI
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
                             listBoxDeployments.Items.Add($"{name.PadRight(maxNameLength)}\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
-                            comboBoxDeployments.Items.Add($"Name: {name}");
+                            comboBoxDeployments.Items.Add($"Nome: {name}");
                         }
                     }
                     else
