@@ -15,6 +15,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
+
 namespace AppLTI
 {
     public partial class mainPage : Form
@@ -43,7 +44,7 @@ namespace AppLTI
 
         private void mainPage_Load(object sender, EventArgs e)
         {
-            textBoxIP.Text = username + " - " + routerIp+":"+portoSSH;
+            textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
         }
 
         private void buttonPods_Click_1(object sender, EventArgs e)
@@ -93,5 +94,16 @@ namespace AppLTI
             servicesForm.Show();
             this.Dispose();
         }
+
+        private void buttonActivateMic_Click(object sender, EventArgs e)
+        {
+            buttonMutMic.BringToFront();
+        }
+
+        private void buttonMutMic_Click(object sender, EventArgs e)
+        {
+            buttonActivateMic.BringToFront();
+        }
+
     }
 }

@@ -41,6 +41,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonActivateMic = new System.Windows.Forms.PictureBox();
+            this.buttonMutMic = new System.Windows.Forms.PictureBox();
             this.buttonServices = new System.Windows.Forms.Label();
             this.labelService = new System.Windows.Forms.Label();
             this.labelWorkloads = new System.Windows.Forms.Label();
@@ -49,6 +51,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonMutMic)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDashboard
@@ -191,10 +196,34 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.buttonActivateMic);
+            this.panel4.Controls.Add(this.buttonMutMic);
             this.panel4.Location = new System.Drawing.Point(178, 26);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
+            // 
+            // buttonActivateMic
+            // 
+            this.buttonActivateMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonActivateMic.Image")));
+            this.buttonActivateMic.Location = new System.Drawing.Point(21, 15);
+            this.buttonActivateMic.Name = "buttonActivateMic";
+            this.buttonActivateMic.Size = new System.Drawing.Size(23, 34);
+            this.buttonActivateMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonActivateMic.TabIndex = 148;
+            this.buttonActivateMic.TabStop = false;
+            this.buttonActivateMic.Click += new System.EventHandler(this.buttonActivateMic_Click);
+            // 
+            // buttonMutMic
+            // 
+            this.buttonMutMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonMutMic.Image")));
+            this.buttonMutMic.Location = new System.Drawing.Point(21, 16);
+            this.buttonMutMic.Name = "buttonMutMic";
+            this.buttonMutMic.Size = new System.Drawing.Size(23, 33);
+            this.buttonMutMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonMutMic.TabIndex = 149;
+            this.buttonMutMic.TabStop = false;
+            this.buttonMutMic.Click += new System.EventHandler(this.buttonMutMic_Click);
             // 
             // buttonServices
             // 
@@ -261,6 +290,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonMutMic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +314,7 @@
         private System.Windows.Forms.Label labelCluster;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureUsername;
+        private System.Windows.Forms.PictureBox buttonActivateMic;
+        private System.Windows.Forms.PictureBox buttonMutMic;
     }
 }
