@@ -256,7 +256,7 @@
             // 
             // textBoxReplicas
             // 
-            this.textBoxReplicas.Location = new System.Drawing.Point(112, 529);
+            this.textBoxReplicas.Location = new System.Drawing.Point(112, 531);
             this.textBoxReplicas.Name = "textBoxReplicas";
             this.textBoxReplicas.Size = new System.Drawing.Size(334, 20);
             this.textBoxReplicas.TabIndex = 237;
@@ -267,7 +267,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(31, 524);
+            this.label7.Location = new System.Drawing.Point(31, 526);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 23);
             this.label7.TabIndex = 236;

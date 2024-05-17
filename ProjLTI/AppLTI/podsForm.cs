@@ -406,10 +406,13 @@ namespace AppLTI
             deploymentsForm.Show();
             this.Dispose();
         }
-
+        
         private void buttonServices_Click(object sender, EventArgs e)
         {
-
+            servicesForm servicesForm = new servicesForm();
+            servicesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            servicesForm.Show();
+            this.Dispose();
         }
 
         private void buttonNameSpaces_Click(object sender, EventArgs e)
