@@ -35,7 +35,9 @@
             this.textBoxPorto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxReplicas = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -97,12 +99,24 @@
             this.textBoxReplicas.Size = new System.Drawing.Size(264, 20);
             this.textBoxReplicas.TabIndex = 238;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 239;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // deploymentPortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(384, 161);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBoxReplicas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -112,6 +126,7 @@
             this.Name = "deploymentPortForm";
             this.Text = "deploymentPortForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +139,6 @@
         private System.Windows.Forms.TextBox textBoxPorto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxReplicas;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

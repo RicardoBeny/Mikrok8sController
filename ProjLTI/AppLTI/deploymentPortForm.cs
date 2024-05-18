@@ -59,5 +59,13 @@ namespace AppLTI
             deploymentImageForm.Show();
             this.Dispose();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            deploymentNameForm deploymentNameForm = new deploymentNameForm();
+            deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
+            deploymentNameForm.Show();
+            this.Dispose();
+        }
     }
 }

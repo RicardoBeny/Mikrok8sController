@@ -155,5 +155,13 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while creating Deployment: " + ex.Message);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            deploymentPortForm deploymentPortForm = new deploymentPortForm();
+            deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, deploymentName, parentForm);
+            deploymentPortForm.Show();
+            this.Dispose();
+        }
     }
 }
