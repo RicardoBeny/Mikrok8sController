@@ -39,6 +39,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonWizardServices = new System.Windows.Forms.PictureBox();
+            this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxTargetPort = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPorto = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxProtocolo = new System.Windows.Forms.TextBox();
+            this.labeltype = new System.Windows.Forms.Label();
+            this.textBoxTipo = new System.Windows.Forms.TextBox();
+            this.labelApp = new System.Windows.Forms.Label();
+            this.textBoxLabelApp = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.comboBoxService = new System.Windows.Forms.ComboBox();
             this.listBoxService = new System.Windows.Forms.ListBox();
             this.buttonCreateService = new System.Windows.Forms.Button();
@@ -51,25 +66,12 @@
             this.buttonNameSpaces = new System.Windows.Forms.Label();
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelApp = new System.Windows.Forms.Label();
-            this.textBoxLabelApp = new System.Windows.Forms.TextBox();
-            this.labeltype = new System.Windows.Forms.Label();
-            this.textBoxTipo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxProtocolo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPorto = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxTargetPort = new System.Windows.Forms.TextBox();
-            this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardServices)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureUsername
@@ -190,6 +192,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.buttonWizardServices);
             this.panel4.Controls.Add(this.comboBoxNamespaceCriar);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label5);
@@ -212,6 +215,153 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
+            // 
+            // buttonWizardServices
+            // 
+            this.buttonWizardServices.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardServices.Image")));
+            this.buttonWizardServices.Location = new System.Drawing.Point(384, 334);
+            this.buttonWizardServices.Name = "buttonWizardServices";
+            this.buttonWizardServices.Size = new System.Drawing.Size(39, 32);
+            this.buttonWizardServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonWizardServices.TabIndex = 241;
+            this.buttonWizardServices.TabStop = false;
+            // 
+            // comboBoxNamespaceCriar
+            // 
+            this.comboBoxNamespaceCriar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNamespaceCriar.FormattingEnabled = true;
+            this.comboBoxNamespaceCriar.Items.AddRange(new object[] {
+            "Todos"});
+            this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(151, 405);
+            this.comboBoxNamespaceCriar.Name = "comboBoxNamespaceCriar";
+            this.comboBoxNamespaceCriar.Size = new System.Drawing.Size(308, 21);
+            this.comboBoxNamespaceCriar.TabIndex = 257;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(33, 405);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 23);
+            this.label6.TabIndex = 258;
+            this.label6.Text = "Namespaces:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(32, 534);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 23);
+            this.label5.TabIndex = 256;
+            this.label5.Text = "Target Port :";
+            // 
+            // textBoxTargetPort
+            // 
+            this.textBoxTargetPort.Location = new System.Drawing.Point(142, 537);
+            this.textBoxTargetPort.Name = "textBoxTargetPort";
+            this.textBoxTargetPort.Size = new System.Drawing.Size(317, 20);
+            this.textBoxTargetPort.TabIndex = 255;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(33, 509);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 23);
+            this.label3.TabIndex = 254;
+            this.label3.Text = "Porto :";
+            // 
+            // textBoxPorto
+            // 
+            this.textBoxPorto.Location = new System.Drawing.Point(98, 512);
+            this.textBoxPorto.Name = "textBoxPorto";
+            this.textBoxPorto.Size = new System.Drawing.Size(362, 20);
+            this.textBoxPorto.TabIndex = 253;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(33, 483);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 23);
+            this.label2.TabIndex = 252;
+            this.label2.Text = "Protocolo :";
+            // 
+            // textBoxProtocolo
+            // 
+            this.textBoxProtocolo.Location = new System.Drawing.Point(128, 486);
+            this.textBoxProtocolo.Name = "textBoxProtocolo";
+            this.textBoxProtocolo.Size = new System.Drawing.Size(332, 20);
+            this.textBoxProtocolo.TabIndex = 251;
+            // 
+            // labeltype
+            // 
+            this.labeltype.AutoSize = true;
+            this.labeltype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labeltype.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltype.ForeColor = System.Drawing.Color.White;
+            this.labeltype.Location = new System.Drawing.Point(33, 456);
+            this.labeltype.Name = "labeltype";
+            this.labeltype.Size = new System.Drawing.Size(48, 23);
+            this.labeltype.TabIndex = 250;
+            this.labeltype.Text = "Tipo:";
+            // 
+            // textBoxTipo
+            // 
+            this.textBoxTipo.Location = new System.Drawing.Point(87, 459);
+            this.textBoxTipo.Name = "textBoxTipo";
+            this.textBoxTipo.Size = new System.Drawing.Size(373, 20);
+            this.textBoxTipo.TabIndex = 249;
+            // 
+            // labelApp
+            // 
+            this.labelApp.AutoSize = true;
+            this.labelApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelApp.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApp.ForeColor = System.Drawing.Color.White;
+            this.labelApp.Location = new System.Drawing.Point(33, 428);
+            this.labelApp.Name = "labelApp";
+            this.labelApp.Size = new System.Drawing.Size(88, 23);
+            this.labelApp.TabIndex = 248;
+            this.labelApp.Text = "Label App:";
+            // 
+            // textBoxLabelApp
+            // 
+            this.textBoxLabelApp.Location = new System.Drawing.Point(128, 432);
+            this.textBoxLabelApp.Name = "textBoxLabelApp";
+            this.textBoxLabelApp.Size = new System.Drawing.Size(332, 20);
+            this.textBoxLabelApp.TabIndex = 247;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(33, 379);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 23);
+            this.label1.TabIndex = 246;
+            this.label1.Text = "Nome:";
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Location = new System.Drawing.Point(98, 382);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(362, 20);
+            this.textBoxNome.TabIndex = 245;
             // 
             // comboBoxService
             // 
@@ -345,143 +495,6 @@
             this.buttonNodes.Text = "Nodes";
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
             // 
-            // textBoxNome
-            // 
-            this.textBoxNome.Location = new System.Drawing.Point(98, 382);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(362, 20);
-            this.textBoxNome.TabIndex = 245;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(33, 379);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 23);
-            this.label1.TabIndex = 246;
-            this.label1.Text = "Nome:";
-            // 
-            // labelApp
-            // 
-            this.labelApp.AutoSize = true;
-            this.labelApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelApp.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApp.ForeColor = System.Drawing.Color.White;
-            this.labelApp.Location = new System.Drawing.Point(33, 428);
-            this.labelApp.Name = "labelApp";
-            this.labelApp.Size = new System.Drawing.Size(88, 23);
-            this.labelApp.TabIndex = 248;
-            this.labelApp.Text = "Label App:";
-            // 
-            // textBoxLabelApp
-            // 
-            this.textBoxLabelApp.Location = new System.Drawing.Point(128, 432);
-            this.textBoxLabelApp.Name = "textBoxLabelApp";
-            this.textBoxLabelApp.Size = new System.Drawing.Size(332, 20);
-            this.textBoxLabelApp.TabIndex = 247;
-            // 
-            // labeltype
-            // 
-            this.labeltype.AutoSize = true;
-            this.labeltype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labeltype.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltype.ForeColor = System.Drawing.Color.White;
-            this.labeltype.Location = new System.Drawing.Point(33, 456);
-            this.labeltype.Name = "labeltype";
-            this.labeltype.Size = new System.Drawing.Size(48, 23);
-            this.labeltype.TabIndex = 250;
-            this.labeltype.Text = "Tipo:";
-            // 
-            // textBoxTipo
-            // 
-            this.textBoxTipo.Location = new System.Drawing.Point(87, 459);
-            this.textBoxTipo.Name = "textBoxTipo";
-            this.textBoxTipo.Size = new System.Drawing.Size(373, 20);
-            this.textBoxTipo.TabIndex = 249;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(33, 483);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 23);
-            this.label2.TabIndex = 252;
-            this.label2.Text = "Protocolo :";
-            // 
-            // textBoxProtocolo
-            // 
-            this.textBoxProtocolo.Location = new System.Drawing.Point(128, 486);
-            this.textBoxProtocolo.Name = "textBoxProtocolo";
-            this.textBoxProtocolo.Size = new System.Drawing.Size(332, 20);
-            this.textBoxProtocolo.TabIndex = 251;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(33, 509);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 23);
-            this.label3.TabIndex = 254;
-            this.label3.Text = "Porto :";
-            // 
-            // textBoxPorto
-            // 
-            this.textBoxPorto.Location = new System.Drawing.Point(98, 512);
-            this.textBoxPorto.Name = "textBoxPorto";
-            this.textBoxPorto.Size = new System.Drawing.Size(362, 20);
-            this.textBoxPorto.TabIndex = 253;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(32, 534);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 23);
-            this.label5.TabIndex = 256;
-            this.label5.Text = "Target Port :";
-            // 
-            // textBoxTargetPort
-            // 
-            this.textBoxTargetPort.Location = new System.Drawing.Point(142, 537);
-            this.textBoxTargetPort.Name = "textBoxTargetPort";
-            this.textBoxTargetPort.Size = new System.Drawing.Size(317, 20);
-            this.textBoxTargetPort.TabIndex = 255;
-            // 
-            // comboBoxNamespaceCriar
-            // 
-            this.comboBoxNamespaceCriar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNamespaceCriar.FormattingEnabled = true;
-            this.comboBoxNamespaceCriar.Items.AddRange(new object[] {
-            "Todos"});
-            this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(151, 405);
-            this.comboBoxNamespaceCriar.Name = "comboBoxNamespaceCriar";
-            this.comboBoxNamespaceCriar.Size = new System.Drawing.Size(308, 21);
-            this.comboBoxNamespaceCriar.TabIndex = 257;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(33, 405);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 23);
-            this.label6.TabIndex = 258;
-            this.label6.Text = "Namespaces:";
-            // 
             // servicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +513,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardServices)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -542,5 +556,6 @@
         private System.Windows.Forms.TextBox textBoxTargetPort;
         private System.Windows.Forms.ComboBox comboBoxNamespaceCriar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox buttonWizardServices;
     }
 }

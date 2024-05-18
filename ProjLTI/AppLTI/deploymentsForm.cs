@@ -22,13 +22,14 @@ namespace AppLTI
         private string portoSSH;
         private string portoAPI;
         private string authKey;
+        private deploymentsForm parentForm;
 
         public deploymentsForm()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, deploymentsForm parentForm)
         {
             this.routerIp = routerIp;
             this.username = username;
@@ -36,6 +37,12 @@ namespace AppLTI
             this.portoSSH = portoSSH;
             this.portoAPI = portoAPI;
             this.authKey = authKey;
+            this.parentForm = parentForm;
+        }
+        public deploymentsForm(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, deploymentsForm parentForm)
+        {
+            InitializeComponent();
+            SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
         }
 
         private async void deploymentsForm_Load(object sender, EventArgs e)
@@ -202,8 +209,6 @@ namespace AppLTI
         {
             try
             {
-                MessageBox.Show(namespaceName);
-                MessageBox.Show(deploymentname);
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespaceName}/deployments/{deploymentname}";
 
                 var handler = new HttpClientHandler();
@@ -233,7 +238,7 @@ namespace AppLTI
             }
         }
 
-        private async Task LoadDeployments(string routerIp, string portoAPI, string authToken, string namespacename)
+        public async Task LoadDeployments(string routerIp, string portoAPI, string authToken, string namespacename)
         {
             try
             {
@@ -383,20 +388,19 @@ namespace AppLTI
             this.Dispose();
         }
 
-        private void buttonDeployments_Click(object sender, EventArgs e)
-        {
-            deploymentsForm deploymentsForm = new deploymentsForm();
-            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
-            deploymentsForm.Show();
-            this.Dispose();
-        }
-
         private void buttonPods_Click(object sender, EventArgs e)
         {
             podsForm podsForm = new podsForm();
             podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             podsForm.Show();
             this.Dispose();
+        }
+
+        private void buttonWizardDeployment_Click(object sender, EventArgs e)
+        {
+            deploymentNameForm deploymentNameForm = new deploymentNameForm();
+            deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
+            deploymentNameForm.Show();
         }
     }
 }

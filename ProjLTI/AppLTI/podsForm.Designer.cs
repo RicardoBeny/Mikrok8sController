@@ -59,11 +59,13 @@
             this.buttonNodes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonWizardPods = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardPods)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxPods
@@ -394,6 +396,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.buttonWizardPods);
             this.panel4.Controls.Add(this.listBoxPods);
             this.panel4.Controls.Add(this.buttonCreateNamespace);
             this.panel4.Controls.Add(this.textBoxContainerName);
@@ -410,6 +413,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
+            // 
+            // buttonWizardPods
+            // 
+            this.buttonWizardPods.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardPods.Image")));
+            this.buttonWizardPods.Location = new System.Drawing.Point(132, 356);
+            this.buttonWizardPods.Name = "buttonWizardPods";
+            this.buttonWizardPods.Size = new System.Drawing.Size(39, 32);
+            this.buttonWizardPods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonWizardPods.TabIndex = 239;
+            this.buttonWizardPods.TabStop = false;
             // 
             // podsForm
             // 
@@ -429,6 +442,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardPods)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,5 +478,6 @@
         private System.Windows.Forms.Label buttonNodes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox buttonWizardPods;
     }
 }

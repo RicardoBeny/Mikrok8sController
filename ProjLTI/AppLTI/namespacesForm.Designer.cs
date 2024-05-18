@@ -81,7 +81,7 @@
             // 
             // textBoxNomeAdd
             // 
-            this.textBoxNomeAdd.Location = new System.Drawing.Point(106, 463);
+            this.textBoxNomeAdd.Location = new System.Drawing.Point(106, 405);
             this.textBoxNomeAdd.Name = "textBoxNomeAdd";
             this.textBoxNomeAdd.Size = new System.Drawing.Size(334, 20);
             this.textBoxNomeAdd.TabIndex = 192;
@@ -92,7 +92,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 460);
+            this.label1.Location = new System.Drawing.Point(41, 402);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 23);
             this.label1.TabIndex = 193;
@@ -101,7 +101,7 @@
             // buttonCreateNamespace
             // 
             this.buttonCreateNamespace.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateNamespace.Location = new System.Drawing.Point(144, 409);
+            this.buttonCreateNamespace.Location = new System.Drawing.Point(144, 351);
             this.buttonCreateNamespace.Name = "buttonCreateNamespace";
             this.buttonCreateNamespace.Size = new System.Drawing.Size(240, 32);
             this.buttonCreateNamespace.TabIndex = 194;
@@ -112,7 +112,7 @@
             // buttonDeleteNamespace
             // 
             this.buttonDeleteNamespace.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteNamespace.Location = new System.Drawing.Point(656, 409);
+            this.buttonDeleteNamespace.Location = new System.Drawing.Point(656, 351);
             this.buttonDeleteNamespace.Name = "buttonDeleteNamespace";
             this.buttonDeleteNamespace.Size = new System.Drawing.Size(240, 32);
             this.buttonDeleteNamespace.TabIndex = 195;
@@ -124,7 +124,7 @@
             // 
             this.comboBoxNamespaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNamespaces.FormattingEnabled = true;
-            this.comboBoxNamespaces.Location = new System.Drawing.Point(609, 460);
+            this.comboBoxNamespaces.Location = new System.Drawing.Point(609, 402);
             this.comboBoxNamespaces.Name = "comboBoxNamespaces";
             this.comboBoxNamespaces.Size = new System.Drawing.Size(334, 21);
             this.comboBoxNamespaces.TabIndex = 196;

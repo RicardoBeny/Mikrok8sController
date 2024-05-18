@@ -114,6 +114,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="deploymentImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deploymentImageForm.Designer.cs">
+      <DependentUpon>deploymentImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deploymentNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deploymentNameForm.Designer.cs">
+      <DependentUpon>deploymentNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deploymentPortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deploymentPortForm.Designer.cs">
+      <DependentUpon>deploymentPortForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="deploymentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +188,15 @@
     <Compile Include="sshConection.Designer.cs">
       <DependentUpon>sshConection.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="deploymentImageForm.resx">
+      <DependentUpon>deploymentImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deploymentNameForm.resx">
+      <DependentUpon>deploymentNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deploymentPortForm.resx">
+      <DependentUpon>deploymentPortForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="deploymentsForm.resx">
       <DependentUpon>deploymentsForm.cs</DependentUpon>
     </EmbeddedResource>

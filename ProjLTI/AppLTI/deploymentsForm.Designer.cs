@@ -65,11 +65,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardDeployment)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -389,7 +391,6 @@
             this.buttonDeployments.Size = new System.Drawing.Size(115, 23);
             this.buttonDeployments.TabIndex = 141;
             this.buttonDeployments.Text = "Deployments";
-            this.buttonDeployments.Click += new System.EventHandler(this.buttonDeployments_Click);
             // 
             // buttonNameSpaces
             // 
@@ -460,6 +461,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.buttonWizardDeployment);
             this.panel4.Controls.Add(this.listBoxDeployments);
             this.panel4.Controls.Add(this.buttonCreateDeployments);
             this.panel4.Controls.Add(this.textBoxReplicas);
@@ -483,6 +485,17 @@
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
             // 
+            // buttonWizardDeployment
+            // 
+            this.buttonWizardDeployment.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardDeployment.Image")));
+            this.buttonWizardDeployment.Location = new System.Drawing.Point(374, 334);
+            this.buttonWizardDeployment.Name = "buttonWizardDeployment";
+            this.buttonWizardDeployment.Size = new System.Drawing.Size(39, 32);
+            this.buttonWizardDeployment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonWizardDeployment.TabIndex = 238;
+            this.buttonWizardDeployment.TabStop = false;
+            this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
+            // 
             // deploymentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,6 +514,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardDeployment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -543,5 +557,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label btnTerminal;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox buttonWizardDeployment;
     }
 }
