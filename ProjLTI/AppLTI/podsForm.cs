@@ -438,5 +438,23 @@ namespace AppLTI
             sshConection.Show();
             this.Dispose();
         }
+
+        private void listBoxPods_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxPods.SelectedIndex != -1)
+            {
+                string selectedItem = listBoxPods.SelectedItem.ToString();
+
+                string[] parts = selectedItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length > 0)
+                {
+                    string podName = parts[0].Trim();
+                    MessageBox.Show(podName);
+                    podDetailsForm podDetailsForm = new podDetailsForm();
+                    podDetailsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, podName);
+                    podDetailsForm.Show();
+                }
+            }
+        }
     }
 }

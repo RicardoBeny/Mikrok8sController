@@ -402,5 +402,22 @@ namespace AppLTI
             deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
             deploymentNameForm.Show();
         }
+
+        private void listBoxDeployments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxDeployments.SelectedIndex != -1)
+            {
+                string selectedItem = listBoxDeployments.SelectedItem.ToString();
+
+                string[] parts = selectedItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length > 0)
+                {
+                    string deploymentName = parts[0].Trim();
+                    deploymentDetailsForm deploymentDetailsForm = new deploymentDetailsForm();
+                    deploymentDetailsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, deploymentName);
+                    deploymentDetailsForm.Show();
+                }
+            }
+        }
     }
 }

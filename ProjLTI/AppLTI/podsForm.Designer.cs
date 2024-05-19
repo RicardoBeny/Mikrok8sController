@@ -126,6 +126,7 @@
             this.listBoxPods.ScrollAlwaysVisible = true;
             this.listBoxPods.Size = new System.Drawing.Size(990, 316);
             this.listBoxPods.TabIndex = 199;
+            this.listBoxPods.SelectedIndexChanged += new System.EventHandler(this.listBoxPods_SelectedIndexChanged);
             // 
             // label2
             // 

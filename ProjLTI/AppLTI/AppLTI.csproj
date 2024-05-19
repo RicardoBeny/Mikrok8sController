@@ -114,6 +114,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="deploymentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deploymentDetailsForm.Designer.cs">
+      <DependentUpon>deploymentDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="deploymentImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,12 @@
     <Compile Include="nodesForm.Designer.cs">
       <DependentUpon>nodesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="podDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="podDetailsForm.Designer.cs">
+      <DependentUpon>podDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="podsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,9 @@
     <Compile Include="sshConection.Designer.cs">
       <DependentUpon>sshConection.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="deploymentDetailsForm.resx">
+      <DependentUpon>deploymentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="deploymentImageForm.resx">
       <DependentUpon>deploymentImageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nodesForm.resx">
       <DependentUpon>nodesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="podDetailsForm.resx">
+      <DependentUpon>podDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="podsForm.resx">
       <DependentUpon>podsForm.cs</DependentUpon>

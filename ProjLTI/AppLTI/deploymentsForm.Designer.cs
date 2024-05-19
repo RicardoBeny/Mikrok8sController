@@ -175,6 +175,7 @@
             this.listBoxDeployments.ScrollAlwaysVisible = true;
             this.listBoxDeployments.Size = new System.Drawing.Size(969, 290);
             this.listBoxDeployments.TabIndex = 216;
+            this.listBoxDeployments.SelectedIndexChanged += new System.EventHandler(this.listBoxDeployments_SelectedIndexChanged);
             // 
             // label2
             // 
