@@ -69,17 +69,26 @@ namespace AppLTI
 
                         foreach (JObject podObject in podArray)
                         {
-                            string name = (string)podObject["metadata"]["name"];
+                            string name = (string)podObject["metadata"]?["name"];
 
                             if (name == podName)
                             {
-                                string namespaceName = (string)podObject["metadata"]["namespace"];
-                                string manager = (string)podObject["metadata"]["managedFields"].First["manager"];
+                                string generateName = (string)podObject["metadata"]?["generateName"];
+                                string namespaceName = (string)podObject["metadata"]?["namespace"];
+                                string uid = (string)podObject["metadata"]?["uid"];
+                                string resourceVersion = (string)podObject["metadata"]?["resourceVersion"];
+                                string appLabel = (string)podObject["metadata"]?["labels"]?["app"];
+                                string podTemplateHash = (string)podObject["metadata"]?["labels"]?["pod-template-hash"];
+                                string manager = (string)podObject["metadata"]?["managedFields"]?.First()?["manager"];
 
-                                containerNamesListBox.Items.Clear();
-                                envNamesListBox.Items.Clear();
+                                JArray volumes = (JArray)podObject["spec"]?["volumes"];
+                                string volumeNames = volumes != null ? string.Join(", ", volumes.Select(v => (string)v["name"])) : "";
 
-                                JArray containers = (JArray)podObject["spec"]["template"]["spec"]["containers"];
+                                JArray containers = (JArray)podObject["spec"]?["containers"];
+                                //containerNamesListBox.Items.Clear();
+                                //envNamesListBox.Items.Clear();
+                                List<string> commandList = new List<string>();
+
                                 if (containers != null)
                                 {
                                     foreach (JObject container in containers)
@@ -87,8 +96,14 @@ namespace AppLTI
                                         string containerName = (string)container["name"];
                                         if (!string.IsNullOrEmpty(containerName))
                                         {
-                                            containerNamesListBox.Items.Add(containerName);
+                                            //containerNamesListBox.Items.Add(containerName);
                                         }
+
+                                        string image = (string)container["image"];
+                                        string command = container["command"] != null ? string.Join(" ", container["command"].Select(c => (string)c)) : "";
+
+                                        commandList.Add(command);
+
                                         JArray envVars = (JArray)container["env"];
                                         if (envVars != null)
                                         {
@@ -97,41 +112,23 @@ namespace AppLTI
                                                 string envName = (string)envVar["name"];
                                                 if (!string.IsNullOrEmpty(envName))
                                                 {
-                                                    envNamesListBox.Items.Add(envName);
+                                                    //envNamesListBox.Items.Add(envName);
                                                 }
                                             }
                                         }
                                     }
                                 }
 
-                                string restartPolicy = (string)podObject["spec"]["template"]["spec"]["restartPolicy"];
-                                int terminationGracePeriodSeconds = (int)podObject["spec"]["template"]["spec"]["terminationGracePeriodSeconds"];
-                                string dnsPolicy = (string)podObject["spec"]["template"]["spec"]["dnsPolicy"];
+                                string restartPolicy = (string)podObject["spec"]?["restartPolicy"];
+                                int? terminationGracePeriodSeconds = (int?)podObject["spec"]?["terminationGracePeriodSeconds"];
+                                string dnsPolicy = (string)podObject["spec"]?["dnsPolicy"];
+                                string serviceAccountName = (string)podObject["spec"]?["serviceAccountName"];
+                                string serviceAccount = (string)podObject["spec"]?["serviceAccount"];
+                                string priorityClassName = (string)podObject["spec"]?["priorityClassName"];
 
-                                int availableReplicas = (int)podObject["status"]["availableReplicas"];
-                                int readyReplicas = (int)podObject["status"]["readyReplicas"];
-                                int updatedReplicas = (int)podObject["status"]["updatedReplicas"];
-                                int replicas = (int)podObject["status"]["replicas"];
-                                int observedGeneration = (int)podObject["status"]["observedGeneration"];
-                                string created = (string)podObject["metadata"]["creationTimestamp"];
-
-                                DateTime creationDateTime = DateTime.ParseExact(created, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-                                TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
-                                string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m";
-
-                                labelTimeAgo.Text = timeAgo;
-                                labelnome.Text = name;
-                                labelnamespacename.Text = namespaceName;
-                                managerlabel.Text = manager;
-                                labelrestartpolicy.Text = restartPolicy;
-                                labelgraceperiod.Text = terminationGracePeriodSeconds.ToString();
-                                labeldnspolicy.Text = dnsPolicy;
-                                availableReplicaslabel.Text = availableReplicas.ToString();
-                                readyReplicaslabel.Text = readyReplicas.ToString();
-                                updatedReplicaslabel.Text = updatedReplicas.ToString();
-                                replicaslabel.Text = replicas.ToString();
-                                observedGenerationlabel.Text = observedGeneration.ToString();
-
+                                string phase = (string)podObject["status"]?["phase"];
+                                string hostIP = (string)podObject["status"]?["hostIP"];
+                                string podIP = (string)podObject["status"]?["podIP"];
                             }
                         }
                     }
