@@ -34,7 +34,8 @@ namespace MiddlewareDatabaseAPI.Controllers
                             {
                                 Id = (int)reader["Id"],
                                 Ip = (string)reader["Ip"],
-                                Porto = (string)reader["Porto"],
+                                Porto_ssh = (string)reader["Porto_ssh"],
+                                Porto_api = (string)reader["Porto_api"],
                                 Username = (string)reader["Username"],
                                 Password = reader["Password"] == DBNull.Value ? "" : (string)reader["Password"],
                             };
@@ -60,7 +61,8 @@ namespace MiddlewareDatabaseAPI.Controllers
             Credential credential = new Credential
             {
                 Ip = value.Ip,
-                Porto = value.Porto,
+                Porto_ssh = value.Porto_ssh,
+                Porto_api = value.Porto_api,
                 Username = value.Username,
                 Password = passwordPlainText,
             };
@@ -72,7 +74,7 @@ namespace MiddlewareDatabaseAPI.Controllers
                 return Ok("Credenciais já guardadas. Login automático.");
             }
 
-            string queryString = "INSERT INTO Routers (ip, username, porto, password) VALUES (@ip, @username, @porto, @password)";
+            string queryString = "INSERT INTO Routers (ip, username, porto_ssh, porto_api, password) VALUES (@ip, @username, @porto_ssh, @porto_api, @password)";
 
             try
             {
@@ -81,7 +83,8 @@ namespace MiddlewareDatabaseAPI.Controllers
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Parameters.AddWithValue("@ip", value.Ip);
                     command.Parameters.AddWithValue("@username", value.Username);
-                    command.Parameters.AddWithValue("@porto", value.Porto);
+                    command.Parameters.AddWithValue("@porto_ssh", value.Porto_ssh);
+                    command.Parameters.AddWithValue("@porto_api", value.Porto_ssh);
                     command.Parameters.AddWithValue("@password", value.Password);
 
                     try
@@ -126,7 +129,8 @@ namespace MiddlewareDatabaseAPI.Controllers
                             Credential c = new Credential
                             {
                                 Ip = (string)reader["Ip"],
-                                Porto = (string)reader["Porto"],
+                                Porto_ssh = (string)reader["Porto_ssh"],
+                                Porto_api = (string)reader["Porto_api"],
                                 Username = (string)reader["Username"],
                                 Password = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String((string)reader["Password"])),
                             };

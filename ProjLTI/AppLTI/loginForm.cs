@@ -19,6 +19,8 @@ using System.Net.NetworkInformation;
 using Renci.SshNet;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Net.Http.Headers;
+using OpenQA.Selenium;
+using System.Web.Routing;
 
 namespace AppLTI
 {
@@ -92,8 +94,8 @@ namespace AppLTI
 
                             if (tokenResult.ExitStatus != 0)
                             {
-                                Console.WriteLine("Falha na execução do comando para guardar o token.");
-                                MessageBox.Show("Login falhou.");
+                                //Console.WriteLine("Falha na execução do comando para guardar o token.");
+                                MessageBox.Show("Erro a obter o token - Login falhou.");
                                 return;
                             }
 
@@ -105,8 +107,32 @@ namespace AppLTI
 
                             if (flagVerifyAPI)
                             {
+
+                                bool flagPassword = checkBoxGuardarPassword.Checked;
+
+                                Credential credential = new Credential
+                                {
+                                    Ip = routerIp,
+                                    Username = username,
+                                    Password = flagPassword ? Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password)) : null,
+                                    Porto_ssh = portoSSH,
+                                    Porto_api = portoAPI,
+                                };
+
+                                var request = new RestRequest("api/credentials", Method.Post);
+                                request.RequestFormat = DataFormat.Json;
+                                request.AddObject(credential);
+
+                                var responseRequest = restClient.Execute(request);
+
+                                if (responseRequest.StatusCode != HttpStatusCode.OK)
+                                {
+                                    MessageBox.Show("Erro Interno - Login Falhou.");
+                                    return;
+                                }
+
                                 mainPage mainPageForm = new mainPage();
-                                checkBoxGuardarCredencias.Checked = false;
+                                checkBoxGuardarPassword.Checked = false;
                                 clearTextBoxes();
                                 mainPageForm.SetCredentials(routerIp.Trim(), username, password, portoSSH, portoAPI, authToken);
                                 mainPageForm.Show();
@@ -115,13 +141,13 @@ namespace AppLTI
                             }
                             else
                             {
-                                MessageBox.Show("Login falhou, porto da API incorreto.");
+                                MessageBox.Show("Porto API incorreto - Login falhou.");
                                 return;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Login falhou, verifica as Credenciais e tenta de novo.");
+                            MessageBox.Show("Verifique as credenciais - Login falhou.");
                             return;
                         }
                     }
