@@ -153,14 +153,14 @@ namespace AppLTI
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Credenciais incorretas: {ex.Message}");
+                        MessageBox.Show($"Credenciais incorretas - Login falhou.");
                         return;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Erro - Login falhou");
                 return;
             }
         }

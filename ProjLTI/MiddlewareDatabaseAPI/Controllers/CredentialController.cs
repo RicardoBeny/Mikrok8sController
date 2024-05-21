@@ -56,15 +56,13 @@ namespace MiddlewareDatabaseAPI.Controllers
         public IHttpActionResult StoreCredentials ([FromBody] Credential value)
         {
 
-            string passwordPlainText = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(value.Password));
-
             Credential credential = new Credential
             {
                 Ip = value.Ip,
                 Porto_ssh = value.Porto_ssh,
                 Porto_api = value.Porto_api,
                 Username = value.Username,
-                Password = passwordPlainText,
+                Password = value.Password,
             };
 
             List<Credential> credentials = getAllCredentials(); ;
@@ -74,7 +72,9 @@ namespace MiddlewareDatabaseAPI.Controllers
                 return Ok("Credenciais já guardadas. Login automático.");
             }
 
-            string queryString = "INSERT INTO Routers (ip, username, porto_ssh, porto_api, password) VALUES (@ip, @username, @porto_ssh, @porto_api, @password)";
+            string queryString = credential.Password != null ?
+                "INSERT INTO Credentials (ip, username, porto_ssh, porto_api, password) VALUES (@ip, @username, @porto_ssh, @porto_api, @password)" :
+                "INSERT INTO Credentials (ip, username, porto_ssh, porto_api) VALUES (@ip, @username, @porto_ssh, @porto_api)";
 
             try
             {
@@ -85,7 +85,11 @@ namespace MiddlewareDatabaseAPI.Controllers
                     command.Parameters.AddWithValue("@username", value.Username);
                     command.Parameters.AddWithValue("@porto_ssh", value.Porto_ssh);
                     command.Parameters.AddWithValue("@porto_api", value.Porto_ssh);
-                    command.Parameters.AddWithValue("@password", value.Password);
+                    if (credential.Password != null)
+                    {
+                        command.Parameters.AddWithValue("@password", value.Password);
+                    }
+                    
 
                     try
                     {
