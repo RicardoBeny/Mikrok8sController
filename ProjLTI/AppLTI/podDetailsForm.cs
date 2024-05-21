@@ -73,21 +73,16 @@ namespace AppLTI
 
                             if (name == podName)
                             {
-                                string generateName = (string)podObject["metadata"]?["generateName"];
                                 string namespaceName = (string)podObject["metadata"]?["namespace"];
                                 string uid = (string)podObject["metadata"]?["uid"];
-                                string resourceVersion = (string)podObject["metadata"]?["resourceVersion"];
                                 string appLabel = (string)podObject["metadata"]?["labels"]?["app"];
                                 string podTemplateHash = (string)podObject["metadata"]?["labels"]?["pod-template-hash"];
                                 string manager = (string)podObject["metadata"]?["managedFields"]?.First()?["manager"];
 
-                                JArray volumes = (JArray)podObject["spec"]?["volumes"];
-                                string volumeNames = volumes != null ? string.Join(", ", volumes.Select(v => (string)v["name"])) : "";
-
                                 JArray containers = (JArray)podObject["spec"]?["containers"];
-                                //containerNamesListBox.Items.Clear();
-                                //envNamesListBox.Items.Clear();
-                                List<string> commandList = new List<string>();
+
+                                containerNamesListBox.Items.Clear();
+                                envNamesListBox.Items.Clear();
 
                                 if (containers != null)
                                 {
@@ -96,13 +91,8 @@ namespace AppLTI
                                         string containerName = (string)container["name"];
                                         if (!string.IsNullOrEmpty(containerName))
                                         {
-                                            //containerNamesListBox.Items.Add(containerName);
+                                            containerNamesListBox.Items.Add(containerName);
                                         }
-
-                                        string image = (string)container["image"];
-                                        string command = container["command"] != null ? string.Join(" ", container["command"].Select(c => (string)c)) : "";
-
-                                        commandList.Add(command);
 
                                         JArray envVars = (JArray)container["env"];
                                         if (envVars != null)
@@ -112,7 +102,7 @@ namespace AppLTI
                                                 string envName = (string)envVar["name"];
                                                 if (!string.IsNullOrEmpty(envName))
                                                 {
-                                                    //envNamesListBox.Items.Add(envName);
+                                                    envNamesListBox.Items.Add(envName);
                                                 }
                                             }
                                         }
@@ -123,12 +113,25 @@ namespace AppLTI
                                 int? terminationGracePeriodSeconds = (int?)podObject["spec"]?["terminationGracePeriodSeconds"];
                                 string dnsPolicy = (string)podObject["spec"]?["dnsPolicy"];
                                 string serviceAccountName = (string)podObject["spec"]?["serviceAccountName"];
-                                string serviceAccount = (string)podObject["spec"]?["serviceAccount"];
                                 string priorityClassName = (string)podObject["spec"]?["priorityClassName"];
 
                                 string phase = (string)podObject["status"]?["phase"];
                                 string hostIP = (string)podObject["status"]?["hostIP"];
                                 string podIP = (string)podObject["status"]?["podIP"];
+
+                                labelnamespacename.Text = namespaceName;
+                                uidlabel.Text = uid;
+                                labelapplabel.Text = appLabel;
+                                labeltemplatehash.Text = podTemplateHash;
+                                managerlabel.Text = manager;
+
+                                restartpolicylabel.Text = restartPolicy;
+                                terminationGracePeriodSecondslabel.Text = terminationGracePeriodSeconds.ToString();
+                                dnsPolicylabel.Text = dnsPolicy;
+                                serviceAccountNamelabel.Text = serviceAccountName;
+                                phaselabel.Text = phase;
+                                hostIPlabel.Text = hostIP;
+                                podIPlabel.Text = podIP;
                             }
                         }
                     }

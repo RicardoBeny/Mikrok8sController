@@ -449,7 +449,6 @@ namespace AppLTI
                 if (parts.Length > 0)
                 {
                     string podName = parts[0].Trim();
-                    MessageBox.Show(podName);
                     podDetailsForm podDetailsForm = new podDetailsForm();
                     podDetailsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, podName);
                     podDetailsForm.Show();
