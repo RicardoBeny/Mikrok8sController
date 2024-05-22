@@ -60,6 +60,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonWizardPods = new System.Windows.Forms.PictureBox();
+            this.buttonIngress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +74,7 @@
             this.comboBoxPods.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPods.FormattingEnabled = true;
             this.comboBoxPods.Location = new System.Drawing.Point(779, 494);
-            this.comboBoxPods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPods.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPods.Name = "comboBoxPods";
             this.comboBoxPods.Size = new System.Drawing.Size(431, 24);
             this.comboBoxPods.TabIndex = 204;
@@ -82,7 +83,7 @@
             // 
             this.buttonDeletePods.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeletePods.Location = new System.Drawing.Point(901, 438);
-            this.buttonDeletePods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDeletePods.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeletePods.Name = "buttonDeletePods";
             this.buttonDeletePods.Size = new System.Drawing.Size(157, 39);
             this.buttonDeletePods.TabIndex = 203;
@@ -94,7 +95,7 @@
             // 
             this.buttonCreateNamespace.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateNamespace.Location = new System.Drawing.Point(35, 438);
-            this.buttonCreateNamespace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCreateNamespace.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateNamespace.Name = "buttonCreateNamespace";
             this.buttonCreateNamespace.Size = new System.Drawing.Size(133, 39);
             this.buttonCreateNamespace.TabIndex = 202;
@@ -118,7 +119,7 @@
             // textBoxNomeAdd
             // 
             this.textBoxNomeAdd.Location = new System.Drawing.Point(116, 495);
-            this.textBoxNomeAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNomeAdd.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNomeAdd.Name = "textBoxNomeAdd";
             this.textBoxNomeAdd.Size = new System.Drawing.Size(407, 22);
             this.textBoxNomeAdd.TabIndex = 200;
@@ -128,7 +129,7 @@
             this.listBoxPods.FormattingEnabled = true;
             this.listBoxPods.ItemHeight = 16;
             this.listBoxPods.Location = new System.Drawing.Point(35, 23);
-            this.listBoxPods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxPods.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPods.Name = "listBoxPods";
             this.listBoxPods.ScrollAlwaysVisible = true;
             this.listBoxPods.Size = new System.Drawing.Size(1319, 388);
@@ -183,7 +184,7 @@
             "wurstmeister/kafka:latest",
             "portainer/portainer-ce:latest"});
             this.comboBoxImage.Location = new System.Drawing.Point(143, 528);
-            this.comboBoxImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxImage.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxImage.Name = "comboBoxImage";
             this.comboBoxImage.Size = new System.Drawing.Size(380, 24);
             this.comboBoxImage.TabIndex = 206;
@@ -204,7 +205,7 @@
             // textBoxPorto
             // 
             this.textBoxPorto.Location = new System.Drawing.Point(113, 594);
-            this.textBoxPorto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPorto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPorto.Name = "textBoxPorto";
             this.textBoxPorto.Size = new System.Drawing.Size(409, 22);
             this.textBoxPorto.TabIndex = 208;
@@ -216,7 +217,7 @@
             this.comboBoxNamespaces.Items.AddRange(new object[] {
             "Todos"});
             this.comboBoxNamespaces.Location = new System.Drawing.Point(389, 86);
-            this.comboBoxNamespaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxNamespaces.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxNamespaces.Name = "comboBoxNamespaces";
             this.comboBoxNamespaces.Size = new System.Drawing.Size(392, 24);
             this.comboBoxNamespaces.TabIndex = 209;
@@ -238,7 +239,7 @@
             // textBoxContainerName
             // 
             this.textBoxContainerName.Location = new System.Drawing.Point(225, 562);
-            this.textBoxContainerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxContainerName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxContainerName.Name = "textBoxContainerName";
             this.textBoxContainerName.Size = new System.Drawing.Size(297, 22);
             this.textBoxContainerName.TabIndex = 212;
@@ -275,7 +276,7 @@
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIP.ForeColor = System.Drawing.Color.White;
             this.textBoxIP.Location = new System.Drawing.Point(1033, 37);
-            this.textBoxIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIP.Multiline = true;
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(545, 27);
@@ -303,7 +304,7 @@
             this.panel1.Controls.Add(this.comboBoxNamespaces);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1668, 124);
             this.panel1.TabIndex = 213;
@@ -312,7 +313,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(127, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -374,7 +375,7 @@
             this.labelCluster.AutoSize = true;
             this.labelCluster.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCluster.ForeColor = System.Drawing.Color.White;
-            this.labelCluster.Location = new System.Drawing.Point(15, 261);
+            this.labelCluster.Location = new System.Drawing.Point(15, 292);
             this.labelCluster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCluster.Name = "labelCluster";
             this.labelCluster.Size = new System.Drawing.Size(91, 29);
@@ -399,7 +400,7 @@
             this.buttonNameSpaces.AutoSize = true;
             this.buttonNameSpaces.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNameSpaces.ForeColor = System.Drawing.Color.White;
-            this.buttonNameSpaces.Location = new System.Drawing.Point(39, 302);
+            this.buttonNameSpaces.Location = new System.Drawing.Point(39, 333);
             this.buttonNameSpaces.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.buttonNameSpaces.Name = "buttonNameSpaces";
             this.buttonNameSpaces.Size = new System.Drawing.Size(139, 29);
@@ -424,7 +425,7 @@
             this.buttonNodes.AutoSize = true;
             this.buttonNodes.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNodes.ForeColor = System.Drawing.Color.White;
-            this.buttonNodes.Location = new System.Drawing.Point(39, 343);
+            this.buttonNodes.Location = new System.Drawing.Point(39, 374);
             this.buttonNodes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.buttonNodes.Name = "buttonNodes";
             this.buttonNodes.Size = new System.Drawing.Size(73, 29);
@@ -435,6 +436,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.buttonIngress);
             this.panel3.Controls.Add(this.btnTerminal);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.buttonServices);
@@ -446,7 +448,7 @@
             this.panel3.Controls.Add(this.buttonPods);
             this.panel3.Controls.Add(this.buttonNodes);
             this.panel3.Location = new System.Drawing.Point(0, 119);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1668, 778);
             this.panel3.TabIndex = 214;
@@ -468,7 +470,7 @@
             this.panel4.Controls.Add(this.comboBoxImage);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(237, 32);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1391, 711);
             this.panel4.TabIndex = 147;
@@ -477,12 +479,24 @@
             // 
             this.buttonWizardPods.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardPods.Image")));
             this.buttonWizardPods.Location = new System.Drawing.Point(176, 438);
-            this.buttonWizardPods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonWizardPods.Margin = new System.Windows.Forms.Padding(4);
             this.buttonWizardPods.Name = "buttonWizardPods";
             this.buttonWizardPods.Size = new System.Drawing.Size(52, 39);
             this.buttonWizardPods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonWizardPods.TabIndex = 239;
             this.buttonWizardPods.TabStop = false;
+            // 
+            // buttonIngress
+            // 
+            this.buttonIngress.AutoSize = true;
+            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIngress.ForeColor = System.Drawing.Color.White;
+            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
+            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.buttonIngress.Name = "buttonIngress";
+            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
+            this.buttonIngress.TabIndex = 149;
+            this.buttonIngress.Text = "Ingress";
             // 
             // podsForm
             // 
@@ -491,7 +505,7 @@
             this.ClientSize = new System.Drawing.Size(1667, 897);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "podsForm";
             this.Text = "podsForm";
             this.Load += new System.EventHandler(this.podsForm_Load);
@@ -540,5 +554,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox buttonWizardPods;
+        private System.Windows.Forms.Label buttonIngress;
     }
 }

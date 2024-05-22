@@ -66,6 +66,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
+            this.buttonIngress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
@@ -394,7 +395,7 @@
             this.labelCluster.AutoSize = true;
             this.labelCluster.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCluster.ForeColor = System.Drawing.Color.White;
-            this.labelCluster.Location = new System.Drawing.Point(15, 261);
+            this.labelCluster.Location = new System.Drawing.Point(15, 293);
             this.labelCluster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCluster.Name = "labelCluster";
             this.labelCluster.Size = new System.Drawing.Size(91, 29);
@@ -418,7 +419,7 @@
             this.buttonNameSpaces.AutoSize = true;
             this.buttonNameSpaces.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNameSpaces.ForeColor = System.Drawing.Color.White;
-            this.buttonNameSpaces.Location = new System.Drawing.Point(39, 302);
+            this.buttonNameSpaces.Location = new System.Drawing.Point(39, 334);
             this.buttonNameSpaces.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.buttonNameSpaces.Name = "buttonNameSpaces";
             this.buttonNameSpaces.Size = new System.Drawing.Size(139, 29);
@@ -444,7 +445,7 @@
             this.buttonNodes.AutoSize = true;
             this.buttonNodes.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNodes.ForeColor = System.Drawing.Color.White;
-            this.buttonNodes.Location = new System.Drawing.Point(39, 343);
+            this.buttonNodes.Location = new System.Drawing.Point(39, 375);
             this.buttonNodes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.buttonNodes.Name = "buttonNodes";
             this.buttonNodes.Size = new System.Drawing.Size(73, 29);
@@ -455,6 +456,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.buttonIngress);
             this.panel3.Controls.Add(this.btnTerminal);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.buttonServices);
@@ -564,6 +566,18 @@
             this.comboBoxImage.Size = new System.Drawing.Size(465, 24);
             this.comboBoxImage.TabIndex = 239;
             // 
+            // buttonIngress
+            // 
+            this.buttonIngress.AutoSize = true;
+            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIngress.ForeColor = System.Drawing.Color.White;
+            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
+            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.buttonIngress.Name = "buttonIngress";
+            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
+            this.buttonIngress.TabIndex = 148;
+            this.buttonIngress.Text = "Ingress";
+            // 
             // deploymentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -627,5 +641,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox buttonWizardDeployment;
         private System.Windows.Forms.ComboBox comboBoxImage;
+        private System.Windows.Forms.Label buttonIngress;
     }
 }
