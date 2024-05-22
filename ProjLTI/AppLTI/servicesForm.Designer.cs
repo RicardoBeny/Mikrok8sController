@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxNamespaces = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonIngress = new System.Windows.Forms.Label();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonWizardServices = new System.Windows.Forms.PictureBox();
@@ -66,7 +67,6 @@
             this.buttonNameSpaces = new System.Windows.Forms.Label();
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
-            this.buttonIngress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,7 +96,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBoxNamespaces);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1668, 124);
             this.panel1.TabIndex = 239;
@@ -120,7 +120,7 @@
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIP.ForeColor = System.Drawing.Color.White;
             this.textBoxIP.Location = new System.Drawing.Point(1033, 37);
-            this.textBoxIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIP.Multiline = true;
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(545, 27);
@@ -131,7 +131,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(127, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,7 +158,7 @@
             this.comboBoxNamespaces.Items.AddRange(new object[] {
             "Todos"});
             this.comboBoxNamespaces.Location = new System.Drawing.Point(408, 86);
-            this.comboBoxNamespaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxNamespaces.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxNamespaces.Name = "comboBoxNamespaces";
             this.comboBoxNamespaces.Size = new System.Drawing.Size(392, 24);
             this.comboBoxNamespaces.TabIndex = 226;
@@ -179,10 +179,23 @@
             this.panel3.Controls.Add(this.buttonPods);
             this.panel3.Controls.Add(this.buttonNodes);
             this.panel3.Location = new System.Drawing.Point(0, 118);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1668, 779);
             this.panel3.TabIndex = 240;
+            // 
+            // buttonIngress
+            // 
+            this.buttonIngress.AutoSize = true;
+            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIngress.ForeColor = System.Drawing.Color.White;
+            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
+            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.buttonIngress.Name = "buttonIngress";
+            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
+            this.buttonIngress.TabIndex = 149;
+            this.buttonIngress.Text = "Ingress";
+            this.buttonIngress.Click += new System.EventHandler(this.buttonIngress_Click);
             // 
             // btnTerminal
             // 
@@ -220,7 +233,7 @@
             this.panel4.Controls.Add(this.buttonCreateService);
             this.panel4.Controls.Add(this.buttonDeleteService);
             this.panel4.Location = new System.Drawing.Point(237, 32);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1391, 711);
             this.panel4.TabIndex = 147;
@@ -229,7 +242,7 @@
             // 
             this.buttonWizardServices.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardServices.Image")));
             this.buttonWizardServices.Location = new System.Drawing.Point(512, 411);
-            this.buttonWizardServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonWizardServices.Margin = new System.Windows.Forms.Padding(4);
             this.buttonWizardServices.Name = "buttonWizardServices";
             this.buttonWizardServices.Size = new System.Drawing.Size(52, 39);
             this.buttonWizardServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,7 +256,7 @@
             this.comboBoxNamespaceCriar.Items.AddRange(new object[] {
             "Todos"});
             this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(201, 498);
-            this.comboBoxNamespaceCriar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxNamespaceCriar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxNamespaceCriar.Name = "comboBoxNamespaceCriar";
             this.comboBoxNamespaceCriar.Size = new System.Drawing.Size(409, 24);
             this.comboBoxNamespaceCriar.TabIndex = 257;
@@ -277,7 +290,7 @@
             // textBoxTargetPort
             // 
             this.textBoxTargetPort.Location = new System.Drawing.Point(189, 661);
-            this.textBoxTargetPort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTargetPort.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTargetPort.Name = "textBoxTargetPort";
             this.textBoxTargetPort.Size = new System.Drawing.Size(421, 22);
             this.textBoxTargetPort.TabIndex = 255;
@@ -298,7 +311,7 @@
             // textBoxPorto
             // 
             this.textBoxPorto.Location = new System.Drawing.Point(131, 630);
-            this.textBoxPorto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPorto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPorto.Name = "textBoxPorto";
             this.textBoxPorto.Size = new System.Drawing.Size(481, 22);
             this.textBoxPorto.TabIndex = 253;
@@ -319,7 +332,7 @@
             // textBoxProtocolo
             // 
             this.textBoxProtocolo.Location = new System.Drawing.Point(171, 598);
-            this.textBoxProtocolo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProtocolo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProtocolo.Name = "textBoxProtocolo";
             this.textBoxProtocolo.Size = new System.Drawing.Size(441, 22);
             this.textBoxProtocolo.TabIndex = 251;
@@ -340,7 +353,7 @@
             // textBoxTipo
             // 
             this.textBoxTipo.Location = new System.Drawing.Point(116, 565);
-            this.textBoxTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTipo.Name = "textBoxTipo";
             this.textBoxTipo.Size = new System.Drawing.Size(496, 22);
             this.textBoxTipo.TabIndex = 249;
@@ -361,7 +374,7 @@
             // textBoxLabelApp
             // 
             this.textBoxLabelApp.Location = new System.Drawing.Point(171, 532);
-            this.textBoxLabelApp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLabelApp.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLabelApp.Name = "textBoxLabelApp";
             this.textBoxLabelApp.Size = new System.Drawing.Size(441, 22);
             this.textBoxLabelApp.TabIndex = 247;
@@ -382,7 +395,7 @@
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(131, 470);
-            this.textBoxNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(481, 22);
             this.textBoxNome.TabIndex = 245;
@@ -392,7 +405,7 @@
             this.comboBoxService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxService.FormattingEnabled = true;
             this.comboBoxService.Location = new System.Drawing.Point(796, 469);
-            this.comboBoxService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxService.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxService.Name = "comboBoxService";
             this.comboBoxService.Size = new System.Drawing.Size(417, 24);
             this.comboBoxService.TabIndex = 244;
@@ -402,7 +415,7 @@
             this.listBoxService.FormattingEnabled = true;
             this.listBoxService.ItemHeight = 16;
             this.listBoxService.Location = new System.Drawing.Point(49, 43);
-            this.listBoxService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxService.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxService.Name = "listBoxService";
             this.listBoxService.ScrollAlwaysVisible = true;
             this.listBoxService.Size = new System.Drawing.Size(1291, 356);
@@ -412,7 +425,7 @@
             // 
             this.buttonCreateService.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateService.Location = new System.Drawing.Point(171, 411);
-            this.buttonCreateService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCreateService.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateService.Name = "buttonCreateService";
             this.buttonCreateService.Size = new System.Drawing.Size(320, 39);
             this.buttonCreateService.TabIndex = 242;
@@ -424,7 +437,7 @@
             // 
             this.buttonDeleteService.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteService.Location = new System.Drawing.Point(847, 411);
-            this.buttonDeleteService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDeleteService.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeleteService.Name = "buttonDeleteService";
             this.buttonDeleteService.Size = new System.Drawing.Size(320, 39);
             this.buttonDeleteService.TabIndex = 243;
@@ -532,18 +545,6 @@
             this.buttonNodes.Text = "Nodes";
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
             // 
-            // buttonIngress
-            // 
-            this.buttonIngress.AutoSize = true;
-            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIngress.ForeColor = System.Drawing.Color.White;
-            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
-            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.buttonIngress.Name = "buttonIngress";
-            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
-            this.buttonIngress.TabIndex = 149;
-            this.buttonIngress.Text = "Ingress";
-            // 
             // servicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -551,7 +552,7 @@
             this.ClientSize = new System.Drawing.Size(1667, 897);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "servicesForm";
             this.Text = "servicesForm";
             this.Load += new System.EventHandler(this.servicesForm_Load);

@@ -58,9 +58,9 @@
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonIngress = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonWizardPods = new System.Windows.Forms.PictureBox();
-            this.buttonIngress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -453,6 +453,19 @@
             this.panel3.Size = new System.Drawing.Size(1668, 778);
             this.panel3.TabIndex = 214;
             // 
+            // buttonIngress
+            // 
+            this.buttonIngress.AutoSize = true;
+            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIngress.ForeColor = System.Drawing.Color.White;
+            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
+            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.buttonIngress.Name = "buttonIngress";
+            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
+            this.buttonIngress.TabIndex = 149;
+            this.buttonIngress.Text = "Ingress";
+            this.buttonIngress.Click += new System.EventHandler(this.buttonIngress_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -485,18 +498,6 @@
             this.buttonWizardPods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonWizardPods.TabIndex = 239;
             this.buttonWizardPods.TabStop = false;
-            // 
-            // buttonIngress
-            // 
-            this.buttonIngress.AutoSize = true;
-            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIngress.ForeColor = System.Drawing.Color.White;
-            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
-            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.buttonIngress.Name = "buttonIngress";
-            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
-            this.buttonIngress.TabIndex = 149;
-            this.buttonIngress.Text = "Ingress";
             // 
             // podsForm
             // 

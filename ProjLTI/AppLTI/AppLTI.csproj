@@ -144,6 +144,12 @@
     <Compile Include="deploymentsForm.Designer.cs">
       <DependentUpon>deploymentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ingressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ingressForm.Designer.cs">
+      <DependentUpon>ingressForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deploymentsForm.resx">
       <DependentUpon>deploymentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ingressForm.resx">
+      <DependentUpon>ingressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>

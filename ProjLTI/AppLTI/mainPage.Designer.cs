@@ -40,6 +40,7 @@
             this.pictureUsername = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonIngress = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonActivateMic = new System.Windows.Forms.PictureBox();
             this.buttonMutMic = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,6 @@
             this.labelService = new System.Windows.Forms.Label();
             this.labelWorkloads = new System.Windows.Forms.Label();
             this.labelCluster = new System.Windows.Forms.Label();
-            this.buttonIngress = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,7 +76,7 @@
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIP.ForeColor = System.Drawing.Color.White;
             this.textBoxIP.Location = new System.Drawing.Point(1033, 37);
-            this.textBoxIP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIP.Multiline = true;
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(545, 27);
@@ -156,7 +156,7 @@
             this.panel1.Controls.Add(this.pictureUsername);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1668, 124);
             this.panel1.TabIndex = 142;
@@ -176,7 +176,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(127, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,10 +198,23 @@
             this.panel3.Controls.Add(this.buttonPods);
             this.panel3.Controls.Add(this.buttonNodes);
             this.panel3.Location = new System.Drawing.Point(0, 118);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1668, 779);
             this.panel3.TabIndex = 143;
+            // 
+            // buttonIngress
+            // 
+            this.buttonIngress.AutoSize = true;
+            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIngress.ForeColor = System.Drawing.Color.White;
+            this.buttonIngress.Location = new System.Drawing.Point(39, 249);
+            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.buttonIngress.Name = "buttonIngress";
+            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
+            this.buttonIngress.TabIndex = 149;
+            this.buttonIngress.Text = "Ingress";
+            this.buttonIngress.Click += new System.EventHandler(this.buttonIngress_Click);
             // 
             // panel4
             // 
@@ -209,7 +222,7 @@
             this.panel4.Controls.Add(this.buttonActivateMic);
             this.panel4.Controls.Add(this.buttonMutMic);
             this.panel4.Location = new System.Drawing.Point(237, 32);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1391, 711);
             this.panel4.TabIndex = 147;
@@ -218,7 +231,7 @@
             // 
             this.buttonActivateMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonActivateMic.Image")));
             this.buttonActivateMic.Location = new System.Drawing.Point(28, 18);
-            this.buttonActivateMic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonActivateMic.Margin = new System.Windows.Forms.Padding(4);
             this.buttonActivateMic.Name = "buttonActivateMic";
             this.buttonActivateMic.Size = new System.Drawing.Size(31, 42);
             this.buttonActivateMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -230,7 +243,7 @@
             // 
             this.buttonMutMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonMutMic.Image")));
             this.buttonMutMic.Location = new System.Drawing.Point(28, 20);
-            this.buttonMutMic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMutMic.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMutMic.Name = "buttonMutMic";
             this.buttonMutMic.Size = new System.Drawing.Size(31, 41);
             this.buttonMutMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -286,18 +299,6 @@
             this.labelCluster.Size = new System.Drawing.Size(91, 29);
             this.labelCluster.TabIndex = 144;
             this.labelCluster.Text = "Cluster";
-            // 
-            // buttonIngress
-            // 
-            this.buttonIngress.AutoSize = true;
-            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIngress.ForeColor = System.Drawing.Color.White;
-            this.buttonIngress.Location = new System.Drawing.Point(39, 249);
-            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.buttonIngress.Name = "buttonIngress";
-            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
-            this.buttonIngress.TabIndex = 149;
-            this.buttonIngress.Text = "Ingress";
             // 
             // mainPage
             // 

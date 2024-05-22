@@ -451,5 +451,13 @@ namespace AppLTI
                 }
             }
         }
+
+        private void buttonIngress_Click(object sender, EventArgs e)
+        {
+            ingressForm ingressForm = new ingressForm();
+            ingressForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            ingressForm.Show();
+            this.Dispose();
+        }
     }
 }

@@ -392,5 +392,13 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while creating Service: " + ex.Message);
             }
         }
+
+        private void buttonIngress_Click(object sender, EventArgs e)
+        {
+            ingressForm ingressForm = new ingressForm();
+            ingressForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            ingressForm.Show();
+            this.Dispose();
+        }
     }
 }

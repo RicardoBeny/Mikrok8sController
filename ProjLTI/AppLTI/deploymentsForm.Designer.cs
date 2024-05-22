@@ -62,11 +62,11 @@
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonIngress = new System.Windows.Forms.Label();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
-            this.buttonIngress = new System.Windows.Forms.Label();
+            this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
@@ -473,6 +473,19 @@
             this.panel3.Size = new System.Drawing.Size(1668, 783);
             this.panel3.TabIndex = 239;
             // 
+            // buttonIngress
+            // 
+            this.buttonIngress.AutoSize = true;
+            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIngress.ForeColor = System.Drawing.Color.White;
+            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
+            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.buttonIngress.Name = "buttonIngress";
+            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
+            this.buttonIngress.TabIndex = 148;
+            this.buttonIngress.Text = "Ingress";
+            this.buttonIngress.Click += new System.EventHandler(this.buttonIngress_Click);
+            // 
             // btnTerminal
             // 
             this.btnTerminal.AutoSize = true;
@@ -514,18 +527,6 @@
             this.panel4.Size = new System.Drawing.Size(1391, 711);
             this.panel4.TabIndex = 147;
             // 
-            // buttonWizardDeployment
-            // 
-            this.buttonWizardDeployment.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardDeployment.Image")));
-            this.buttonWizardDeployment.Location = new System.Drawing.Point(499, 411);
-            this.buttonWizardDeployment.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonWizardDeployment.Name = "buttonWizardDeployment";
-            this.buttonWizardDeployment.Size = new System.Drawing.Size(52, 39);
-            this.buttonWizardDeployment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonWizardDeployment.TabIndex = 238;
-            this.buttonWizardDeployment.TabStop = false;
-            this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
-            // 
             // comboBoxImage
             // 
             this.comboBoxImage.FormattingEnabled = true;
@@ -566,17 +567,17 @@
             this.comboBoxImage.Size = new System.Drawing.Size(465, 24);
             this.comboBoxImage.TabIndex = 239;
             // 
-            // buttonIngress
+            // buttonWizardDeployment
             // 
-            this.buttonIngress.AutoSize = true;
-            this.buttonIngress.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIngress.ForeColor = System.Drawing.Color.White;
-            this.buttonIngress.Location = new System.Drawing.Point(39, 248);
-            this.buttonIngress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.buttonIngress.Name = "buttonIngress";
-            this.buttonIngress.Size = new System.Drawing.Size(88, 29);
-            this.buttonIngress.TabIndex = 148;
-            this.buttonIngress.Text = "Ingress";
+            this.buttonWizardDeployment.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardDeployment.Image")));
+            this.buttonWizardDeployment.Location = new System.Drawing.Point(499, 411);
+            this.buttonWizardDeployment.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonWizardDeployment.Name = "buttonWizardDeployment";
+            this.buttonWizardDeployment.Size = new System.Drawing.Size(52, 39);
+            this.buttonWizardDeployment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonWizardDeployment.TabIndex = 238;
+            this.buttonWizardDeployment.TabStop = false;
+            this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
             // 
             // deploymentsForm
             // 

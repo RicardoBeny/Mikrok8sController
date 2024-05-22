@@ -168,14 +168,14 @@ namespace AppLTI
                             return;
                         }
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show($"Credenciais incorretas - Login falhou.");
                         return;
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show($"Erro - Login falhou");
                 return;
