@@ -326,7 +326,6 @@ namespace AppLTI
                         JArray namespacesArray = (JArray)namespacesData["items"];
 
                         comboBoxNamespaces.Items.Add("Todos");
-                        comboBoxImage.Items.Add("nginx");
 
                         foreach (JObject namespaceObject in namespacesArray)
                         {
@@ -359,7 +358,6 @@ namespace AppLTI
             try
             {
                 string url;
-                comboBoxImage.Items.Clear();
 
                 url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/deployments";
                 
@@ -382,8 +380,6 @@ namespace AppLTI
                         foreach (JObject deploymentObject in deploymentsArray)
                         {
                             string containerImage = (string)deploymentObject["spec"]["template"]["spec"]["containers"][0]["image"];
-
-                            comboBoxImage.Items.Add($"{containerImage}");
                         }
                     }
                     else

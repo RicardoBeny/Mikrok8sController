@@ -59,9 +59,9 @@ namespace AppLTI
                 MessageBox.Show("Campo label app tem de ser preenchido.");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(textBoxImage.Text))
+            if (comboBoxImage.SelectedIndex == -1)
             {
-                MessageBox.Show("Campo image tem de ser preenchido.");
+                MessageBox.Show("Imagem tem de ser selecionada.");
                 return;
             }
 
@@ -107,7 +107,7 @@ namespace AppLTI
                             new JObject
                             {
                                 ["name"] = textBoxContainerName.Text,
-                                ["image"] = textBoxImage.Text,
+                                ["image"] = comboBoxImage.SelectedItem.ToString(),
                                 ["ports"] = new JArray
                                 {
                                     new JObject

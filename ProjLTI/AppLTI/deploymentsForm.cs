@@ -114,6 +114,12 @@ namespace AppLTI
                 return;
             }
 
+            if (comboBoxImage.SelectedIndex == -1)
+            {
+                MessageBox.Show("Imagem tem de ser selecionada.");
+                return;
+            }
+
             string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
             string namespacename = selectedItemText.Trim();
 
@@ -157,7 +163,7 @@ namespace AppLTI
                             new JObject
                             {
                                 ["name"] = $"{textBoxContainerName.Text}",
-                                ["image"] = $"{textBoxImage.Text}",
+                                ["image"] = comboBoxImage.SelectedItem.ToString(),
                                 ["ports"] = new JArray
                                 {
                                     new JObject
