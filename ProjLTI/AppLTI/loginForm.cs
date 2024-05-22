@@ -21,11 +21,24 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Net.Http.Headers;
 using OpenQA.Selenium;
 using System.Web.Routing;
+using System.Runtime.InteropServices;
 
 namespace AppLTI
 {
     public partial class loginForm : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+            (
+                int nLeft, 
+                int nTop,
+                int nRight,
+                int nBottom,
+                int nWidthEllipse,
+                int nHeightEllipse
+            );
+
         private List<Credential> credentials;
 
         string baseURI = @"http://localhost:11755";
@@ -33,6 +46,10 @@ namespace AppLTI
         public loginForm()
         {
             InitializeComponent();
+
+            btnLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 15, 15));
+            panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 30, 30));
+
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 
             var request = new RestRequest("/api/credentials", Method.Get);
@@ -258,9 +275,9 @@ namespace AppLTI
 
                 credentials = JsonConvert.DeserializeObject<List<Credential>>(responseCredentials.Content);
 
-                foreach (var router in credentials)
+                foreach (var credential in credentials)
                 {
-                    comboBoxRoutersIP.Items.Add(router.Username + " - " + router.Ip + " (" + router.Id + ")");
+                    comboBoxRoutersIP.Items.Add(credential.Username + " - " + credential.Ip + " (" + credential.Id + ")");
                 }
             }
         }
@@ -275,14 +292,14 @@ namespace AppLTI
                 return;
             }
 
-            Credential selectedRouter = credentials.FirstOrDefault(r => r.Username + " - " + r.Ip + " (" + r.Id + ")" == selectedItem);
+            Credential selectedCredential = credentials.FirstOrDefault(c => c.Username + " - " + c.Ip + " (" + c.Id + ")" == selectedItem);
 
-            if (selectedRouter != null)
+            if (selectedCredential != null)
             {
                 //textBoxRouterIP.Text = selectedRouter.Ip;
-                textBoxRouterIP.Text = selectedRouter.Ip;
-                textBoxUsername.Text = selectedRouter.Username;
-                textBoxPassword.Text = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(selectedRouter.Password));
+                textBoxRouterIP.Text = selectedCredential.Ip;
+                textBoxUsername.Text = selectedCredential.Username;
+                textBoxPassword.Text = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(selectedCredential.Password));
             }
         }
 
