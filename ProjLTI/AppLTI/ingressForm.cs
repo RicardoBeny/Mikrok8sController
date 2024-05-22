@@ -103,35 +103,48 @@ namespace AppLTI
                             maxNameLength = Math.Max(maxNameLength, name.Length);
                         }
 
-                        string nameHeader = "Deployment Name".PadRight(maxNameLength);
+                        string nameHeader = "Ingress Name".PadRight(maxNameLength);
+                        string hostHeader = "Host";
+                        string pathHeader = "Path";
+                        string createdHeader = "Age";
 
-                        listBoxIngress.Items.Add($"{nameHeader}\t\tPods\t\tAge\t\tImagem");
+                        listBoxIngress.Items.Add($"{nameHeader}\t\t{hostHeader}\t\t\t{pathHeader}\t\t{createdHeader}");
 
                         foreach (JObject ingressObject in ingressArray)
                         {
                             string name = (string)ingressObject["metadata"]["name"];
-                            int replicas = (int)ingressObject["spec"]["replicas"];
-                            string created = (string)ingressObject["metadata"]["creationTimestamp"];
-                            string containerImage = (string)ingressObject["spec"]["template"]["spec"]["containers"][0]["image"];
+                            JArray rulesArray = (JArray)ingressObject["spec"]["rules"];
 
+                            string created = (string)ingressObject["metadata"]["creationTimestamp"];
                             DateTime creationDateTime = DateTime.ParseExact(created, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                             TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
-                            listBoxIngress.Items.Add($"{name.PadRight(maxNameLength)}\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
+                            foreach (JObject rule in rulesArray)
+                            {
+                                string host = (string)rule["host"];
+                                JArray pathsArray = (JArray)rule["http"]["paths"];
+
+                                foreach (JObject pathObject in pathsArray)
+                                {
+                                    string path = (string)pathObject["path"];
+                                    listBoxIngress.Items.Add($"{name.PadRight(maxNameLength)}\t\t{host}\t\t{path}\t\t{timeAgo}");
+                                }
+                            }
+
                             comboBoxDeployments.Items.Add($"Nome: {name}");
                         }
                     }
                     else
                     {
                         string errorMessage = await response.Content.ReadAsStringAsync();
-                        MessageBox.Show("Failed to load deployments. Error message: " + errorMessage);
+                        MessageBox.Show("Failed to load Ingresses. Error message: " + errorMessage);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while loading deployments: " + ex.Message);
+                MessageBox.Show("An error occurred while loading Ingresses: " + ex.Message);
             }
         }
 
