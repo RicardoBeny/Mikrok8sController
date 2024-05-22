@@ -120,7 +120,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Impact", 18.8F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(427, 395);
+            this.btnLogin.Location = new System.Drawing.Point(424, 394);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(169, 47);
@@ -152,13 +152,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxGuardarPassword.AutoSize = true;
             this.checkBoxGuardarPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkBoxGuardarPassword.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxGuardarPassword.Font = new System.Drawing.Font("Impact", 14F);
             this.checkBoxGuardarPassword.ForeColor = System.Drawing.Color.White;
-            this.checkBoxGuardarPassword.Location = new System.Drawing.Point(438, 351);
+            this.checkBoxGuardarPassword.Location = new System.Drawing.Point(422, 352);
             this.checkBoxGuardarPassword.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxGuardarPassword.Name = "checkBoxGuardarPassword";
             this.checkBoxGuardarPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxGuardarPassword.Size = new System.Drawing.Size(148, 24);
+            this.checkBoxGuardarPassword.Size = new System.Drawing.Size(174, 27);
             this.checkBoxGuardarPassword.TabIndex = 14;
             this.checkBoxGuardarPassword.Text = "Guardar Password";
             this.checkBoxGuardarPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,33 +218,33 @@
             // labelIP
             // 
             this.labelIP.AutoSize = true;
-            this.labelIP.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIP.Font = new System.Drawing.Font("Impact", 16F);
             this.labelIP.ForeColor = System.Drawing.Color.White;
-            this.labelIP.Location = new System.Drawing.Point(188, 103);
+            this.labelIP.Location = new System.Drawing.Point(182, 103);
             this.labelIP.Name = "labelIP";
-            this.labelIP.Size = new System.Drawing.Size(116, 23);
+            this.labelIP.Size = new System.Drawing.Size(133, 27);
             this.labelIP.TabIndex = 23;
             this.labelIP.Text = "IP do servidor";
             // 
             // labelSSH
             // 
             this.labelSSH.AutoSize = true;
-            this.labelSSH.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSSH.Font = new System.Drawing.Font("Impact", 16F);
             this.labelSSH.ForeColor = System.Drawing.Color.White;
-            this.labelSSH.Location = new System.Drawing.Point(470, 103);
+            this.labelSSH.Location = new System.Drawing.Point(466, 103);
             this.labelSSH.Name = "labelSSH";
-            this.labelSSH.Size = new System.Drawing.Size(87, 23);
+            this.labelSSH.Size = new System.Drawing.Size(98, 27);
             this.labelSSH.TabIndex = 24;
             this.labelSSH.Text = "Porto SSH";
             // 
             // labelAPI
             // 
             this.labelAPI.AutoSize = true;
-            this.labelAPI.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAPI.Font = new System.Drawing.Font("Impact", 16F);
             this.labelAPI.ForeColor = System.Drawing.Color.White;
-            this.labelAPI.Location = new System.Drawing.Point(746, 103);
+            this.labelAPI.Location = new System.Drawing.Point(736, 103);
             this.labelAPI.Name = "labelAPI";
-            this.labelAPI.Size = new System.Drawing.Size(80, 23);
+            this.labelAPI.Size = new System.Drawing.Size(92, 27);
             this.labelAPI.TabIndex = 25;
             this.labelAPI.Text = "Porto API";
             // 
@@ -320,12 +320,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
-            this.label1.Font = new System.Drawing.Font("Impact", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Impact", 29.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(463, 10);
+            this.label1.Location = new System.Drawing.Point(459, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 46);
+            this.label1.Size = new System.Drawing.Size(113, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             // 
