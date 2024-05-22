@@ -33,7 +33,9 @@
             this.buttonIngress = new System.Windows.Forms.Label();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
             this.listBoxIngress = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonCreateDeployments = new System.Windows.Forms.Button();
             this.buttonDeleteDeployments = new System.Windows.Forms.Button();
             this.comboBoxDeployments = new System.Windows.Forms.ComboBox();
@@ -52,8 +54,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxNamespaces = new System.Windows.Forms.ComboBox();
-            this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -121,6 +121,18 @@
             this.panel4.Size = new System.Drawing.Size(1391, 711);
             this.panel4.TabIndex = 147;
             // 
+            // comboBoxNamespaceCriar
+            // 
+            this.comboBoxNamespaceCriar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNamespaceCriar.FormattingEnabled = true;
+            this.comboBoxNamespaceCriar.Items.AddRange(new object[] {
+            "Todos"});
+            this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(201, 469);
+            this.comboBoxNamespaceCriar.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxNamespaceCriar.Name = "comboBoxNamespaceCriar";
+            this.comboBoxNamespaceCriar.Size = new System.Drawing.Size(392, 24);
+            this.comboBoxNamespaceCriar.TabIndex = 242;
+            // 
             // listBoxIngress
             // 
             this.listBoxIngress.FormattingEnabled = true;
@@ -132,6 +144,19 @@
             this.listBoxIngress.Size = new System.Drawing.Size(1291, 356);
             this.listBoxIngress.TabIndex = 216;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(44, 469);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 29);
+            this.label2.TabIndex = 243;
+            this.label2.Text = "Namespaces:";
+            // 
             // buttonCreateDeployments
             // 
             this.buttonCreateDeployments.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,6 +167,7 @@
             this.buttonCreateDeployments.TabIndex = 219;
             this.buttonCreateDeployments.Text = "Criar Ingress";
             this.buttonCreateDeployments.UseVisualStyleBackColor = true;
+            this.buttonCreateDeployments.Click += new System.EventHandler(this.buttonCreateDeployments_Click);
             // 
             // buttonDeleteDeployments
             // 
@@ -153,12 +179,13 @@
             this.buttonDeleteDeployments.TabIndex = 220;
             this.buttonDeleteDeployments.Text = "Apagar Ingress";
             this.buttonDeleteDeployments.UseVisualStyleBackColor = true;
+            this.buttonDeleteDeployments.Click += new System.EventHandler(this.buttonDeleteDeployments_Click);
             // 
             // comboBoxDeployments
             // 
             this.comboBoxDeployments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDeployments.FormattingEnabled = true;
-            this.comboBoxDeployments.Location = new System.Drawing.Point(781, 454);
+            this.comboBoxDeployments.Location = new System.Drawing.Point(781, 469);
             this.comboBoxDeployments.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDeployments.Name = "comboBoxDeployments";
             this.comboBoxDeployments.Size = new System.Drawing.Size(444, 24);
@@ -353,31 +380,6 @@
             this.comboBoxNamespaces.Size = new System.Drawing.Size(392, 24);
             this.comboBoxNamespaces.TabIndex = 226;
             this.comboBoxNamespaces.SelectedIndexChanged += new System.EventHandler(this.comboBoxNamespaces_SelectedIndexChanged);
-            // 
-            // comboBoxNamespaceCriar
-            // 
-            this.comboBoxNamespaceCriar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNamespaceCriar.FormattingEnabled = true;
-            this.comboBoxNamespaceCriar.Items.AddRange(new object[] {
-            "Todos"});
-            this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(201, 469);
-            this.comboBoxNamespaceCriar.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxNamespaceCriar.Name = "comboBoxNamespaceCriar";
-            this.comboBoxNamespaceCriar.Size = new System.Drawing.Size(392, 24);
-            this.comboBoxNamespaceCriar.TabIndex = 242;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(44, 469);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 29);
-            this.label2.TabIndex = 243;
-            this.label2.Text = "Namespaces:";
             // 
             // ingressForm
             // 

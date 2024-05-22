@@ -241,5 +241,15 @@ namespace AppLTI
             sshConection.Show();
             this.Dispose();
         }
+
+        private void buttonCreateDeployments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDeleteDeployments_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
