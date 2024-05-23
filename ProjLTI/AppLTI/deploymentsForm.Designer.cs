@@ -67,6 +67,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
             this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
+            this.textBoxOwner = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxncontainers = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxproposito = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxanotacoes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
@@ -115,7 +125,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(44, 519);
+            this.label3.Location = new System.Drawing.Point(44, 522);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 29);
@@ -126,19 +136,19 @@
             // 
             this.comboBoxDeployments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDeployments.FormattingEnabled = true;
-            this.comboBoxDeployments.Location = new System.Drawing.Point(781, 454);
+            this.comboBoxDeployments.Location = new System.Drawing.Point(1028, 459);
             this.comboBoxDeployments.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDeployments.Name = "comboBoxDeployments";
-            this.comboBoxDeployments.Size = new System.Drawing.Size(444, 24);
+            this.comboBoxDeployments.Size = new System.Drawing.Size(313, 24);
             this.comboBoxDeployments.TabIndex = 221;
             // 
             // buttonDeleteDeployments
             // 
             this.buttonDeleteDeployments.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteDeployments.Location = new System.Drawing.Point(847, 411);
+            this.buttonDeleteDeployments.Location = new System.Drawing.Point(1062, 411);
             this.buttonDeleteDeployments.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeleteDeployments.Name = "buttonDeleteDeployments";
-            this.buttonDeleteDeployments.Size = new System.Drawing.Size(320, 39);
+            this.buttonDeleteDeployments.Size = new System.Drawing.Size(255, 39);
             this.buttonDeleteDeployments.TabIndex = 220;
             this.buttonDeleteDeployments.Text = "Apagar Deployments";
             this.buttonDeleteDeployments.UseVisualStyleBackColor = true;
@@ -165,9 +175,9 @@
             this.label1.Location = new System.Drawing.Point(44, 454);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 29);
+            this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 218;
-            this.label1.Text = "Nome:";
+            this.label1.Text = "Nome*:";
             // 
             // textBoxNomeAdd
             // 
@@ -198,9 +208,9 @@
             this.label2.Location = new System.Drawing.Point(44, 490);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 29);
+            this.label2.Size = new System.Drawing.Size(151, 29);
             this.label2.TabIndex = 229;
-            this.label2.Text = "Namespaces:";
+            this.label2.Text = "Namespaces*:";
             // 
             // comboBoxNamespaceCriar
             // 
@@ -216,10 +226,10 @@
             // 
             // textBoxContainerName
             // 
-            this.textBoxContainerName.Location = new System.Drawing.Point(271, 555);
+            this.textBoxContainerName.Location = new System.Drawing.Point(825, 585);
             this.textBoxContainerName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxContainerName.Name = "textBoxContainerName";
-            this.textBoxContainerName.Size = new System.Drawing.Size(323, 22);
+            this.textBoxContainerName.Size = new System.Drawing.Size(178, 22);
             this.textBoxContainerName.TabIndex = 231;
             // 
             // label5
@@ -228,19 +238,19 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(44, 551);
+            this.label5.Location = new System.Drawing.Point(614, 581);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 29);
+            this.label5.Size = new System.Drawing.Size(210, 29);
             this.label5.TabIndex = 230;
-            this.label5.Text = "Nome do Container:";
+            this.label5.Text = "Nome do Container*:";
             // 
             // textBoxLabelApp
             // 
-            this.textBoxLabelApp.Location = new System.Drawing.Point(171, 587);
+            this.textBoxLabelApp.Location = new System.Drawing.Point(158, 621);
             this.textBoxLabelApp.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLabelApp.Name = "textBoxLabelApp";
-            this.textBoxLabelApp.Size = new System.Drawing.Size(423, 22);
+            this.textBoxLabelApp.Size = new System.Drawing.Size(436, 22);
             this.textBoxLabelApp.TabIndex = 233;
             // 
             // label6
@@ -249,7 +259,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(44, 587);
+            this.label6.Location = new System.Drawing.Point(41, 614);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 29);
@@ -262,16 +272,16 @@
             this.label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(44, 619);
+            this.label.Location = new System.Drawing.Point(44, 553);
             this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(80, 29);
+            this.label.Size = new System.Drawing.Size(87, 29);
             this.label.TabIndex = 234;
-            this.label.Text = "Image:";
+            this.label.Text = "Image*:";
             // 
             // textBoxReplicas
             // 
-            this.textBoxReplicas.Location = new System.Drawing.Point(149, 654);
+            this.textBoxReplicas.Location = new System.Drawing.Point(149, 588);
             this.textBoxReplicas.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxReplicas.Name = "textBoxReplicas";
             this.textBoxReplicas.Size = new System.Drawing.Size(444, 22);
@@ -283,12 +293,12 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(41, 647);
+            this.label7.Location = new System.Drawing.Point(41, 581);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 29);
+            this.label7.Size = new System.Drawing.Size(109, 29);
             this.label7.TabIndex = 236;
-            this.label7.Text = "Replicas:";
+            this.label7.Text = "Replicas*:";
             // 
             // pictureBox1
             // 
@@ -502,6 +512,16 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.textBoxanotacoes);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.textBoxproposito);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.textBoxncontainers);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.textBoxOwner);
+            this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.comboBoxImage);
             this.panel4.Controls.Add(this.buttonWizardDeployment);
             this.panel4.Controls.Add(this.listBoxDeployments);
@@ -561,7 +581,7 @@
             "rabbitmq:latest",
             "wurstmeister/kafka:latest",
             "portainer/portainer-ce:latest"});
-            this.comboBoxImage.Location = new System.Drawing.Point(128, 620);
+            this.comboBoxImage.Location = new System.Drawing.Point(128, 554);
             this.comboBoxImage.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxImage.Name = "comboBoxImage";
             this.comboBoxImage.Size = new System.Drawing.Size(465, 24);
@@ -578,6 +598,112 @@
             this.buttonWizardDeployment.TabIndex = 238;
             this.buttonWizardDeployment.TabStop = false;
             this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
+            // 
+            // textBoxOwner
+            // 
+            this.textBoxOwner.Location = new System.Drawing.Point(702, 522);
+            this.textBoxOwner.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxOwner.Name = "textBoxOwner";
+            this.textBoxOwner.Size = new System.Drawing.Size(301, 22);
+            this.textBoxOwner.TabIndex = 241;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(614, 515);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 29);
+            this.label8.TabIndex = 240;
+            this.label8.Text = "Owner:";
+            // 
+            // textBoxncontainers
+            // 
+            this.textBoxncontainers.Location = new System.Drawing.Point(796, 620);
+            this.textBoxncontainers.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxncontainers.Name = "textBoxncontainers";
+            this.textBoxncontainers.Size = new System.Drawing.Size(207, 22);
+            this.textBoxncontainers.TabIndex = 243;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(614, 614);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 29);
+            this.label9.TabIndex = 242;
+            this.label9.Text = "Nº de containers:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(753, 547);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 28);
+            this.label10.TabIndex = 244;
+            this.label10.Text = "Container";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(753, 422);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 28);
+            this.label11.TabIndex = 245;
+            this.label11.Text = "MetaData";
+            // 
+            // textBoxproposito
+            // 
+            this.textBoxproposito.Location = new System.Drawing.Point(733, 490);
+            this.textBoxproposito.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxproposito.Name = "textBoxproposito";
+            this.textBoxproposito.Size = new System.Drawing.Size(270, 22);
+            this.textBoxproposito.TabIndex = 247;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(614, 485);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 29);
+            this.label12.TabIndex = 246;
+            this.label12.Text = "Propósito:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(614, 454);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 29);
+            this.label13.TabIndex = 248;
+            this.label13.Text = "Anotação:";
+            // 
+            // textBoxanotacoes
+            // 
+            this.textBoxanotacoes.Location = new System.Drawing.Point(733, 459);
+            this.textBoxanotacoes.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxanotacoes.Name = "textBoxanotacoes";
+            this.textBoxanotacoes.Size = new System.Drawing.Size(270, 22);
+            this.textBoxanotacoes.TabIndex = 249;
             // 
             // deploymentsForm
             // 
@@ -643,5 +769,15 @@
         private System.Windows.Forms.PictureBox buttonWizardDeployment;
         private System.Windows.Forms.ComboBox comboBoxImage;
         private System.Windows.Forms.Label buttonIngress;
+        private System.Windows.Forms.TextBox textBoxOwner;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxncontainers;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxproposito;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxanotacoes;
     }
 }

@@ -102,12 +102,6 @@ namespace AppLTI
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textBoxPorto.Text))
-            {
-                MessageBox.Show("Campo porto tem de ser preenchido.");
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(textBoxContainerName.Text))
             {
                 MessageBox.Show("Campo nome do container tem de ser preenchido.");
@@ -120,6 +114,13 @@ namespace AppLTI
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(textBoxReplicas.Text))
+            {
+                MessageBox.Show("Campo replicas tem de ser preenchido.");
+                return;
+            }
+
+
             string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
             string namespacename = selectedItemText.Trim();
 
@@ -127,24 +128,51 @@ namespace AppLTI
         }
         private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename)
         {
-            int porto = int.Parse(textBoxPorto.Text);
             int replicas = int.Parse(textBoxReplicas.Text);
+            int? porto = null, nContainers = null, anotacoes = null, proposito = null, owner = null;
+
+            if (!string.IsNullOrEmpty(textBoxPorto.Text))
+            {
+                porto = int.Parse(textBoxPorto.Text);
+            }
+
+            if (!string.IsNullOrEmpty(textBoxncontainers.Text))
+            {
+                nContainers = int.Parse(textBoxncontainers.Text);
+            }
+
+            if (!string.IsNullOrEmpty(textBoxanotacoes.Text))
+            {
+                anotacoes = int.Parse(textBoxanotacoes.Text);
+            }
+
+            if (!string.IsNullOrEmpty(textBoxproposito.Text))
+            {
+                proposito = int.Parse(textBoxproposito.Text);
+            }
+
+            if (!string.IsNullOrEmpty(textBoxOwner.Text))
+            {
+                owner = int.Parse(textBoxOwner.Text);
+            }
+
             var requestBody = new JObject
             {
                 ["apiVersion"] = "apps/v1",
                 ["kind"] = "Deployment",
                 ["metadata"] = new JObject
                 {
-                    ["name"] = $"{textBoxNomeAdd.Text}",
-                    ["namespace"] = $"{namespacename}"
+                    ["name"] = textBoxNomeAdd.Text,
+                    ["namespace"] = namespacename
                 },
-                ["spec"] = new JObject{
-                    ["replicas"] = replicas, 
+                ["spec"] = new JObject
+                {
+                    ["replicas"] = replicas,
                     ["selector"] = new JObject
                     {
                         ["matchLabels"] = new JObject
                         {
-                            ["app"] = $"{textBoxLabelApp.Text}"
+                            ["app"] = textBoxLabelApp.Text
                         }
                     },
                     ["template"] = new JObject
@@ -153,26 +181,19 @@ namespace AppLTI
                         {
                             ["labels"] = new JObject
                             {
-                                ["app"] = $"{textBoxLabelApp.Text}"
+                                ["app"] = textBoxLabelApp.Text
                             }
                         },
                         ["spec"] = new JObject
                         {
                             ["containers"] = new JArray
+                    {
+                        new JObject
                         {
-                            new JObject
-                            {
-                                ["name"] = $"{textBoxContainerName.Text}",
-                                ["image"] = comboBoxImage.SelectedItem.ToString(),
-                                ["ports"] = new JArray
-                                {
-                                    new JObject
-                                    {
-                                        ["containerPort"] = porto
-                                    }
-                                }
-                            }
+                            ["name"] = textBoxContainerName.Text,
+                            ["image"] = comboBoxImage.SelectedItem.ToString()
                         }
+                    }
                         }
                     }
                 }
