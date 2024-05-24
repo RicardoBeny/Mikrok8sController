@@ -118,7 +118,13 @@ namespace AppLTI
                 return;
             }
 
-            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
+            if (comboBoxNamespaceCriar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
             string namespacename = selectedItemText.Trim();
 
             await CreatePods(routerIp, portoAPI, authKey, namespacename);
@@ -306,6 +312,7 @@ namespace AppLTI
             try
             {
                 comboBoxNamespaces.Items.Clear();
+                comboBoxNamespaceCriar.Items.Clear();
 
                 string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces";
 
@@ -331,6 +338,7 @@ namespace AppLTI
                         {
                             string name = (string)namespaceObject["metadata"]["name"];
                             comboBoxNamespaces.Items.Add($"{name}");
+                            comboBoxNamespaceCriar.Items.Add($"{name}");
                         }
                     }
                     else

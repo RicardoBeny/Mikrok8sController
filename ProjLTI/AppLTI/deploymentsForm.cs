@@ -129,7 +129,8 @@ namespace AppLTI
         private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename)
         {
             int replicas = int.Parse(textBoxReplicas.Text);
-            int? porto = null, nContainers = null, anotacoes = null, proposito = null, owner = null;
+            int? porto = 80, nContainers = 1;
+            string proposito = null, owner = null, anotacoes = null;
 
             if (!string.IsNullOrEmpty(textBoxPorto.Text))
             {
@@ -143,28 +144,41 @@ namespace AppLTI
 
             if (!string.IsNullOrEmpty(textBoxanotacoes.Text))
             {
-                anotacoes = int.Parse(textBoxanotacoes.Text);
+                anotacoes = textBoxanotacoes.Text;
             }
 
             if (!string.IsNullOrEmpty(textBoxproposito.Text))
             {
-                proposito = int.Parse(textBoxproposito.Text);
+                proposito = textBoxproposito.Text;
             }
 
             if (!string.IsNullOrEmpty(textBoxOwner.Text))
             {
-                owner = int.Parse(textBoxOwner.Text);
+                owner = textBoxOwner.Text;
             }
+
+            var metadata = new JObject
+            {
+                ["name"] = textBoxNomeAdd.Text,
+                ["namespace"] = namespacename
+            };
+            /*
+            if (!string.IsNullOrEmpty(anotacoes))
+            {
+                metadata["annotations"] = anotacoes;
+            }
+            
+            if (!string.IsNullOrEmpty(proposito))
+            {
+                metadata["purpose"] = proposito;
+            }
+            */
 
             var requestBody = new JObject
             {
                 ["apiVersion"] = "apps/v1",
                 ["kind"] = "Deployment",
-                ["metadata"] = new JObject
-                {
-                    ["name"] = textBoxNomeAdd.Text,
-                    ["namespace"] = namespacename
-                },
+                ["metadata"] = metadata,
                 ["spec"] = new JObject
                 {
                     ["replicas"] = replicas,
@@ -186,16 +200,17 @@ namespace AppLTI
                         },
                         ["spec"] = new JObject
                         {
-                            ["containers"] = new JArray
-                    {
-                        new JObject
-                        {
-                            ["name"] = textBoxContainerName.Text,
-                            ["image"] = comboBoxImage.SelectedItem.ToString()
+                            ["containers"] = GetContainerDefinitions(nContainers, textBoxContainerName.Text, comboBoxImage.SelectedItem.ToString(), porto)
                         }
                     }
-                        }
-                    }
+                }
+            };
+
+            requestBody["metadata"]["managedFields"] = new JArray
+            {
+                new JObject
+                {
+                    ["manager"] = owner
                 }
             };
 
@@ -231,6 +246,34 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while creating Deployment: " + ex.Message);
             }
         }
+
+        private JArray GetContainerDefinitions(int? nContainers, string containerNameBase, string image, int? containerPort)
+        {
+            if (!nContainers.HasValue || nContainers <= 0)
+            {
+                return new JArray();
+            }
+
+            var containers = new JArray();
+            for (int i = 0; i < nContainers.Value; i++)
+            {
+                var containerName = $"{containerNameBase}{i + 1}";
+                containers.Add(new JObject
+                {
+                    ["name"] = containerName,
+                    ["image"] = image,
+                    ["ports"] = new JArray
+                    {
+                        new JObject
+                        {
+                            ["containerPort"] = containerPort
+                        }
+                    }
+                });
+            }
+            return containers;
+        }
+
 
         private async Task DeleteDeployments(string routerIp, string portoAPI, string authToken, string namespaceName, string deploymentname)
         {

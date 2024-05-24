@@ -75,20 +75,38 @@ namespace AppLTI
                             if (name == deploymentName)
                             {
                                 string namespaceName = (string)deploymentObject["metadata"]["namespace"];
-                                string manager = (string)deploymentObject["metadata"]["managedFields"].First["manager"];
+                                string manager = (string)deploymentObject["metadata"]["managedFields"]?.First?["manager"];
 
                                 containerNamesListBox.Items.Clear();
                                 envNamesListBox.Items.Clear();
+                                containerNamesListBox.Items.Add("Container\t\tImagem");
 
-                                JArray containers = (JArray)deploymentObject["spec"]["template"]["spec"]["containers"];
+                                JArray containers = (JArray)deploymentObject["spec"]?["template"]?["spec"]?["containers"];
                                 if (containers != null)
                                 {
                                     foreach (JObject container in containers)
                                     {
+
                                         string containerName = (string)container["name"];
                                         if (!string.IsNullOrEmpty(containerName))
                                         {
-                                            containerNamesListBox.Items.Add(containerName);
+                                            string containerImage = (string)container["image"];
+
+                                            JArray containerPorts = (JArray)container["ports"];
+                                            string containerPortInfo = "";
+                                            if (containerPorts != null && containerPorts.Count > 0)
+                                            {
+                                                foreach (JObject portObj in containerPorts)
+                                                {
+                                                    string containerPort = (string)portObj["containerPort"];
+                                                    if (!string.IsNullOrEmpty(containerPort))
+                                                    {
+                                                        containerPortInfo += containerPort + ", ";
+                                                    }
+                                                }
+                                                containerPortInfo = containerPortInfo.TrimEnd(' ', ',');
+                                            }
+                                            containerNamesListBox.Items.Add($"{containerName} ({containerImage}) - Ports: {containerPortInfo}");
                                         }
                                         JArray envVars = (JArray)container["env"];
                                         if (envVars != null)
@@ -105,34 +123,39 @@ namespace AppLTI
                                     }
                                 }
 
-                                string restartPolicy = (string)deploymentObject["spec"]["template"]["spec"]["restartPolicy"];
-                                int terminationGracePeriodSeconds = (int)deploymentObject["spec"]["template"]["spec"]["terminationGracePeriodSeconds"];
-                                string dnsPolicy = (string)deploymentObject["spec"]["template"]["spec"]["dnsPolicy"];
+                                string restartPolicy = (string)deploymentObject["spec"]?["template"]?["spec"]?["restartPolicy"];
+                                int? terminationGracePeriodSeconds = (int?)deploymentObject["spec"]?["template"]?["spec"]?["terminationGracePeriodSeconds"];
+                                string dnsPolicy = (string)deploymentObject["spec"]?["template"]?["spec"]?["dnsPolicy"];
 
-                                int availableReplicas = (int)deploymentObject["status"]["availableReplicas"];
-                                int readyReplicas = (int)deploymentObject["status"]["readyReplicas"];
-                                int updatedReplicas = (int)deploymentObject["status"]["updatedReplicas"];
-                                int replicas = (int)deploymentObject["status"]["replicas"];
-                                int observedGeneration = (int)deploymentObject["status"]["observedGeneration"];
+                                int? availableReplicas = (int?)deploymentObject["status"]?["availableReplicas"];
+                                int? readyReplicas = (int?)deploymentObject["status"]?["readyReplicas"];
+                                int? updatedReplicas = (int?)deploymentObject["status"]?["updatedReplicas"];
+                                int? replicas = (int?)deploymentObject["status"]?["replicas"];
+                                int? observedGeneration = (int?)deploymentObject["status"]?["observedGeneration"];
                                 string created = (string)deploymentObject["metadata"]["creationTimestamp"];
 
                                 DateTime creationDateTime = DateTime.ParseExact(created, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                                 TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
                                 string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m";
 
+                                if (!availableReplicas.HasValue && !readyReplicas.HasValue)
+                                {
+                                    labelAvailableReplicas.Visible = false;
+                                    labelReadyReplicas.Visible = false;
+                                }
+
                                 labelTimeAgo.Text = timeAgo;
                                 labelnome.Text = name;
                                 labelnamespacename.Text = namespaceName;
                                 managerlabel.Text = manager;
                                 labelrestartpolicy.Text = restartPolicy;
-                                labelgraceperiod.Text = terminationGracePeriodSeconds.ToString();
+                                labelgraceperiod.Text = terminationGracePeriodSeconds?.ToString();
                                 labeldnspolicy.Text = dnsPolicy;
-                                availableReplicaslabel.Text = availableReplicas.ToString();
-                                readyReplicaslabel.Text = readyReplicas.ToString();
-                                updatedReplicaslabel.Text = updatedReplicas.ToString();
-                                replicaslabel.Text = replicas.ToString();
-                                observedGenerationlabel.Text = observedGeneration.ToString();
-
+                                availableReplicaslabel.Text = availableReplicas?.ToString();
+                                readyReplicaslabel.Text = readyReplicas?.ToString();
+                                updatedReplicaslabel.Text = updatedReplicas?.ToString();
+                                replicaslabel.Text = replicas?.ToString();
+                                observedGenerationlabel.Text = observedGeneration?.ToString();
                             }
                         }
                     }
@@ -148,5 +171,6 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while loading deployment: " + ex.Message);
             }
         }
+
     }
 }
