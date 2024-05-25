@@ -58,6 +58,7 @@
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnInterfaceWeb = new System.Windows.Forms.Label();
             this.buttonIngress = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
@@ -412,6 +413,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.btnInterfaceWeb);
             this.panel3.Controls.Add(this.buttonIngress);
             this.panel3.Controls.Add(this.btnTerminal);
             this.panel3.Controls.Add(this.panel4);
@@ -427,6 +429,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1251, 632);
             this.panel3.TabIndex = 214;
+            // 
+            // btnInterfaceWeb
+            // 
+            this.btnInterfaceWeb.AutoSize = true;
+            this.btnInterfaceWeb.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInterfaceWeb.ForeColor = System.Drawing.Color.White;
+            this.btnInterfaceWeb.Location = new System.Drawing.Point(12, 558);
+            this.btnInterfaceWeb.Name = "btnInterfaceWeb";
+            this.btnInterfaceWeb.Size = new System.Drawing.Size(121, 23);
+            this.btnInterfaceWeb.TabIndex = 215;
+            this.btnInterfaceWeb.Text = "Interface Web";
+            this.btnInterfaceWeb.Click += new System.EventHandler(this.btnInterfaceWeb_Click);
             // 
             // buttonIngress
             // 
@@ -554,5 +568,6 @@
         private System.Windows.Forms.Label buttonIngress;
         private System.Windows.Forms.ComboBox comboBoxNamespaceCriar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label btnInterfaceWeb;
     }
 }

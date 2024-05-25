@@ -11,6 +11,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
+using Renci.SshNet;
 
 namespace AppLTI
 {
@@ -23,6 +27,7 @@ namespace AppLTI
         private string portoAPI;
         private string authKey;
         private deploymentsForm parentForm;
+        private IWebDriver driver;
 
         public deploymentsForm()
         {
@@ -496,6 +501,90 @@ namespace AppLTI
             ingressForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             ingressForm.Show();
             this.Dispose();
+        }
+
+        private void RetrievePort()
+        {
+            try
+            {
+                using (var client = new SshClient(routerIp, int.Parse(portoSSH), username, password))
+                {
+                    try
+                    {
+                        client.Connect();
+                        if (client.IsConnected)
+                        {
+                            var portCommand = $"echo '{password}' | sudo -S kubectl get svc kubernetes-dashboard -n kubernetes-dashboard -o jsonpath='{{.spec.ports[0].nodePort}}'";
+                            var portResult = client.RunCommand(portCommand);
+
+                            if (portResult.ExitStatus != 0)
+                            {
+                                MessageBox.Show("Erro a obter o port da API.");
+                                return;
+                            }
+
+                            var port = portResult.Result.Trim();
+
+                            client.Disconnect();
+
+                            OpenRouterPage(routerIp, port, authKey);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Verifique as credenciais - Login falhou.");
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show($"Credenciais incorretas - Login falhou.");
+                        return;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show($"Erro - Login falhou");
+                return;
+            }
+        }
+
+        private void OpenRouterPage(string routerIp, string porto, string authkey)
+        {
+
+            try
+            {
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument("start-maximized");
+                options.AddArgument("disable-infobars");
+                options.AddArgument("disable-extensions");
+                options.AddArgument("disable-notifications");
+                options.AddArgument("--ignore-certificate-errors");
+
+                ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+                service.HideCommandPromptWindow = true;
+
+                driver = new ChromeDriver(service, options);
+
+                driver.Navigate().GoToUrl($"https://{routerIp}:{porto}");
+
+
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement tokenField = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("token")));
+                tokenField.SendKeys(authkey);
+
+                var loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
+                loginButton.Click();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnInterfaceWeb_Click(object sender, EventArgs e)
+        {
+            RetrievePort();
         }
     }
 }
