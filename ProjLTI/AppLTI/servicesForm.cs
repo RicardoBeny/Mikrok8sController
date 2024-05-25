@@ -297,19 +297,19 @@ namespace AppLTI
                 MessageBox.Show("Campo label app tem de ser preenchido.");
                 return;
             }
-
-            if (string.IsNullOrWhiteSpace(textBoxTipo.Text))
-            {
-                MessageBox.Show("Campo tipo tem de ser preenchido.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(textBoxProtocolo.Text))
-            {
-                MessageBox.Show("Campo protocolo tem de ser preenchido.");
-                return;
-            }
             
+            if (comboBoxType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Tipo tem de ser selecionado.");
+                return;
+            }
+
+            if (comboBoxProtocolo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Protocolo tem de ser selecionada.");
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(textBoxPorto.Text))
             {
                 MessageBox.Show("Campo porto tem de ser preenchido.");
@@ -333,19 +333,57 @@ namespace AppLTI
             int port = int.Parse(textBoxPorto.Text);
             int targetPort = int.Parse(textBoxTargetPort.Text);
 
+            string selectedItemText1 = comboBoxType.Items[comboBoxType.SelectedIndex].ToString();
+            string type = selectedItemText1.Trim();
+
+            string selectedItemText2 = comboBoxProtocolo.Items[comboBoxProtocolo.SelectedIndex].ToString();
+            string protocol = selectedItemText2.Trim();
+
+            string proposito = null, owner = null, team = null;
+
+            if (!string.IsNullOrEmpty(textBoxEquipaMetadata.Text))
+            {
+                team = textBoxEquipaMetadata.Text;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxproposito.Text))
+            {
+                proposito = textBoxproposito.Text;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxOwner.Text))
+            {
+                owner = textBoxOwner.Text;
+            }
+
+            var metadata = new JObject
+            {
+                ["name"] = textBoxNome.Text,
+                ["namespace"] = namespacename,
+                ["labels"] = new JObject(),
+                ["annotations"] = new JObject()
+            };
+
+            if (!string.IsNullOrEmpty(team))
+            {
+                metadata["labels"]["team"] = team;
+            }
+
+            if (!string.IsNullOrEmpty(owner))
+            {
+                metadata["annotations"]["owner"] = owner;
+            }
+
+            if (!string.IsNullOrEmpty(proposito))
+            {
+                metadata["annotations"]["purpose"] = proposito;
+            }
+
             var requestBody = new JObject
             {
                 ["apiVersion"] = "v1",
                 ["kind"] = "Service",
-                ["metadata"] = new JObject
-                {
-                    ["name"] = textBoxNome.Text,
-                    ["namespace"] = namespacename,
-                    ["labels"] = new JObject
-                    {
-                        ["app"] = textBoxLabelApp.Text
-                    }
-                },
+                ["metadata"] = namespacename,
                 ["spec"] = new JObject
                 {
                     ["selector"] = new JObject
@@ -356,12 +394,12 @@ namespace AppLTI
             {
                 new JObject
                 {
-                    ["protocol"] = textBoxProtocolo.Text,
+                    ["protocol"] = protocol,
                     ["port"] = port,
                     ["targetPort"] = targetPort
                 }
             },
-                    ["type"] = textBoxTipo.Text
+                    ["type"] = type
                 }
             };
 
