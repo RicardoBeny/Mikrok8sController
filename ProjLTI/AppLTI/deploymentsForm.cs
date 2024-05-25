@@ -135,7 +135,7 @@ namespace AppLTI
         {
             int replicas = int.Parse(textBoxReplicas.Text);
             int? porto = 80, nContainers = 1;
-            string proposito = null, owner = null, anotacoes = null;
+            string proposito = null, owner = null, team = null;
 
             if (!string.IsNullOrEmpty(textBoxPorto.Text))
             {
@@ -147,9 +147,9 @@ namespace AppLTI
                 nContainers = int.Parse(textBoxncontainers.Text);
             }
 
-            if (!string.IsNullOrEmpty(textBoxanotacoes.Text))
+            if (!string.IsNullOrEmpty(textBoxEquipaMetadata.Text))
             {
-                anotacoes = textBoxanotacoes.Text;
+                team = textBoxEquipaMetadata.Text;
             }
 
             if (!string.IsNullOrEmpty(textBoxproposito.Text))
@@ -165,19 +165,25 @@ namespace AppLTI
             var metadata = new JObject
             {
                 ["name"] = textBoxNomeAdd.Text,
-                ["namespace"] = namespacename
+                ["namespace"] = namespacename,
+                ["labels"] = new JObject(),
+                ["annotations"] = new JObject()
             };
-            /*
-            if (!string.IsNullOrEmpty(anotacoes))
+
+            if (!string.IsNullOrEmpty(team))
             {
-                metadata["annotations"] = anotacoes;
+                metadata["labels"]["team"] = team;
             }
-            
+
+            if (!string.IsNullOrEmpty(owner))
+            {
+                metadata["annotations"]["owner"] = owner;
+            }
+
             if (!string.IsNullOrEmpty(proposito))
             {
-                metadata["purpose"] = proposito;
+                metadata["annotations"]["purpose"] = proposito;
             }
-            */
 
             var requestBody = new JObject
             {

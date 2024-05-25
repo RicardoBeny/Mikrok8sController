@@ -62,11 +62,10 @@
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnInterfaceWeb = new System.Windows.Forms.Label();
             this.buttonIngress = new System.Windows.Forms.Label();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBoxanotacoes = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.textBoxproposito = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -77,7 +76,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
             this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
-            this.btnInterfaceWeb = new System.Windows.Forms.Label();
+            this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
@@ -214,7 +214,7 @@
             // 
             // textBoxContainerName
             // 
-            this.textBoxContainerName.Location = new System.Drawing.Point(619, 475);
+            this.textBoxContainerName.Location = new System.Drawing.Point(619, 481);
             this.textBoxContainerName.Name = "textBoxContainerName";
             this.textBoxContainerName.Size = new System.Drawing.Size(134, 20);
             this.textBoxContainerName.TabIndex = 231;
@@ -225,7 +225,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(460, 472);
+            this.label5.Location = new System.Drawing.Point(460, 478);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 23);
             this.label5.TabIndex = 230;
@@ -233,7 +233,7 @@
             // 
             // textBoxLabelApp
             // 
-            this.textBoxLabelApp.Location = new System.Drawing.Point(118, 505);
+            this.textBoxLabelApp.Location = new System.Drawing.Point(118, 507);
             this.textBoxLabelApp.Name = "textBoxLabelApp";
             this.textBoxLabelApp.Size = new System.Drawing.Size(328, 20);
             this.textBoxLabelApp.TabIndex = 233;
@@ -244,7 +244,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(31, 499);
+            this.label6.Location = new System.Drawing.Point(31, 501);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 23);
             this.label6.TabIndex = 232;
@@ -335,7 +335,7 @@
             // 
             this.pictureUsername.Image = ((System.Drawing.Image)(resources.GetObject("pictureUsername.Image")));
             this.pictureUsername.Location = new System.Drawing.Point(1189, 11);
-            this.pictureUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureUsername.Margin = new System.Windows.Forms.Padding(2);
             this.pictureUsername.Name = "pictureUsername";
             this.pictureUsername.Size = new System.Drawing.Size(50, 53);
             this.pictureUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -454,6 +454,18 @@
             this.panel3.Size = new System.Drawing.Size(1251, 636);
             this.panel3.TabIndex = 239;
             // 
+            // btnInterfaceWeb
+            // 
+            this.btnInterfaceWeb.AutoSize = true;
+            this.btnInterfaceWeb.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInterfaceWeb.ForeColor = System.Drawing.Color.White;
+            this.btnInterfaceWeb.Location = new System.Drawing.Point(12, 558);
+            this.btnInterfaceWeb.Name = "btnInterfaceWeb";
+            this.btnInterfaceWeb.Size = new System.Drawing.Size(121, 23);
+            this.btnInterfaceWeb.TabIndex = 250;
+            this.btnInterfaceWeb.Text = "Interface Web";
+            this.btnInterfaceWeb.Click += new System.EventHandler(this.btnInterfaceWeb_Click);
+            // 
             // buttonIngress
             // 
             this.buttonIngress.AutoSize = true;
@@ -481,8 +493,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel4.Controls.Add(this.textBoxanotacoes);
-            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.textBoxEquipaMetadata);
+            this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.textBoxproposito);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label11);
@@ -515,28 +527,9 @@
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
             // 
-            // textBoxanotacoes
-            // 
-            this.textBoxanotacoes.Location = new System.Drawing.Point(550, 373);
-            this.textBoxanotacoes.Name = "textBoxanotacoes";
-            this.textBoxanotacoes.Size = new System.Drawing.Size(204, 20);
-            this.textBoxanotacoes.TabIndex = 249;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(460, 369);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 23);
-            this.label13.TabIndex = 248;
-            this.label13.Text = "Anotação:";
-            // 
             // textBoxproposito
             // 
-            this.textBoxproposito.Location = new System.Drawing.Point(550, 398);
+            this.textBoxproposito.Location = new System.Drawing.Point(550, 376);
             this.textBoxproposito.Name = "textBoxproposito";
             this.textBoxproposito.Size = new System.Drawing.Size(204, 20);
             this.textBoxproposito.TabIndex = 247;
@@ -547,7 +540,7 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(460, 394);
+            this.label12.Location = new System.Drawing.Point(460, 372);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 23);
             this.label12.TabIndex = 246;
@@ -558,7 +551,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(565, 343);
+            this.label11.Location = new System.Drawing.Point(567, 350);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 23);
@@ -570,7 +563,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(565, 444);
+            this.label10.Location = new System.Drawing.Point(565, 450);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 23);
@@ -579,7 +572,7 @@
             // 
             // textBoxncontainers
             // 
-            this.textBoxncontainers.Location = new System.Drawing.Point(597, 504);
+            this.textBoxncontainers.Location = new System.Drawing.Point(597, 510);
             this.textBoxncontainers.Name = "textBoxncontainers";
             this.textBoxncontainers.Size = new System.Drawing.Size(156, 20);
             this.textBoxncontainers.TabIndex = 243;
@@ -590,7 +583,7 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(460, 499);
+            this.label9.Location = new System.Drawing.Point(460, 505);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(142, 23);
             this.label9.TabIndex = 242;
@@ -598,9 +591,9 @@
             // 
             // textBoxOwner
             // 
-            this.textBoxOwner.Location = new System.Drawing.Point(526, 424);
+            this.textBoxOwner.Location = new System.Drawing.Point(526, 402);
             this.textBoxOwner.Name = "textBoxOwner";
-            this.textBoxOwner.Size = new System.Drawing.Size(227, 20);
+            this.textBoxOwner.Size = new System.Drawing.Size(228, 20);
             this.textBoxOwner.TabIndex = 241;
             // 
             // label8
@@ -609,7 +602,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(460, 418);
+            this.label8.Location = new System.Drawing.Point(460, 396);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 23);
             this.label8.TabIndex = 240;
@@ -665,17 +658,24 @@
             this.buttonWizardDeployment.TabStop = false;
             this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
             // 
-            // btnInterfaceWeb
+            // textBoxEquipaMetadata
             // 
-            this.btnInterfaceWeb.AutoSize = true;
-            this.btnInterfaceWeb.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInterfaceWeb.ForeColor = System.Drawing.Color.White;
-            this.btnInterfaceWeb.Location = new System.Drawing.Point(12, 558);
-            this.btnInterfaceWeb.Name = "btnInterfaceWeb";
-            this.btnInterfaceWeb.Size = new System.Drawing.Size(121, 23);
-            this.btnInterfaceWeb.TabIndex = 250;
-            this.btnInterfaceWeb.Text = "Interface Web";
-            this.btnInterfaceWeb.Click += new System.EventHandler(this.btnInterfaceWeb_Click);
+            this.textBoxEquipaMetadata.Location = new System.Drawing.Point(533, 427);
+            this.textBoxEquipaMetadata.Name = "textBoxEquipaMetadata";
+            this.textBoxEquipaMetadata.Size = new System.Drawing.Size(221, 20);
+            this.textBoxEquipaMetadata.TabIndex = 249;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(460, 424);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 23);
+            this.label15.TabIndex = 248;
+            this.label15.Text = "Equipa:";
             // 
             // deploymentsForm
             // 
@@ -748,8 +748,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxproposito;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBoxanotacoes;
         private System.Windows.Forms.Label btnInterfaceWeb;
+        private System.Windows.Forms.TextBox textBoxEquipaMetadata;
+        private System.Windows.Forms.Label label15;
     }
 }

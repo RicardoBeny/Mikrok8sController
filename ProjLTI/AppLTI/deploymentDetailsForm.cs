@@ -75,7 +75,9 @@ namespace AppLTI
                             if (name == deploymentName)
                             {
                                 string namespaceName = (string)deploymentObject["metadata"]["namespace"];
-                                string manager = (string)deploymentObject["metadata"]["managedFields"]?.First?["manager"];
+                                string owner = (string)deploymentObject["metadata"]["annotations"]?["owner"];
+                                string team = (string)deploymentObject["metadata"]["labels"]?["team"];
+                                string purpose = (string)deploymentObject["metadata"]["annotations"]?["purpose"];
 
                                 containerNamesListBox.Items.Clear();
                                 envNamesListBox.Items.Clear();
@@ -144,10 +146,27 @@ namespace AppLTI
                                     labelReadyReplicas.Visible = false;
                                 }
 
+                                if (string.IsNullOrEmpty(owner))
+                                {
+                                    labelmanager.Visible = false;
+                                }
+
+                                if (string.IsNullOrEmpty(team))
+                                {
+                                    label6.Visible = false;
+                                }
+
+                                if (string.IsNullOrEmpty(purpose))
+                                {
+                                    label3.Visible = false;
+                                }
+
                                 labelTimeAgo.Text = timeAgo;
                                 labelnome.Text = name;
                                 labelnamespacename.Text = namespaceName;
-                                managerlabel.Text = manager;
+                                ownerlabel.Text = owner;
+                                labelteam.Text = team;
+                                labelproposito.Text = purpose;
                                 labelrestartpolicy.Text = restartPolicy;
                                 labelgraceperiod.Text = terminationGracePeriodSeconds?.ToString();
                                 labeldnspolicy.Text = dnsPolicy;

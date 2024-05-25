@@ -49,7 +49,7 @@ namespace AppLTI
 
         private void textBoxCommand_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)System.Windows.Forms.Keys.Enter)
             {
                 e.Handled = true;
 
