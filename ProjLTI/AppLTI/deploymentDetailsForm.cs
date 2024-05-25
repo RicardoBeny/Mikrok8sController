@@ -108,7 +108,14 @@ namespace AppLTI
                                                 }
                                                 containerPortInfo = containerPortInfo.TrimEnd(' ', ',');
                                             }
-                                            containerNamesListBox.Items.Add($"{containerName} ({containerImage}) - Ports: {containerPortInfo}");
+                                            if (containerPortInfo == "")
+                                            {
+                                                containerNamesListBox.Items.Add($"{containerName} ({containerImage})");
+                                            }
+                                            else
+                                            {
+                                                containerNamesListBox.Items.Add($"{containerName} ({containerImage}) - Ports: {containerPortInfo}");
+                                            }
                                         }
                                         JArray envVars = (JArray)container["env"];
                                         if (envVars != null)

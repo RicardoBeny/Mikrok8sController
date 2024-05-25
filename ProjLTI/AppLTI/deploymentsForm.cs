@@ -134,7 +134,8 @@ namespace AppLTI
         private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename)
         {
             int replicas = int.Parse(textBoxReplicas.Text);
-            int? porto = 80, nContainers = 1;
+            int nContainers = 1;
+            int porto = -1;
             string proposito = null, owner = null, team = null;
 
             if (!string.IsNullOrEmpty(textBoxPorto.Text))
@@ -225,6 +226,8 @@ namespace AppLTI
                 }
             };
 
+            MessageBox.Show(requestBody.ToString());
+
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespacename}/deployments";
@@ -258,7 +261,7 @@ namespace AppLTI
             }
         }
 
-        private JArray GetContainerDefinitions(int? nContainers, string containerNameBase, string image, int? containerPort)
+        private JArray GetContainerDefinitions(int? nContainers, string containerNameBase, string image, int containerPort)
         {
             if (!nContainers.HasValue || nContainers <= 0)
             {
@@ -273,14 +276,12 @@ namespace AppLTI
                 {
                     ["name"] = containerName,
                     ["image"] = image,
-                    ["ports"] = new JArray
-                    {
-                        new JObject
-                        {
-                            ["containerPort"] = containerPort
-                        }
-                    }
+                    ["ports"] = new JArray()
                 });
+                if (containerPort != -1)
+                {
+                    containers["ports"]["containerPort"] = containerPort;
+                }
             }
             return containers;
         }
