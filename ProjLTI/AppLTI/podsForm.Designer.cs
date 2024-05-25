@@ -61,9 +61,19 @@
             this.btnInterfaceWeb = new System.Windows.Forms.Label();
             this.buttonIngress = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxncontainers = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
             this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxproposito = new System.Windows.Forms.TextBox();
             this.buttonWizardPods = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxOwner = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,17 +86,17 @@
             // 
             this.comboBoxPods.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPods.FormattingEnabled = true;
-            this.comboBoxPods.Location = new System.Drawing.Point(584, 401);
+            this.comboBoxPods.Location = new System.Drawing.Point(774, 394);
             this.comboBoxPods.Name = "comboBoxPods";
-            this.comboBoxPods.Size = new System.Drawing.Size(324, 21);
+            this.comboBoxPods.Size = new System.Drawing.Size(242, 21);
             this.comboBoxPods.TabIndex = 204;
             // 
             // buttonDeletePods
             // 
             this.buttonDeletePods.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeletePods.Location = new System.Drawing.Point(676, 356);
+            this.buttonDeletePods.Location = new System.Drawing.Point(842, 356);
             this.buttonDeletePods.Name = "buttonDeletePods";
-            this.buttonDeletePods.Size = new System.Drawing.Size(118, 32);
+            this.buttonDeletePods.Size = new System.Drawing.Size(108, 32);
             this.buttonDeletePods.TabIndex = 203;
             this.buttonDeletePods.Text = "Apagar Pod";
             this.buttonDeletePods.UseVisualStyleBackColor = true;
@@ -95,7 +105,7 @@
             // buttonCreateNamespace
             // 
             this.buttonCreateNamespace.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateNamespace.Location = new System.Drawing.Point(26, 356);
+            this.buttonCreateNamespace.Location = new System.Drawing.Point(26, 341);
             this.buttonCreateNamespace.Name = "buttonCreateNamespace";
             this.buttonCreateNamespace.Size = new System.Drawing.Size(100, 32);
             this.buttonCreateNamespace.TabIndex = 202;
@@ -109,15 +119,15 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 399);
+            this.label1.Location = new System.Drawing.Point(22, 379);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 23);
+            this.label1.Size = new System.Drawing.Size(64, 23);
             this.label1.TabIndex = 201;
-            this.label1.Text = "Nome:";
+            this.label1.Text = "Nome*:";
             // 
             // textBoxNomeAdd
             // 
-            this.textBoxNomeAdd.Location = new System.Drawing.Point(87, 402);
+            this.textBoxNomeAdd.Location = new System.Drawing.Point(87, 382);
             this.textBoxNomeAdd.Name = "textBoxNomeAdd";
             this.textBoxNomeAdd.Size = new System.Drawing.Size(306, 20);
             this.textBoxNomeAdd.TabIndex = 200;
@@ -138,11 +148,11 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 424);
+            this.label2.Location = new System.Drawing.Point(22, 526);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 23);
+            this.label2.Size = new System.Drawing.Size(87, 23);
             this.label2.TabIndex = 205;
-            this.label2.Text = "Imagem:";
+            this.label2.Text = "Imagem *:";
             // 
             // comboBoxImage
             // 
@@ -178,7 +188,7 @@
             "rabbitmq:latest",
             "wurstmeister/kafka:latest",
             "portainer/portainer-ce:latest"});
-            this.comboBoxImage.Location = new System.Drawing.Point(107, 429);
+            this.comboBoxImage.Location = new System.Drawing.Point(107, 528);
             this.comboBoxImage.Name = "comboBoxImage";
             this.comboBoxImage.Size = new System.Drawing.Size(286, 21);
             this.comboBoxImage.TabIndex = 206;
@@ -189,7 +199,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 506);
+            this.label3.Location = new System.Drawing.Point(22, 457);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 23);
             this.label3.TabIndex = 207;
@@ -197,7 +207,7 @@
             // 
             // textBoxPorto
             // 
-            this.textBoxPorto.Location = new System.Drawing.Point(85, 509);
+            this.textBoxPorto.Location = new System.Drawing.Point(85, 460);
             this.textBoxPorto.Name = "textBoxPorto";
             this.textBoxPorto.Size = new System.Drawing.Size(308, 20);
             this.textBoxPorto.TabIndex = 208;
@@ -228,9 +238,9 @@
             // 
             // textBoxContainerName
             // 
-            this.textBoxContainerName.Location = new System.Drawing.Point(169, 483);
+            this.textBoxContainerName.Location = new System.Drawing.Point(85, 483);
             this.textBoxContainerName.Name = "textBoxContainerName";
-            this.textBoxContainerName.Size = new System.Drawing.Size(224, 20);
+            this.textBoxContainerName.Size = new System.Drawing.Size(308, 20);
             this.textBoxContainerName.TabIndex = 212;
             // 
             // label5
@@ -241,9 +251,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(22, 480);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 23);
+            this.label5.Size = new System.Drawing.Size(67, 23);
             this.label5.TabIndex = 211;
-            this.label5.Text = "Container Name:";
+            this.label5.Text = "Nome *:";
             // 
             // labelDashboard
             // 
@@ -457,11 +467,21 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.textBoxncontainers);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.textBoxEquipaMetadata);
             this.panel4.Controls.Add(this.comboBoxNamespaceCriar);
+            this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.textBoxproposito);
             this.panel4.Controls.Add(this.buttonWizardPods);
+            this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.listBoxPods);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.textBoxOwner);
             this.panel4.Controls.Add(this.buttonCreateNamespace);
+            this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.textBoxContainerName);
             this.panel4.Controls.Add(this.buttonDeletePods);
             this.panel4.Controls.Add(this.label5);
@@ -477,16 +497,66 @@
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(155, 434);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 23);
+            this.label7.TabIndex = 278;
+            this.label7.Text = "Container";
+            // 
+            // textBoxncontainers
+            // 
+            this.textBoxncontainers.Location = new System.Drawing.Point(170, 506);
+            this.textBoxncontainers.Name = "textBoxncontainers";
+            this.textBoxncontainers.Size = new System.Drawing.Size(223, 20);
+            this.textBoxncontainers.TabIndex = 277;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(22, 503);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(142, 23);
+            this.label9.TabIndex = 276;
+            this.label9.Text = "Nº de containers:";
+            // 
+            // textBoxEquipaMetadata
+            // 
+            this.textBoxEquipaMetadata.Location = new System.Drawing.Point(489, 512);
+            this.textBoxEquipaMetadata.Name = "textBoxEquipaMetadata";
+            this.textBoxEquipaMetadata.Size = new System.Drawing.Size(256, 20);
+            this.textBoxEquipaMetadata.TabIndex = 275;
+            // 
             // comboBoxNamespaceCriar
             // 
             this.comboBoxNamespaceCriar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNamespaceCriar.FormattingEnabled = true;
             this.comboBoxNamespaceCriar.Items.AddRange(new object[] {
             "Todos"});
-            this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(144, 457);
+            this.comboBoxNamespaceCriar.Location = new System.Drawing.Point(144, 408);
             this.comboBoxNamespaceCriar.Name = "comboBoxNamespaceCriar";
             this.comboBoxNamespaceCriar.Size = new System.Drawing.Size(249, 21);
             this.comboBoxNamespaceCriar.TabIndex = 240;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(416, 509);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 23);
+            this.label15.TabIndex = 274;
+            this.label15.Text = "Equipa:";
             // 
             // label6
             // 
@@ -494,21 +564,71 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(22, 455);
+            this.label6.Location = new System.Drawing.Point(22, 406);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 23);
+            this.label6.Size = new System.Drawing.Size(124, 23);
             this.label6.TabIndex = 241;
-            this.label6.Text = "Namespaces:";
+            this.label6.Text = "Namespaces *:";
+            // 
+            // textBoxproposito
+            // 
+            this.textBoxproposito.Location = new System.Drawing.Point(506, 461);
+            this.textBoxproposito.Name = "textBoxproposito";
+            this.textBoxproposito.Size = new System.Drawing.Size(239, 20);
+            this.textBoxproposito.TabIndex = 273;
             // 
             // buttonWizardPods
             // 
             this.buttonWizardPods.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardPods.Image")));
-            this.buttonWizardPods.Location = new System.Drawing.Point(132, 356);
+            this.buttonWizardPods.Location = new System.Drawing.Point(132, 341);
             this.buttonWizardPods.Name = "buttonWizardPods";
             this.buttonWizardPods.Size = new System.Drawing.Size(39, 32);
             this.buttonWizardPods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonWizardPods.TabIndex = 239;
             this.buttonWizardPods.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(416, 457);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 23);
+            this.label12.TabIndex = 272;
+            this.label12.Text = "Propósito:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(532, 435);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 23);
+            this.label11.TabIndex = 271;
+            this.label11.Text = "MetaData";
+            // 
+            // textBoxOwner
+            // 
+            this.textBoxOwner.Location = new System.Drawing.Point(482, 487);
+            this.textBoxOwner.Name = "textBoxOwner";
+            this.textBoxOwner.Size = new System.Drawing.Size(263, 20);
+            this.textBoxOwner.TabIndex = 270;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(416, 481);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 23);
+            this.label8.TabIndex = 269;
+            this.label8.Text = "Owner:";
             // 
             // podsForm
             // 
@@ -569,5 +689,15 @@
         private System.Windows.Forms.ComboBox comboBoxNamespaceCriar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label btnInterfaceWeb;
+        private System.Windows.Forms.TextBox textBoxEquipaMetadata;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxproposito;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxOwner;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxncontainers;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
     }
 }

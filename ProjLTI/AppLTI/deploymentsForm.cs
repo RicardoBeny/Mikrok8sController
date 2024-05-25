@@ -226,8 +226,6 @@ namespace AppLTI
                 }
             };
 
-            MessageBox.Show(requestBody.ToString());
-
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespacename}/deployments";

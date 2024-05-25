@@ -73,11 +73,13 @@ namespace AppLTI
 
                             if (name == podName)
                             {
+                                string owner = (string)podObject["metadata"]["annotations"]?["owner"];
+                                string team = (string)podObject["metadata"]["labels"]?["team"];
+                                string purpose = (string)podObject["metadata"]["annotations"]?["purpose"];
                                 string namespaceName = (string)podObject["metadata"]?["namespace"];
                                 string uid = (string)podObject["metadata"]?["uid"];
                                 string appLabel = (string)podObject["metadata"]?["labels"]?["app"];
                                 string podTemplateHash = (string)podObject["metadata"]?["labels"]?["pod-template-hash"];
-                                string manager = (string)podObject["metadata"]?["managedFields"]?.First()?["manager"];
 
                                 JArray containers = (JArray)podObject["spec"]?["containers"];
 
@@ -91,7 +93,30 @@ namespace AppLTI
                                         string containerName = (string)container["name"];
                                         if (!string.IsNullOrEmpty(containerName))
                                         {
-                                            containerNamesListBox.Items.Add(containerName);
+                                            string containerImage = (string)container["image"];
+
+                                            JArray containerPorts = (JArray)container["ports"];
+                                            string containerPortInfo = "";
+                                            if (containerPorts != null && containerPorts.Count > 0)
+                                            {
+                                                foreach (JObject portObj in containerPorts)
+                                                {
+                                                    string containerPort = (string)portObj["containerPort"];
+                                                    if (!string.IsNullOrEmpty(containerPort))
+                                                    {
+                                                        containerPortInfo += containerPort + ", ";
+                                                    }
+                                                }
+                                                containerPortInfo = containerPortInfo.TrimEnd(' ', ',');
+                                            }
+                                            if (containerPortInfo == "")
+                                            {
+                                                containerNamesListBox.Items.Add($"{containerName} ({containerImage})");
+                                            }
+                                            else
+                                            {
+                                                containerNamesListBox.Items.Add($"{containerName} ({containerImage}) - Ports: {containerPortInfo}");
+                                            }
                                         }
 
                                         JArray envVars = (JArray)container["env"];
@@ -119,12 +144,28 @@ namespace AppLTI
                                 string hostIP = (string)podObject["status"]?["hostIP"];
                                 string podIP = (string)podObject["status"]?["podIP"];
 
+                                if (string.IsNullOrEmpty(owner))
+                                {
+                                    labelmanager.Visible = false;
+                                }
+
+                                if (string.IsNullOrEmpty(team))
+                                {
+                                    label6.Visible = false;
+                                }
+
+                                if (string.IsNullOrEmpty(purpose))
+                                {
+                                    label3.Visible = false;
+                                }
+
                                 labelnamespacename.Text = namespaceName;
                                 uidlabel.Text = uid;
-                                labelapplabel.Text = appLabel;
                                 labeltemplatehash.Text = podTemplateHash;
-                                managerlabel.Text = manager;
-
+                                managerlabel.Text = owner;
+                                ownerlabel.Text = owner;
+                                labelteam.Text = team;
+                                labelproposito.Text = purpose;
                                 restartpolicylabel.Text = restartPolicy;
                                 terminationGracePeriodSecondslabel.Text = terminationGracePeriodSeconds.ToString();
                                 dnsPolicylabel.Text = dnsPolicy;

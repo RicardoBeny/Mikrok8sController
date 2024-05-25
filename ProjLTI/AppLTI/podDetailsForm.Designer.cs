@@ -47,8 +47,6 @@
             this.labelAvailableReplicas = new System.Windows.Forms.Label();
             this.labeltemplatehash = new System.Windows.Forms.Label();
             this.labeldns = new System.Windows.Forms.Label();
-            this.labelapplabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.uidlabel = new System.Windows.Forms.Label();
             this.labeluid = new System.Windows.Forms.Label();
             this.labelnamespacename = new System.Windows.Forms.Label();
@@ -59,6 +57,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.podIPlabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.labelproposito = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelteam = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ownerlabel = new System.Windows.Forms.Label();
+            this.labelmanager = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +103,7 @@
             // 
             this.phaselabel.AutoSize = true;
             this.phaselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phaselabel.Location = new System.Drawing.Point(69, 305);
+            this.phaselabel.Location = new System.Drawing.Point(69, 272);
             this.phaselabel.Name = "phaselabel";
             this.phaselabel.Size = new System.Drawing.Size(86, 20);
             this.phaselabel.TabIndex = 59;
@@ -109,7 +113,7 @@
             // 
             this.labeltempodeCriacao.AutoSize = true;
             this.labeltempodeCriacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltempodeCriacao.Location = new System.Drawing.Point(9, 305);
+            this.labeltempodeCriacao.Location = new System.Drawing.Point(9, 272);
             this.labeltempodeCriacao.Name = "labeltempodeCriacao";
             this.labeltempodeCriacao.Size = new System.Drawing.Size(64, 20);
             this.labeltempodeCriacao.TabIndex = 58;
@@ -129,7 +133,7 @@
             // 
             this.labelcontainerNamesListBox.AutoSize = true;
             this.labelcontainerNamesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcontainerNamesListBox.Location = new System.Drawing.Point(9, 332);
+            this.labelcontainerNamesListBox.Location = new System.Drawing.Point(9, 299);
             this.labelcontainerNamesListBox.Name = "labelcontainerNamesListBox";
             this.labelcontainerNamesListBox.Size = new System.Drawing.Size(66, 20);
             this.labelcontainerNamesListBox.TabIndex = 56;
@@ -139,7 +143,7 @@
             // 
             this.serviceAccountNamelabel.AutoSize = true;
             this.serviceAccountNamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceAccountNamelabel.Location = new System.Drawing.Point(133, 276);
+            this.serviceAccountNamelabel.Location = new System.Drawing.Point(133, 243);
             this.serviceAccountNamelabel.Name = "serviceAccountNamelabel";
             this.serviceAccountNamelabel.Size = new System.Drawing.Size(159, 20);
             this.serviceAccountNamelabel.TabIndex = 55;
@@ -149,7 +153,7 @@
             // 
             this.labelObservedGeneration.AutoSize = true;
             this.labelObservedGeneration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelObservedGeneration.Location = new System.Drawing.Point(9, 276);
+            this.labelObservedGeneration.Location = new System.Drawing.Point(9, 243);
             this.labelObservedGeneration.Name = "labelObservedGeneration";
             this.labelObservedGeneration.Size = new System.Drawing.Size(128, 20);
             this.labelObservedGeneration.TabIndex = 54;
@@ -159,7 +163,7 @@
             // 
             this.dnsPolicylabel.AutoSize = true;
             this.dnsPolicylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dnsPolicylabel.Location = new System.Drawing.Point(96, 249);
+            this.dnsPolicylabel.Location = new System.Drawing.Point(96, 216);
             this.dnsPolicylabel.Name = "dnsPolicylabel";
             this.dnsPolicylabel.Size = new System.Drawing.Size(108, 20);
             this.dnsPolicylabel.TabIndex = 53;
@@ -169,7 +173,7 @@
             // 
             this.labelReplicas.AutoSize = true;
             this.labelReplicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReplicas.Location = new System.Drawing.Point(9, 249);
+            this.labelReplicas.Location = new System.Drawing.Point(9, 216);
             this.labelReplicas.Name = "labelReplicas";
             this.labelReplicas.Size = new System.Drawing.Size(91, 20);
             this.labelReplicas.TabIndex = 52;
@@ -179,7 +183,7 @@
             // 
             this.terminationGracePeriodSecondslabel.AutoSize = true;
             this.terminationGracePeriodSecondslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.terminationGracePeriodSecondslabel.Location = new System.Drawing.Point(114, 221);
+            this.terminationGracePeriodSecondslabel.Location = new System.Drawing.Point(114, 188);
             this.terminationGracePeriodSecondslabel.Name = "terminationGracePeriodSecondslabel";
             this.terminationGracePeriodSecondslabel.Size = new System.Drawing.Size(273, 20);
             this.terminationGracePeriodSecondslabel.TabIndex = 51;
@@ -189,7 +193,7 @@
             // 
             this.labelUpdatedReplicas.AutoSize = true;
             this.labelUpdatedReplicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUpdatedReplicas.Location = new System.Drawing.Point(9, 221);
+            this.labelUpdatedReplicas.Location = new System.Drawing.Point(9, 188);
             this.labelUpdatedReplicas.Name = "labelUpdatedReplicas";
             this.labelUpdatedReplicas.Size = new System.Drawing.Size(106, 20);
             this.labelUpdatedReplicas.TabIndex = 50;
@@ -199,7 +203,7 @@
             // 
             this.restartpolicylabel.AutoSize = true;
             this.restartpolicylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restartpolicylabel.Location = new System.Drawing.Point(114, 193);
+            this.restartpolicylabel.Location = new System.Drawing.Point(114, 160);
             this.restartpolicylabel.Name = "restartpolicylabel";
             this.restartpolicylabel.Size = new System.Drawing.Size(127, 20);
             this.restartpolicylabel.TabIndex = 49;
@@ -209,7 +213,7 @@
             // 
             this.labelReadyReplicas.AutoSize = true;
             this.labelReadyReplicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReadyReplicas.Location = new System.Drawing.Point(9, 193);
+            this.labelReadyReplicas.Location = new System.Drawing.Point(9, 160);
             this.labelReadyReplicas.Name = "labelReadyReplicas";
             this.labelReadyReplicas.Size = new System.Drawing.Size(110, 20);
             this.labelReadyReplicas.TabIndex = 48;
@@ -219,7 +223,7 @@
             // 
             this.managerlabel.AutoSize = true;
             this.managerlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managerlabel.Location = new System.Drawing.Point(83, 166);
+            this.managerlabel.Location = new System.Drawing.Point(83, 133);
             this.managerlabel.Name = "managerlabel";
             this.managerlabel.Size = new System.Drawing.Size(72, 20);
             this.managerlabel.TabIndex = 47;
@@ -229,7 +233,7 @@
             // 
             this.labelAvailableReplicas.AutoSize = true;
             this.labelAvailableReplicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAvailableReplicas.Location = new System.Drawing.Point(9, 166);
+            this.labelAvailableReplicas.Location = new System.Drawing.Point(9, 133);
             this.labelAvailableReplicas.Name = "labelAvailableReplicas";
             this.labelAvailableReplicas.Size = new System.Drawing.Size(76, 20);
             this.labelAvailableReplicas.TabIndex = 46;
@@ -239,7 +243,7 @@
             // 
             this.labeltemplatehash.AutoSize = true;
             this.labeltemplatehash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltemplatehash.Location = new System.Drawing.Point(133, 138);
+            this.labeltemplatehash.Location = new System.Drawing.Point(133, 105);
             this.labeltemplatehash.Name = "labeltemplatehash";
             this.labeltemplatehash.Size = new System.Drawing.Size(106, 20);
             this.labeltemplatehash.TabIndex = 45;
@@ -249,31 +253,11 @@
             // 
             this.labeldns.AutoSize = true;
             this.labeldns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeldns.Location = new System.Drawing.Point(9, 138);
+            this.labeldns.Location = new System.Drawing.Point(9, 105);
             this.labeldns.Name = "labeldns";
             this.labeldns.Size = new System.Drawing.Size(121, 20);
             this.labeldns.TabIndex = 44;
             this.labeldns.Text = "Template Hash:";
-            // 
-            // labelapplabel
-            // 
-            this.labelapplabel.AutoSize = true;
-            this.labelapplabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelapplabel.Location = new System.Drawing.Point(96, 110);
-            this.labelapplabel.Name = "labelapplabel";
-            this.labelapplabel.Size = new System.Drawing.Size(69, 20);
-            this.labelapplabel.TabIndex = 43;
-            this.labelapplabel.Text = "applabel";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 20);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "App Label:";
             // 
             // uidlabel
             // 
@@ -337,7 +321,7 @@
             // 
             this.hostIPlabel.AutoSize = true;
             this.hostIPlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hostIPlabel.Location = new System.Drawing.Point(77, 332);
+            this.hostIPlabel.Location = new System.Drawing.Point(77, 299);
             this.hostIPlabel.Name = "hostIPlabel";
             this.hostIPlabel.Size = new System.Drawing.Size(88, 20);
             this.hostIPlabel.TabIndex = 60;
@@ -357,7 +341,7 @@
             // 
             this.podIPlabel.AutoSize = true;
             this.podIPlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.podIPlabel.Location = new System.Drawing.Point(68, 360);
+            this.podIPlabel.Location = new System.Drawing.Point(68, 327);
             this.podIPlabel.Name = "podIPlabel";
             this.podIPlabel.Size = new System.Drawing.Size(84, 20);
             this.podIPlabel.TabIndex = 63;
@@ -367,11 +351,71 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 360);
+            this.label5.Location = new System.Drawing.Point(9, 327);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 62;
             this.label5.Text = "Pod IP:";
+            // 
+            // labelproposito
+            // 
+            this.labelproposito.AutoSize = true;
+            this.labelproposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelproposito.Location = new System.Drawing.Point(423, 83);
+            this.labelproposito.Name = "labelproposito";
+            this.labelproposito.Size = new System.Drawing.Size(75, 20);
+            this.labelproposito.TabIndex = 69;
+            this.labelproposito.Text = "proposito";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(347, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 68;
+            this.label3.Text = "Propósito:";
+            // 
+            // labelteam
+            // 
+            this.labelteam.AutoSize = true;
+            this.labelteam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelteam.Location = new System.Drawing.Point(396, 54);
+            this.labelteam.Name = "labelteam";
+            this.labelteam.Size = new System.Drawing.Size(45, 20);
+            this.labelteam.TabIndex = 67;
+            this.labelteam.Text = "team";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(347, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "Team:";
+            // 
+            // ownerlabel
+            // 
+            this.ownerlabel.AutoSize = true;
+            this.ownerlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ownerlabel.Location = new System.Drawing.Point(402, 112);
+            this.ownerlabel.Name = "ownerlabel";
+            this.ownerlabel.Size = new System.Drawing.Size(72, 20);
+            this.ownerlabel.TabIndex = 65;
+            this.ownerlabel.Text = "manager";
+            // 
+            // labelmanager
+            // 
+            this.labelmanager.AutoSize = true;
+            this.labelmanager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelmanager.Location = new System.Drawing.Point(347, 112);
+            this.labelmanager.Name = "labelmanager";
+            this.labelmanager.Size = new System.Drawing.Size(59, 20);
+            this.labelmanager.TabIndex = 64;
+            this.labelmanager.Text = "Owner:";
             // 
             // podDetailsForm
             // 
@@ -379,6 +423,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(584, 661);
+            this.Controls.Add(this.labelproposito);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelteam);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ownerlabel);
+            this.Controls.Add(this.labelmanager);
             this.Controls.Add(this.podIPlabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -399,8 +449,6 @@
             this.Controls.Add(this.labelAvailableReplicas);
             this.Controls.Add(this.labeltemplatehash);
             this.Controls.Add(this.labeldns);
-            this.Controls.Add(this.labelapplabel);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.uidlabel);
             this.Controls.Add(this.labeluid);
             this.Controls.Add(this.labelnamespacename);
@@ -440,8 +488,6 @@
         private System.Windows.Forms.Label labelAvailableReplicas;
         private System.Windows.Forms.Label labeltemplatehash;
         private System.Windows.Forms.Label labeldns;
-        private System.Windows.Forms.Label labelapplabel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label uidlabel;
         private System.Windows.Forms.Label labeluid;
         private System.Windows.Forms.Label labelnamespacename;
@@ -452,5 +498,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label podIPlabel;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelproposito;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelteam;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ownerlabel;
+        private System.Windows.Forms.Label labelmanager;
     }
 }

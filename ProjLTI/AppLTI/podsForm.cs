@@ -99,33 +99,27 @@ namespace AppLTI
 
         private async void buttonCreateNamespace_Click(object sender, EventArgs e)
         {
-            if (comboBoxNamespaces.SelectedIndex == -1)
-            {
-                MessageBox.Show("Namespace tem de ser selecionada.");
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(textBoxNomeAdd.Text))
             {
                 MessageBox.Show("Campo nome tem de ser preenchido.");
                 return;
             }
 
-            if (comboBoxImage.SelectedIndex == -1)
-            {
-                MessageBox.Show("Imagem tem de ser selecionada.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(textBoxPorto.Text))
-            {
-                MessageBox.Show("Campo porto tem de ser preenchido.");
-                return;
-            }
-
             if (comboBoxNamespaceCriar.SelectedIndex == -1)
             {
                 MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+            
+            if (string.IsNullOrWhiteSpace(textBoxContainerName.Text))
+            {
+                MessageBox.Show("Campo nome do container tem de ser preenchido.");
+                return;
+            }
+
+            if (comboBoxImage.SelectedIndex == -1)
+            {
+                MessageBox.Show("Imagem tem de ser selecionada.");
                 return;
             }
 
@@ -137,29 +131,65 @@ namespace AppLTI
 
         private async Task CreatePods(string routerIp, string portoAPI, string authToken, string namespacename)
         {
+            int nContainers = 1;
+            int porto = -1;
+            string proposito = null, owner = null, team = null;
+
+            if (!string.IsNullOrEmpty(textBoxPorto.Text))
+            {
+                porto = int.Parse(textBoxPorto.Text);
+            }
+
+            if (!string.IsNullOrEmpty(textBoxncontainers.Text))
+            {
+                nContainers = int.Parse(textBoxncontainers.Text);
+            }
+
+            if (!string.IsNullOrEmpty(textBoxEquipaMetadata.Text))
+            {
+                team = textBoxEquipaMetadata.Text;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxproposito.Text))
+            {
+                proposito = textBoxproposito.Text;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxOwner.Text))
+            {
+                owner = textBoxOwner.Text;
+            }
+
+            var metadata = new JObject
+            {
+                ["name"] = textBoxNomeAdd.Text,
+                ["namespace"] = namespacename,
+                ["labels"] = new JObject(),
+                ["annotations"] = new JObject()
+            };
+
+            if (!string.IsNullOrEmpty(team))
+            {
+                metadata["labels"]["team"] = team;
+            }
+
+            if (!string.IsNullOrEmpty(owner))
+            {
+                metadata["annotations"]["owner"] = owner;
+            }
+
+            if (!string.IsNullOrEmpty(proposito))
+            {
+                metadata["annotations"]["purpose"] = proposito;
+            }
+
             var requestBody = new JObject();
             requestBody["apiVersion"] = "v1";
             requestBody["kind"] = "Pod";
-
-            var metadata = new JObject();
-            metadata["name"] = textBoxNomeAdd.Text;
             requestBody["metadata"] = metadata;
 
             var spec = new JObject();
-
-            var containers = new JArray();
-            var container = new JObject();
-            container["name"] = textBoxContainerName.Text;
-            container["image"] = comboBoxImage.SelectedItem.ToString();
-            var ports = new JArray();
-            var port = new JObject();
-            port["containerPort"] = int.Parse(textBoxPorto.Text);
-            ports.Add(port);
-            container["ports"] = ports;
-            containers.Add(container);
-
-            spec["containers"] = containers;
-
+            spec["containers"] = GetContainerDefinitions(nContainers, textBoxContainerName.Text, comboBoxImage.SelectedItem.ToString(), porto);
             requestBody["spec"] = spec;
 
             try
@@ -185,7 +215,7 @@ namespace AppLTI
                     else
                     {
                         string errorMessage = await response.Content.ReadAsStringAsync();
-                        MessageBox.Show("Falha ao adicionar o Pod . Mensagem de erro: " + errorMessage);
+                        MessageBox.Show("Falha ao adicionar o Pod. Mensagem de erro: " + errorMessage);
                     }
                 }
             }
@@ -193,6 +223,41 @@ namespace AppLTI
             {
                 MessageBox.Show("Ocorreu um erro ao adicionar o Pod: " + ex.Message);
             }
+        }
+
+
+        private JArray GetContainerDefinitions(int? nContainers, string containerNameBase, string image, int containerPort)
+        {
+            if (!nContainers.HasValue || nContainers <= 0)
+            {
+                return new JArray();
+            }
+
+            var containers = new JArray();
+            for (int i = 0; i < nContainers.Value; i++)
+            {
+                var containerName = $"{containerNameBase}{i + 1}";
+                var portsArray = new JArray();
+
+                if (containerPort != -1)
+                {
+                    portsArray.Add(new JObject
+                    {
+                        ["containerPort"] = containerPort
+                    });
+                }
+
+                var container = new JObject
+                {
+                    ["name"] = containerName,
+                    ["image"] = image,
+                    ["ports"] = portsArray
+                };
+
+                containers.Add(container);
+            }
+
+            return containers;
         }
 
         private async Task LoadPods(string routerIp, string portoAPI, string authToken, string namespacename)
