@@ -14,6 +14,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using Renci.SshNet;
+using System.IO;
 
 namespace AppLTI
 {
@@ -428,6 +429,7 @@ namespace AppLTI
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Ingress created successfully.");
+                        escreverNoHosts(textBoxHost.Text,routerIp);
                         await LoadIngress(routerIp, portoAPI, authToken, namespacename);
                     }
                     else
@@ -443,6 +445,36 @@ namespace AppLTI
             }
         }
 
+        private void escreverNoHosts(string host, string routerIp)
+        {
+            string hostsFilePath = @"C:\Windows\System32\drivers\etc\hosts";
+            string newEntry = $"\n{routerIp}\t{host}";
+            try
+            {
+                if (!IsAdministrator())
+                {
+                    MessageBox.Show("This operation requires administrative privileges. Please run the application as an administrator.");
+                    return;
+                }
+                using (StreamWriter sw = File.AppendText(hostsFilePath))
+                {
+                    sw.WriteLine(newEntry);
+                }
+
+                MessageBox.Show("Entry added to hosts file successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while writing to the hosts file: " + ex.Message);
+            }
+        }
+
+        private bool IsAdministrator()
+        {
+            var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+            var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+        }
 
         private async void buttonDeleteDeployments_Click(object sender, EventArgs e)
         {
@@ -548,7 +580,6 @@ namespace AppLTI
 
         private void OpenRouterPage(string routerIp, string porto, string authkey)
         {
-
             try
             {
                 ChromeOptions options = new ChromeOptions();
@@ -582,6 +613,45 @@ namespace AppLTI
         private void btnInterfaceWeb_Click(object sender, EventArgs e)
         {
             RetrievePort();
+        }
+
+        private void listBoxIngress_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxIngress.SelectedIndex != -1)
+            {
+                string selectedItem = listBoxIngress.SelectedItem.ToString();
+
+                string[] parts = selectedItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length > 0)
+                {
+                    string ingressName = parts[1].Trim();
+                    OpenIngressPage(ingressName);
+                }
+            }
+        }
+
+        private void OpenIngressPage(string ingressname)
+        {
+            try
+            {
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument("start-maximized");
+                options.AddArgument("disable-infobars");
+                options.AddArgument("disable-extensions");
+                options.AddArgument("disable-notifications");
+                options.AddArgument("--ignore-certificate-errors");
+
+                ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+                service.HideCommandPromptWindow = true;
+
+                driver = new ChromeDriver(service, options);
+
+                driver.Navigate().GoToUrl($"https://{ingressname}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

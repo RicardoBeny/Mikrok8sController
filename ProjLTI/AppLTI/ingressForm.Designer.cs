@@ -295,6 +295,7 @@
             this.listBoxIngress.ScrollAlwaysVisible = true;
             this.listBoxIngress.Size = new System.Drawing.Size(969, 290);
             this.listBoxIngress.TabIndex = 216;
+            this.listBoxIngress.SelectedIndexChanged += new System.EventHandler(this.listBoxIngress_SelectedIndexChanged);
             // 
             // label2
             // 
