@@ -148,12 +148,12 @@ namespace AppLTI
                                     return;
                                 }
 
-                                mainPage mainPageForm = new mainPage();
                                 checkBoxGuardarPassword.Checked = false;
-                                clearTextBoxes();
+                                mainPage mainPageForm = new mainPage();
                                 mainPageForm.SetCredentials(routerIp.Trim(), username, password, portoSSH, portoAPI, authToken);
                                 mainPageForm.Show();
                                 MessageBox.Show("Login efetuado com sucesso!");
+                                clearTextBoxes();
                                 listCredentials();
                             }
                             else

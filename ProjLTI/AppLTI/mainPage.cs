@@ -8,6 +8,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Speech.Recognition;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +25,8 @@ namespace AppLTI
 {
     public partial class mainPage : Form
     {
+        SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
+        SpeechSynthesizer speech = new SpeechSynthesizer();
         private IWebDriver driver;
         private string routerIp;
         private string username;
@@ -34,7 +38,109 @@ namespace AppLTI
         public mainPage()
         {
             InitializeComponent();
+            InitializeVoiceRecognition();
         }
+
+        private void InitializeVoiceRecognition()
+        {
+            try
+            {
+                if (SpeechRecognitionEngine.InstalledRecognizers().Count > 0)
+                {
+                    recognizer = new SpeechRecognitionEngine();
+                    recognizer.SetInputToDefaultAudioDevice();
+                    recognizer.SpeechRecognized += recEngine_SpeechRecognized;
+
+                    Choices choices = new Choices();
+                    choices.Add(new string[] { "pods", "nodes", "terminal", "namespaces", "deployments", "services", "ingress", "web page"});
+                    GrammarBuilder gb = new GrammarBuilder();
+                    gb.Append(choices);
+                    gb.Culture = recognizer.RecognizerInfo.Culture;
+                    Grammar g = new Grammar(gb);
+
+                    recognizer.LoadGrammar(g);
+                    recognizer.RecognizeAsync(RecognizeMode.Multiple);
+
+                    speech.SelectVoiceByHints(VoiceGender.Male);
+                }
+                else
+                {
+                    MessageBox.Show("No speech recognizers installed. Please install a speech recognizer.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Voice recognition initialization failed: {ex.Message}");
+            }
+        }
+
+        private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            string result = e.Result.Text;
+
+            Task.Run(() =>
+            {
+                speech.SpeakAsync("Redirecting to" + result);
+
+                Invoke(new Action(() =>
+                {
+                    if (result == "pods")
+                    {
+                        podsForm podsForm = new podsForm();
+                        podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        podsForm.Show();
+                        this.Hide();
+                    }
+                    else if (result == "nodes")
+                    {
+                        nodesForm nodesForm = new nodesForm();
+                        nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        nodesForm.Show();
+                        this.Hide();
+                    }
+                    else if (result == "terminal")
+                    {
+                        sshConection sshConection = new sshConection();
+                        sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        sshConection.Show();
+                        this.Hide();
+                    }
+                    else if (result == "namespaces")
+                    {
+                        namespacesForm namespacesForm = new namespacesForm();
+                        namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        namespacesForm.Show();
+                        this.Hide();
+                    }
+                    else if (result == "deployments")
+                    {
+                        deploymentsForm deploymentsForm = new deploymentsForm();
+                        deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, deploymentsForm);
+                        deploymentsForm.Show();
+                        this.Hide();
+                    }
+                    else if (result == "services")
+                    {
+                        servicesForm servicesForm = new servicesForm();
+                        servicesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        servicesForm.Show();
+                        this.Hide();
+                    }
+                    else if (result == "ingress")
+                    {
+                        ingressForm ingressForm = new ingressForm();
+                        ingressForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        ingressForm.Show();
+                        this.Hide();
+                    }
+                    else if (result == "web page")
+                    {
+                        RetrievePort();
+                    }
+                }));
+            });
+        }
+
 
         public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
         {
