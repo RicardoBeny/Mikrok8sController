@@ -269,21 +269,26 @@ namespace AppLTI
             var containers = new JArray();
             for (int i = 0; i < nContainers.Value; i++)
             {
-                var containerName = $"{containerNameBase}{i + 1}";
-                containers.Add(new JObject
+                var container = new JObject
                 {
-                    ["name"] = containerName,
+                    ["name"] = $"{containerNameBase}{i + 1}",
                     ["image"] = image,
                     ["ports"] = new JArray()
-                });
+                };
+
                 if (containerPort != -1)
                 {
-                    containers["ports"]["containerPort"] = containerPort;
+                    var port = new JObject
+                    {
+                        ["containerPort"] = containerPort
+                    };
+                    ((JArray)container["ports"]).Add(port);
                 }
+
+                containers.Add(container);
             }
             return containers;
         }
-
 
         private async Task DeleteDeployments(string routerIp, string portoAPI, string authToken, string namespaceName, string deploymentname)
         {

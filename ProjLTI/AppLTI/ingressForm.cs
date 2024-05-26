@@ -69,7 +69,7 @@ namespace AppLTI
             {
                 string url;
                 listBoxIngress.Items.Clear();
-                comboBoxDeployments.Items.Clear();
+                comboBoxIngresses.Items.Clear();
 
                 if (namespacename == "Todos")
                 {
@@ -137,7 +137,7 @@ namespace AppLTI
                                 }
                             }
 
-                            comboBoxDeployments.Items.Add($"Nome: {name}");
+                            comboBoxIngresses.Items.Add($"Nome: {name}");
                         }
                     }
                     else
@@ -158,6 +158,52 @@ namespace AppLTI
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
 
             await LoadNamespaces(routerIp, portoAPI, authKey);
+            await LoadServices(routerIp, portoAPI, authKey);
+        }
+
+        private async Task LoadServices(string routerIp, string portoAPI, string authToken)
+        {
+            try
+            {
+                string url;
+                comboBoxNomeDoServico.Items.Clear();
+
+                url = $"https://{routerIp}:{portoAPI}/api/v1/services";
+                
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    HttpResponseMessage response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseBody = await response.Content.ReadAsStringAsync();
+
+                        JObject servicesData = JObject.Parse(responseBody);
+                        JArray servicesArray = (JArray)servicesData["items"];
+
+                        foreach (JObject serviceObject in servicesArray)
+                        {
+                            string name = (string)serviceObject["metadata"]["name"];
+
+                            comboBoxNomeDoServico.Items.Add($"{name}");
+                        }
+                    }
+                    else
+                    {
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Failed to load services. Error message: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading services: " + ex.Message);
+            }
         }
 
         private async Task LoadNamespaces(string routerIp, string portoAPI, string authToken)
@@ -247,15 +293,212 @@ namespace AppLTI
             this.Dispose();
         }
 
-        private void buttonCreateDeployments_Click(object sender, EventArgs e)
+        private async void buttonCreateDeployments_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxNomeAdd.Text))
+            {
+                MessageBox.Show("Campo nome tem de ser preenchido.");
+                return;
+            }
 
+            if (comboBoxNamespaceCriar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBoxHost.Text))
+            {
+                MessageBox.Show("Campo URL tem de ser preenchido.");
+                return;
+            }
+
+            if (comboBoxNomeDoServico.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBoxPortaServico.Text))
+            {
+                MessageBox.Show("Campo porta do serviço tem de ser preenchido.");
+                return;
+            }
+
+
+            string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
+            string namespacename = selectedItemText.Trim();
+
+            await CreateIngress(routerIp, portoAPI, authKey, namespacename);
         }
 
-        private void buttonDeleteDeployments_Click(object sender, EventArgs e)
+        private async Task CreateIngress(string routerIp, string portoAPI, string authToken, string namespacename)
         {
+            string selectedItemText1 = comboBoxNomeDoServico.Items[comboBoxNomeDoServico.SelectedIndex].ToString();
+            string servicename = selectedItemText1.Trim();
 
+            string proposito = null, owner = null;
+
+            int portaservico = int.Parse(textBoxPortaServico.Text);
+
+            if (!string.IsNullOrEmpty(textBoxproposito.Text))
+            {
+                proposito = textBoxproposito.Text;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxOwner.Text))
+            {
+                owner = textBoxOwner.Text;
+            }
+
+            var metadata = new JObject
+            {
+                ["name"] = textBoxNomeAdd.Text,
+                ["namespace"] = namespacename,
+                ["annotations"] = new JObject
+                {
+                    ["nginx.ingress.kubernetes.io/rewrite-target"] = "/"
+                }
+            };
+
+            if (!string.IsNullOrEmpty(owner))
+            {
+                metadata["annotations"]["owner"] = owner;
+            }
+
+            if (!string.IsNullOrEmpty(proposito))
+            {
+                metadata["annotations"]["purpose"] = proposito;
+            }
+
+            var requestBody = new JObject
+            {
+                ["apiVersion"] = "networking.k8s.io/v1",
+                ["kind"] = "Ingress",
+                ["metadata"] = metadata,
+                ["spec"] = new JObject
+                {
+                    ["rules"] = new JArray
+            {
+                new JObject
+                {
+                    ["host"] = textBoxHost.Text,
+                    ["http"] = new JObject
+                    {
+                        ["paths"] = new JArray
+                        {
+                            new JObject
+                            {
+                                ["path"] = "/",
+                                ["pathType"] = "Prefix",
+                                ["backend"] = new JObject
+                                {
+                                    ["service"] = new JObject
+                                    {
+                                        ["name"] = servicename,
+                                        ["port"] = new JObject
+                                        {
+                                            ["number"] = portaservico
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+                }
+            };
+
+            try
+            {
+                string url = $"https://{routerIp}:{portoAPI}/apis/networking.k8s.io/v1/namespaces/{namespacename}/ingresses";
+
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    var content = new StringContent(requestBody.ToString(), Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await client.PostAsync(url, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Ingress created successfully.");
+                        await LoadIngress(routerIp, portoAPI, authToken, namespacename);
+                    }
+                    else
+                    {
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Failed to create Ingress. Error message: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while creating Ingress: " + ex.Message);
+            }
         }
+
+
+        private async void buttonDeleteDeployments_Click(object sender, EventArgs e)
+        {
+            if (comboBoxNamespaces.SelectedIndex == -1 || (string)comboBoxNamespaces.SelectedItem == "Todos")
+            {
+                MessageBox.Show("Por favor selecione um namespace.");
+                return;
+            }
+
+            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
+            string namespacename = selectedItemText.Trim();
+
+            if (comboBoxIngresses.SelectedIndex == -1)
+            {
+                MessageBox.Show("Deployment tem de ser selecionado.");
+                return;
+            }
+
+            string selectedItemText1 = comboBoxIngresses.Items[comboBoxIngresses.SelectedIndex].ToString();
+            string ingressname = selectedItemText1.Substring(selectedItemText1.IndexOf("Nome:") + 5).Split(';')[0].Trim();
+            await DeleteIngress(routerIp, portoAPI, authKey, namespacename, ingressname);
+        }
+
+        private async Task DeleteIngress(string routerIp, string portoAPI, string authToken, string namespaceName, string ingressName)
+        {
+            try
+            {
+                string url = $"https://{routerIp}:{portoAPI}/apis/networking.k8s.io/v1/namespaces/{namespaceName}/ingresses/{ingressName}";
+
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    HttpResponseMessage response = await client.DeleteAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Ingress eliminado com sucesso.");
+                        await LoadIngress(routerIp, portoAPI, authToken, namespaceName);
+                    }
+                    else
+                    {
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Falha ao eliminar o Ingress. Mensagem de erro: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao eliminar o Ingress: " + ex.Message);
+            }
+        }
+
 
         private void RetrievePort()
         {

@@ -383,7 +383,7 @@ namespace AppLTI
             {
                 ["apiVersion"] = "v1",
                 ["kind"] = "Service",
-                ["metadata"] = namespacename,
+                ["metadata"] = metadata,
                 ["spec"] = new JObject
                 {
                     ["selector"] = new JObject
@@ -402,6 +402,8 @@ namespace AppLTI
                     ["type"] = type
                 }
             };
+
+            MessageBox.Show(requestBody.ToString());
 
             try
             {
