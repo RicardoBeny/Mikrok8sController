@@ -95,6 +95,9 @@ namespace AppLTI
 
         private async void buttonCreateDeployments_Click(object sender, EventArgs e)
         {
+            bool flag = false;
+            string imagem;
+
             if (string.IsNullOrWhiteSpace(textBoxNomeAdd.Text))
             {
                 MessageBox.Show("Campo nome tem de ser preenchido.");
@@ -115,8 +118,21 @@ namespace AppLTI
 
             if (comboBoxImage.SelectedIndex == -1)
             {
-                MessageBox.Show("Imagem tem de ser selecionada.");
-                return;
+                if (string.IsNullOrEmpty(comboBoxImage.Text))
+                {
+                    MessageBox.Show("Imagem tem de ser selecionada.");
+                    return;
+                }
+            }
+
+            if (!flag)
+            {
+                imagem = comboBoxImage.Text;
+            }
+            else
+            {
+                string selectedItemText1 = comboBoxImage.Items[comboBoxImage.SelectedIndex].ToString();
+                imagem = selectedItemText1.Trim();
             }
 
             if (string.IsNullOrWhiteSpace(textBoxReplicas.Text))
@@ -129,9 +145,9 @@ namespace AppLTI
             string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
             string namespacename = selectedItemText.Trim();
 
-            await CreateDeployment(routerIp, portoAPI, authKey, namespacename);
+            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, imagem);
         }
-        private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename)
+        private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename, string imagem)
         {
             int replicas = int.Parse(textBoxReplicas.Text);
             int nContainers = 1;
@@ -212,7 +228,7 @@ namespace AppLTI
                         },
                         ["spec"] = new JObject
                         {
-                            ["containers"] = GetContainerDefinitions(nContainers, textBoxContainerName.Text, comboBoxImage.SelectedItem.ToString(), porto)
+                            ["containers"] = GetContainerDefinitions(nContainers, textBoxContainerName.Text, imagem, porto)
                         }
                     }
                 }
@@ -225,7 +241,7 @@ namespace AppLTI
                     ["manager"] = owner
                 }
             };
-
+            MessageBox.Show(requestBody.ToString());
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespacename}/deployments";

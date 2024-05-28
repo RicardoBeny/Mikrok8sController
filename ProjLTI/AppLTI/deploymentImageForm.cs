@@ -65,9 +65,12 @@ namespace AppLTI
                 return;
             }
 
-            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto);
+            string selectedItemText = comboBoxImage.Items[comboBoxImage.SelectedIndex].ToString();
+            string imagem = selectedItemText.Trim();
+
+            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto, imagem);
         }
-        private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename, string deploymentName, string replicas, string porto)
+        private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename, string deploymentName, string replicas, string porto, string imagem)
         {
             int portonovo = int.Parse(porto);
             int replicasnova = int.Parse(replicas);
@@ -107,7 +110,7 @@ namespace AppLTI
                             new JObject
                             {
                                 ["name"] = textBoxContainerName.Text,
-                                ["image"] = comboBoxImage.SelectedItem.ToString(),
+                                ["image"] = imagem,
                                 ["ports"] = new JArray
                                 {
                                     new JObject
@@ -121,7 +124,7 @@ namespace AppLTI
                     }
                 }
             };
-
+            MessageBox.Show(requestBody.ToString());
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespacename}/deployments";
@@ -166,9 +169,12 @@ namespace AppLTI
 
         private async void pictureBox2_Click(object sender, EventArgs e)
         {
+            bool flag = false;
+            string imagem;
             if (string.IsNullOrWhiteSpace(textBoxContainerName.Text))
             {
                 MessageBox.Show("Campo container name tem de ser preenchido.");
+
                 return;
             }
             if (string.IsNullOrWhiteSpace(textBoxLabelApp.Text))
@@ -178,14 +184,30 @@ namespace AppLTI
             }
             if (comboBoxImage.SelectedIndex == -1)
             {
-                MessageBox.Show("Imagem tem de ser selecionada.");
-                return;
+                if (string.IsNullOrEmpty(comboBoxImage.Text))
+                {
+                    flag = true;
+                    MessageBox.Show("Imagem tem de ser selecionada.");
+                    return;
+                }
             }
 
-            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto);
+            string label = textBoxLabelApp.Text;
+
+            if (!flag)
+            {
+                imagem = comboBoxImage.Text;
+            }
+            else
+            {
+                string selectedItemText = comboBoxImage.Items[comboBoxImage.SelectedIndex].ToString();
+                imagem = selectedItemText.Trim();
+            }
+    
+            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto, imagem);
 
             serviceNameForm serviceNameForm = new serviceNameForm();
-            serviceNameForm.SetCredentials(routerIp, portoAPI, authKey, textBoxLabelApp.Text, namespacename, porto);
+            serviceNameForm.SetCredentials(routerIp, portoAPI, authKey, label, namespacename, porto);
             serviceNameForm.Show();
             this.Dispose();
         }

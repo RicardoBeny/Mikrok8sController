@@ -410,7 +410,7 @@ namespace AppLTI
             }
                 }
             };
-
+            MessageBox.Show(requestBody.ToString());
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/networking.k8s.io/v1/namespaces/{namespacename}/ingresses";

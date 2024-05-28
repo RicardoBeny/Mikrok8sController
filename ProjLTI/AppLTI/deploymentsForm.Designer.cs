@@ -66,6 +66,8 @@
             this.buttonIngress = new System.Windows.Forms.Label();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.textBoxproposito = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
             this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
-            this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
@@ -527,6 +527,25 @@
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
             // 
+            // textBoxEquipaMetadata
+            // 
+            this.textBoxEquipaMetadata.Location = new System.Drawing.Point(533, 427);
+            this.textBoxEquipaMetadata.Name = "textBoxEquipaMetadata";
+            this.textBoxEquipaMetadata.Size = new System.Drawing.Size(221, 20);
+            this.textBoxEquipaMetadata.TabIndex = 249;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(460, 424);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 23);
+            this.label15.TabIndex = 248;
+            this.label15.Text = "Equipa:";
+            // 
             // textBoxproposito
             // 
             this.textBoxproposito.Location = new System.Drawing.Point(550, 376);
@@ -612,7 +631,7 @@
             // 
             this.comboBoxImage.FormattingEnabled = true;
             this.comboBoxImage.Items.AddRange(new object[] {
-            "nginx:latest",
+            "nginx:mainline",
             "httpd:latest",
             "caddy:latest",
             "mysql:latest",
@@ -657,25 +676,6 @@
             this.buttonWizardDeployment.TabIndex = 238;
             this.buttonWizardDeployment.TabStop = false;
             this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
-            // 
-            // textBoxEquipaMetadata
-            // 
-            this.textBoxEquipaMetadata.Location = new System.Drawing.Point(533, 427);
-            this.textBoxEquipaMetadata.Name = "textBoxEquipaMetadata";
-            this.textBoxEquipaMetadata.Size = new System.Drawing.Size(221, 20);
-            this.textBoxEquipaMetadata.TabIndex = 249;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(460, 424);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 23);
-            this.label15.TabIndex = 248;
-            this.label15.Text = "Equipa:";
             // 
             // deploymentsForm
             // 

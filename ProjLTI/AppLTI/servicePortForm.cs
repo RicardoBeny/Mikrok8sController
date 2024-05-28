@@ -34,7 +34,6 @@ namespace AppLTI
             this.label = label;
             this.servicename = servicename;
             this.namespacename = namespacename;
-            this.servicename = servicename;
             this.portoDeployment = portoDeployment;
         }
 

@@ -127,7 +127,7 @@ namespace AppLTI
                     ["type"] = tipo
                 }
             };
-
+            MessageBox.Show(requestBody.ToString());
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces/{namespacename}/services";

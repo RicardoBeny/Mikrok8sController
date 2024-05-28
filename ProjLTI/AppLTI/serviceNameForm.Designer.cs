@@ -39,10 +39,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(453, 162);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(340, 132);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(24, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 260;
             this.pictureBox2.TabStop = false;
@@ -50,10 +49,9 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(96, 86);
-            this.textBoxNome.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNome.Location = new System.Drawing.Point(72, 70);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(389, 22);
+            this.textBoxNome.Size = new System.Drawing.Size(293, 20);
             this.textBoxNome.TabIndex = 256;
             // 
             // label5
@@ -62,10 +60,9 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(26, 86);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(20, 70);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 25);
+            this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 255;
             this.label5.Text = "Nome:";
             // 
@@ -74,23 +71,23 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(205, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(154, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 29);
+            this.label1.Size = new System.Drawing.Size(68, 23);
             this.label1.TabIndex = 253;
             this.label1.Text = "Service";
             // 
             // serviceNameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(512, 198);
+            this.ClientSize = new System.Drawing.Size(384, 161);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "serviceNameForm";
             this.Text = "serviceNameForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
