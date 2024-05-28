@@ -35,8 +35,24 @@ namespace AppLTI
         private string portoAPI;
         private string authKey;
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+           (
+               int nLeft,
+               int nTop,
+               int nRight,
+               int nBottom,
+               int nWidthEllipse,
+               int nHeightEllipse
+           );
+
         public mainPage()
         {
+
+            panelDashboard.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelDashboard.Width, panelDashboard.Height, 30, 30));
+            panelMainPage.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelMainPage.Width, panelMainPage.Height, 30, 30));
+
             InitializeComponent();
             InitializeVoiceRecognition();
         }
@@ -306,5 +322,6 @@ namespace AppLTI
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
