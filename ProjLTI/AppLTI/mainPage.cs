@@ -34,6 +34,7 @@ namespace AppLTI
         private string portoSSH;
         private string portoAPI;
         private string authKey;
+        private bool isMicrophoneActive = false;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
@@ -74,15 +75,13 @@ namespace AppLTI
                     recognizer.SpeechRecognized += recEngine_SpeechRecognized;
 
                     Choices choices = new Choices();
-                    choices.Add(new string[] { "pods", "nodes", "terminal", "namespaces", "deployments", "services", "ingress", "web page"});
+                    choices.Add(new string[] { "pods", "nodes", "terminal", "namespaces", "deployments", "services", "ingress", "web page" });
                     GrammarBuilder gb = new GrammarBuilder();
                     gb.Append(choices);
                     gb.Culture = recognizer.RecognizerInfo.Culture;
                     Grammar g = new Grammar(gb);
 
                     recognizer.LoadGrammar(g);
-                    recognizer.RecognizeAsync(RecognizeMode.Multiple);
-
                     speech.SelectVoiceByHints(VoiceGender.Male);
                 }
                 else
@@ -96,14 +95,38 @@ namespace AppLTI
             }
         }
 
+        private void StartMicrophone()
+        {
+            try
+            {
+                recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                isMicrophoneActive = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to start microphone: {ex.Message}");
+            }
+        }
+
+        private void StopMicrophone()
+        {
+            try
+            {
+                recognizer.RecognizeAsyncStop();
+                isMicrophoneActive = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to stop microphone: {ex.Message}");
+            }
+        }
+
         private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             string result = e.Result.Text;
 
             Task.Run(() =>
             {
-                speech.SpeakAsync("Redirecting to" + result);
-
                 Invoke(new Action(() =>
                 {
                     if (result == "pods")
@@ -111,49 +134,49 @@ namespace AppLTI
                         podsForm podsForm = new podsForm();
                         podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         podsForm.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "nodes")
                     {
                         nodesForm nodesForm = new nodesForm();
                         nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         nodesForm.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "terminal")
                     {
                         sshConection sshConection = new sshConection();
                         sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         sshConection.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "namespaces")
                     {
                         namespacesForm namespacesForm = new namespacesForm();
                         namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         namespacesForm.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "deployments")
                     {
                         deploymentsForm deploymentsForm = new deploymentsForm();
                         deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, deploymentsForm);
                         deploymentsForm.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "services")
                     {
                         servicesForm servicesForm = new servicesForm();
                         servicesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         servicesForm.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "ingress")
                     {
                         ingressForm ingressForm = new ingressForm();
                         ingressForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         ingressForm.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else if (result == "web page")
                     {
@@ -237,11 +260,13 @@ namespace AppLTI
 
         private void buttonActivateMic_Click(object sender, EventArgs e)
         {
+            StartMicrophone();
             buttonMutMic.BringToFront();
         }
 
         private void buttonMutMic_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             buttonActivateMic.BringToFront();
         }
 
