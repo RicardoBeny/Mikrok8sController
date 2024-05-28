@@ -38,7 +38,9 @@
             this.buttonFinish = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -69,7 +71,7 @@
             // textBoxLabelApp
             // 
             this.textBoxLabelApp.Location = new System.Drawing.Point(121, 90);
-            this.textBoxLabelApp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLabelApp.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLabelApp.Name = "textBoxLabelApp";
             this.textBoxLabelApp.Size = new System.Drawing.Size(364, 22);
             this.textBoxLabelApp.TabIndex = 248;
@@ -90,7 +92,7 @@
             // textBoxContainerName
             // 
             this.textBoxContainerName.Location = new System.Drawing.Point(215, 59);
-            this.textBoxContainerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxContainerName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxContainerName.Name = "textBoxContainerName";
             this.textBoxContainerName.Size = new System.Drawing.Size(271, 22);
             this.textBoxContainerName.TabIndex = 246;
@@ -112,7 +114,7 @@
             // 
             this.buttonFinish.AutoSize = true;
             this.buttonFinish.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFinish.Location = new System.Drawing.Point(211, 166);
+            this.buttonFinish.Location = new System.Drawing.Point(28, 168);
             this.buttonFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.Size = new System.Drawing.Size(53, 21);
@@ -124,7 +126,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,12 +174,25 @@
             this.comboBoxImage.Size = new System.Drawing.Size(369, 24);
             this.comboBoxImage.TabIndex = 251;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(453, 162);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 252;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // deploymentImageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(512, 198);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.comboBoxImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonFinish);
@@ -187,10 +202,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "deploymentImageForm";
             this.Text = "deploymentImageForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +222,6 @@
         private System.Windows.Forms.Label buttonFinish;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBoxImage;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -163,5 +163,31 @@ namespace AppLTI
             deploymentPortForm.Show();
             this.Dispose();
         }
+
+        private async void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxContainerName.Text))
+            {
+                MessageBox.Show("Campo container name tem de ser preenchido.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxLabelApp.Text))
+            {
+                MessageBox.Show("Campo label app tem de ser preenchido.");
+                return;
+            }
+            if (comboBoxImage.SelectedIndex == -1)
+            {
+                MessageBox.Show("Imagem tem de ser selecionada.");
+                return;
+            }
+
+            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto);
+
+            serviceNameForm serviceNameForm = new serviceNameForm();
+            serviceNameForm.SetCredentials(routerIp, portoAPI, authKey, textBoxLabelApp.Text, namespacename, porto);
+            serviceNameForm.Show();
+            this.Dispose();
+        }
     }
 }

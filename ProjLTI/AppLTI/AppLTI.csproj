@@ -153,6 +153,12 @@
     <Compile Include="ingressForm.Designer.cs">
       <DependentUpon>ingressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ingressWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ingressWizardForm.Designer.cs">
+      <DependentUpon>ingressWizardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,11 +203,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Credential.cs" />
+    <Compile Include="serviceNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="serviceNameForm.Designer.cs">
+      <DependentUpon>serviceNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="servicePortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="servicePortForm.Designer.cs">
+      <DependentUpon>servicePortForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="servicesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="servicesForm.Designer.cs">
       <DependentUpon>servicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="serviceTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="serviceTypeForm.Designer.cs">
+      <DependentUpon>serviceTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="sshConection.cs">
       <SubType>Form</SubType>
@@ -227,6 +251,9 @@
     <EmbeddedResource Include="ingressForm.resx">
       <DependentUpon>ingressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ingressWizardForm.resx">
+      <DependentUpon>ingressWizardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,8 +277,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="serviceNameForm.resx">
+      <DependentUpon>serviceNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="servicePortForm.resx">
+      <DependentUpon>servicePortForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="servicesForm.resx">
       <DependentUpon>servicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="serviceTypeForm.resx">
+      <DependentUpon>serviceTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sshConection.resx">
       <DependentUpon>sshConection.cs</DependentUpon>
