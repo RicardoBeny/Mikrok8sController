@@ -92,7 +92,7 @@
             this.textBoxIP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxIP.Enabled = false;
             this.textBoxIP.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIP.ForeColor = System.Drawing.Color.LightGray;
+            this.textBoxIP.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxIP.Location = new System.Drawing.Point(1033, 19);
             this.textBoxIP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIP.Multiline = true;
