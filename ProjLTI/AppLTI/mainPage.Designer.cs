@@ -49,24 +49,40 @@
             this.buttonActivateMic = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDashboard = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelMainPage = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelPods = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelDeployments = new System.Windows.Forms.Panel();
+            this.panelServices = new System.Windows.Forms.Panel();
+            this.panelIngress = new System.Windows.Forms.Panel();
+            this.panelNamespaces = new System.Windows.Forms.Panel();
+            this.panelNodes = new System.Windows.Forms.Panel();
+            this.panelInterfaceWeb = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panelTerminal = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMutMic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).BeginInit();
+            this.panelDashboard.SuspendLayout();
             this.panelMainPage.SuspendLayout();
+            this.panelPods.SuspendLayout();
+            this.panelInterfaceWeb.SuspendLayout();
+            this.panelTerminal.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelDashboard
             // 
             this.labelDashboard.AutoSize = true;
-            this.labelDashboard.Font = new System.Drawing.Font("Impact", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDashboard.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDashboard.ForeColor = System.Drawing.Color.White;
-            this.labelDashboard.Location = new System.Drawing.Point(26, 15);
+            this.labelDashboard.Location = new System.Drawing.Point(26, 17);
             this.labelDashboard.Name = "labelDashboard";
-            this.labelDashboard.Size = new System.Drawing.Size(166, 41);
+            this.labelDashboard.Size = new System.Drawing.Size(152, 37);
             this.labelDashboard.TabIndex = 1;
             this.labelDashboard.Text = "Dashboard";
             // 
@@ -126,6 +142,8 @@
             this.buttonNodes.TabIndex = 139;
             this.buttonNodes.Text = "Nodes";
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click_1);
+            this.buttonNodes.MouseEnter += new System.EventHandler(this.panelNodes_MouseEnter);
+            this.buttonNodes.MouseLeave += new System.EventHandler(this.panelNodes_MouseLeave);
             // 
             // buttonPods
             // 
@@ -139,6 +157,8 @@
             this.buttonPods.TabIndex = 140;
             this.buttonPods.Text = "Pods";
             this.buttonPods.Click += new System.EventHandler(this.buttonPods_Click_1);
+            this.buttonPods.MouseEnter += new System.EventHandler(this.buttonPods_MouseEnter);
+            this.buttonPods.MouseLeave += new System.EventHandler(this.buttonPods_MouseLeave);
             // 
             // buttonNameSpaces
             // 
@@ -152,6 +172,8 @@
             this.buttonNameSpaces.TabIndex = 137;
             this.buttonNameSpaces.Text = "Namespaces";
             this.buttonNameSpaces.Click += new System.EventHandler(this.buttonNameSpaces_Click_1);
+            this.buttonNameSpaces.MouseEnter += new System.EventHandler(this.buttonNamespaces_MouseEnter);
+            this.buttonNameSpaces.MouseLeave += new System.EventHandler(this.buttonNamespaces_MouseLeave);
             // 
             // buttonDeployments
             // 
@@ -165,6 +187,8 @@
             this.buttonDeployments.TabIndex = 141;
             this.buttonDeployments.Text = "Deployments";
             this.buttonDeployments.Click += new System.EventHandler(this.buttonDeployments_Click_1);
+            this.buttonDeployments.MouseEnter += new System.EventHandler(this.buttonDeployments_MouseEnter);
+            this.buttonDeployments.MouseLeave += new System.EventHandler(this.buttonDeployments_MouseLeave);
             // 
             // labelCluster
             // 
@@ -183,7 +207,7 @@
             this.labelWorkloads.AutoSize = true;
             this.labelWorkloads.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWorkloads.ForeColor = System.Drawing.Color.White;
-            this.labelWorkloads.Location = new System.Drawing.Point(24, 222);
+            this.labelWorkloads.Location = new System.Drawing.Point(24, 224);
             this.labelWorkloads.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelWorkloads.Name = "labelWorkloads";
             this.labelWorkloads.Size = new System.Drawing.Size(126, 32);
@@ -214,6 +238,8 @@
             this.buttonServices.TabIndex = 0;
             this.buttonServices.Text = "Services";
             this.buttonServices.Click += new System.EventHandler(this.buttonServices_Click);
+            this.buttonServices.MouseEnter += new System.EventHandler(this.buttonServices_MouseEnter);
+            this.buttonServices.MouseLeave += new System.EventHandler(this.buttonServices_MouseLeave);
             // 
             // btnTerminal
             // 
@@ -227,6 +253,8 @@
             this.btnTerminal.TabIndex = 138;
             this.btnTerminal.Text = "Terminal";
             this.btnTerminal.Click += new System.EventHandler(this.btnTerminal_Click_1);
+            this.btnTerminal.MouseEnter += new System.EventHandler(this.btnTerminal_MouseEnter);
+            this.btnTerminal.MouseLeave += new System.EventHandler(this.btnTerminal_MouseLeave);
             // 
             // buttonIngress
             // 
@@ -240,6 +268,8 @@
             this.buttonIngress.TabIndex = 149;
             this.buttonIngress.Text = "Ingress";
             this.buttonIngress.Click += new System.EventHandler(this.buttonIngress_Click);
+            this.buttonIngress.MouseEnter += new System.EventHandler(this.buttonIngress_MouseEnter);
+            this.buttonIngress.MouseLeave += new System.EventHandler(this.buttonIngress_MouseLeave);
             // 
             // btnInterfaceWeb
             // 
@@ -253,6 +283,8 @@
             this.btnInterfaceWeb.TabIndex = 150;
             this.btnInterfaceWeb.Text = "Interface Web";
             this.btnInterfaceWeb.Click += new System.EventHandler(this.btnInterfaceWeb_Click);
+            this.btnInterfaceWeb.MouseEnter += new System.EventHandler(this.btnInterfaceWeb_MouseEnter);
+            this.btnInterfaceWeb.MouseLeave += new System.EventHandler(this.btnInterfaceWeb_MouseLeave);
             // 
             // buttonMutMic
             // 
@@ -284,7 +316,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.label1.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(65)))), ((int)(((byte)(210)))));
-            this.label1.Location = new System.Drawing.Point(24, 175);
+            this.label1.Location = new System.Drawing.Point(24, 176);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 32);
@@ -294,10 +326,19 @@
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panelDashboard.Location = new System.Drawing.Point(21, 171);
+            this.panelDashboard.Controls.Add(this.panel3);
+            this.panelDashboard.Location = new System.Drawing.Point(21, 172);
             this.panelDashboard.Name = "panelDashboard";
-            this.panelDashboard.Size = new System.Drawing.Size(240, 40);
+            this.panelDashboard.Size = new System.Drawing.Size(240, 42);
             this.panelDashboard.TabIndex = 152;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel3.Location = new System.Drawing.Point(0, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(240, 42);
+            this.panel3.TabIndex = 153;
             // 
             // panelMainPage
             // 
@@ -316,6 +357,121 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2, 693);
             this.panel2.TabIndex = 154;
+            // 
+            // panelPods
+            // 
+            this.panelPods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelPods.Controls.Add(this.panel5);
+            this.panelPods.Location = new System.Drawing.Point(42, 259);
+            this.panelPods.Name = "panelPods";
+            this.panelPods.Size = new System.Drawing.Size(219, 42);
+            this.panelPods.TabIndex = 154;
+            this.panelPods.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelPods_Click_1);
+            this.panelPods.MouseEnter += new System.EventHandler(this.panelPods_MouseEnter);
+            this.panelPods.MouseLeave += new System.EventHandler(this.panelPods_MouseLeave);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel5.Location = new System.Drawing.Point(0, 46);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(240, 42);
+            this.panel5.TabIndex = 153;
+            // 
+            // panelDeployments
+            // 
+            this.panelDeployments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelDeployments.Location = new System.Drawing.Point(42, 302);
+            this.panelDeployments.Name = "panelDeployments";
+            this.panelDeployments.Size = new System.Drawing.Size(219, 42);
+            this.panelDeployments.TabIndex = 155;
+            this.panelDeployments.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelDeployments_MouseClick);
+            this.panelDeployments.MouseEnter += new System.EventHandler(this.panelDeployments_MouseEnter);
+            this.panelDeployments.MouseLeave += new System.EventHandler(this.panelDeployments_MouseLeave);
+            // 
+            // panelServices
+            // 
+            this.panelServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelServices.Location = new System.Drawing.Point(42, 398);
+            this.panelServices.Name = "panelServices";
+            this.panelServices.Size = new System.Drawing.Size(219, 42);
+            this.panelServices.TabIndex = 156;
+            this.panelServices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelServices_MouseClick);
+            this.panelServices.MouseEnter += new System.EventHandler(this.panelServices_MouseEnter);
+            this.panelServices.MouseLeave += new System.EventHandler(this.panelServices_MouseLeave);
+            // 
+            // panelIngress
+            // 
+            this.panelIngress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelIngress.Location = new System.Drawing.Point(42, 443);
+            this.panelIngress.Name = "panelIngress";
+            this.panelIngress.Size = new System.Drawing.Size(219, 42);
+            this.panelIngress.TabIndex = 157;
+            this.panelIngress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelIngress_MouseClick);
+            this.panelIngress.MouseEnter += new System.EventHandler(this.panelIngress_MouseEnter);
+            this.panelIngress.MouseLeave += new System.EventHandler(this.panelIngress_MouseLeave);
+            // 
+            // panelNamespaces
+            // 
+            this.panelNamespaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelNamespaces.Location = new System.Drawing.Point(42, 538);
+            this.panelNamespaces.Name = "panelNamespaces";
+            this.panelNamespaces.Size = new System.Drawing.Size(219, 42);
+            this.panelNamespaces.TabIndex = 158;
+            this.panelNamespaces.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelNamespaces_MouseClick);
+            this.panelNamespaces.MouseEnter += new System.EventHandler(this.panelNamespaces_MouseEnter);
+            this.panelNamespaces.MouseLeave += new System.EventHandler(this.panelNamespaces_MouseLeave);
+            // 
+            // panelNodes
+            // 
+            this.panelNodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelNodes.Location = new System.Drawing.Point(42, 584);
+            this.panelNodes.Name = "panelNodes";
+            this.panelNodes.Size = new System.Drawing.Size(219, 42);
+            this.panelNodes.TabIndex = 159;
+            this.panelNodes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelNodes_MouseClick);
+            this.panelNodes.MouseEnter += new System.EventHandler(this.panelNodes_MouseEnter);
+            this.panelNodes.MouseLeave += new System.EventHandler(this.panelNodes_MouseLeave);
+            // 
+            // panelInterfaceWeb
+            // 
+            this.panelInterfaceWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelInterfaceWeb.Controls.Add(this.panel12);
+            this.panelInterfaceWeb.Location = new System.Drawing.Point(21, 638);
+            this.panelInterfaceWeb.Name = "panelInterfaceWeb";
+            this.panelInterfaceWeb.Size = new System.Drawing.Size(240, 42);
+            this.panelInterfaceWeb.TabIndex = 154;
+            this.panelInterfaceWeb.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelInterfaceWeb_MouseClick);
+            this.panelInterfaceWeb.MouseEnter += new System.EventHandler(this.panelInterfaceWeb_MouseEnter);
+            this.panelInterfaceWeb.MouseLeave += new System.EventHandler(this.panelInterfaceWeb_MouseLeave);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel12.Location = new System.Drawing.Point(0, 46);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(240, 42);
+            this.panel12.TabIndex = 153;
+            // 
+            // panelTerminal
+            // 
+            this.panelTerminal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelTerminal.Controls.Add(this.panel13);
+            this.panelTerminal.Location = new System.Drawing.Point(21, 684);
+            this.panelTerminal.Name = "panelTerminal";
+            this.panelTerminal.Size = new System.Drawing.Size(240, 42);
+            this.panelTerminal.TabIndex = 155;
+            this.panelTerminal.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelTerminal_MouseClick);
+            this.panelTerminal.MouseEnter += new System.EventHandler(this.panelTerminal_MouseEnter);
+            this.panelTerminal.MouseLeave += new System.EventHandler(this.panelTerminal_MouseLeave);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel13.Location = new System.Drawing.Point(0, 46);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(240, 42);
+            this.panel13.TabIndex = 153;
             // 
             // mainPage
             // 
@@ -342,6 +498,14 @@
             this.Controls.Add(this.buttonNameSpaces);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelDashboard);
+            this.Controls.Add(this.panelPods);
+            this.Controls.Add(this.panelDeployments);
+            this.Controls.Add(this.panelServices);
+            this.Controls.Add(this.panelIngress);
+            this.Controls.Add(this.panelNamespaces);
+            this.Controls.Add(this.panelNodes);
+            this.Controls.Add(this.panelInterfaceWeb);
+            this.Controls.Add(this.panelTerminal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -354,7 +518,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMutMic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).EndInit();
+            this.panelDashboard.ResumeLayout(false);
             this.panelMainPage.ResumeLayout(false);
+            this.panelPods.ResumeLayout(false);
+            this.panelInterfaceWeb.ResumeLayout(false);
+            this.panelTerminal.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +551,17 @@
         private System.Windows.Forms.Panel panelDashboard;
         private System.Windows.Forms.Panel panelMainPage;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelPods;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelDeployments;
+        private System.Windows.Forms.Panel panelServices;
+        private System.Windows.Forms.Panel panelIngress;
+        private System.Windows.Forms.Panel panelNamespaces;
+        private System.Windows.Forms.Panel panelNodes;
+        private System.Windows.Forms.Panel panelInterfaceWeb;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panelTerminal;
+        private System.Windows.Forms.Panel panel13;
     }
 }
