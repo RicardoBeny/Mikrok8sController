@@ -73,7 +73,7 @@ namespace AppLTI
                         JArray items = (JArray)nodesJson["items"];
 
                         listBoxNodes.Items.Add("Name\t\tReady\tCPU Capacity (cores)\t" +
-                            "Memory Limits (bytes)\tMemory Capacity (bytes)\tPods\t"
+                            "Memory Limits (bytes)\tMemory Capacity (bytes)\tPods \t"
                             +"          "+ "Created\t\tEndereço");
 
                         foreach (var item in items)
@@ -103,7 +103,7 @@ namespace AppLTI
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
                             string nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t"+"          "+
-                                $"{memoryLimits}\t\t\t{memoryCapacity}\t{pods}\t{timeAgo}\t\t{ipAddress}";
+                                $"{memoryLimits}\t\t\t{memoryCapacity}\t\t{pods}\t{timeAgo}\t\t{ipAddress}";
 
                             listBoxNodes.Items.Add(nodeInfo);
                         }

@@ -51,6 +51,7 @@
             this.panelDashboard = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMainPage = new System.Windows.Forms.Panel();
+            this.listBoxNodesDashboard = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelPods = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -343,12 +344,26 @@
             // panelMainPage
             // 
             this.panelMainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelMainPage.Controls.Add(this.listBoxNodesDashboard);
             this.panelMainPage.Controls.Add(this.buttonActivateMic);
             this.panelMainPage.Controls.Add(this.buttonMutMic);
             this.panelMainPage.Location = new System.Drawing.Point(309, 172);
             this.panelMainPage.Name = "panelMainPage";
             this.panelMainPage.Size = new System.Drawing.Size(1321, 694);
             this.panelMainPage.TabIndex = 153;
+            // 
+            // listBoxNodesDashboard
+            // 
+            this.listBoxNodesDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.listBoxNodesDashboard.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxNodesDashboard.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxNodesDashboard.ForeColor = System.Drawing.Color.White;
+            this.listBoxNodesDashboard.FormattingEnabled = true;
+            this.listBoxNodesDashboard.ItemHeight = 21;
+            this.listBoxNodesDashboard.Location = new System.Drawing.Point(74, 424);
+            this.listBoxNodesDashboard.Name = "listBoxNodesDashboard";
+            this.listBoxNodesDashboard.Size = new System.Drawing.Size(1173, 210);
+            this.listBoxNodesDashboard.TabIndex = 150;
             // 
             // panel2
             // 
@@ -563,5 +578,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panelTerminal;
         private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.ListBox listBoxNodesDashboard;
     }
 }

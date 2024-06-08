@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
@@ -197,10 +198,98 @@ namespace AppLTI
             this.authKey = authKey;
         }
 
-        private void mainPage_Load(object sender, EventArgs e)
+        private async void mainPage_Load(object sender, EventArgs e)
         {
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
+            await LoadNodes(routerIp, portoAPI, authKey);
         }
+
+        private async Task LoadNodes(string routerIp, string portoAPI, string authToken)
+        {
+            try
+            {
+                listBoxNodesDashboard.Items.Clear();
+
+                string nodesUrl = $"https://{routerIp}:{portoAPI}/api/v1/nodes";
+                string podsUrl = $"https://{routerIp}:{portoAPI}/api/v1/pods";
+
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+
+                    HttpResponseMessage nodesResponse = await client.GetAsync(nodesUrl);
+                    HttpResponseMessage podsResponse = await client.GetAsync(podsUrl);
+
+                    if (nodesResponse.IsSuccessStatusCode && podsResponse.IsSuccessStatusCode)
+                    {
+                        string nodesResponseBody = await nodesResponse.Content.ReadAsStringAsync();
+                        string podsResponseBody = await podsResponse.Content.ReadAsStringAsync();
+
+                        JObject nodesJson = JObject.Parse(nodesResponseBody);
+                        JArray nodesItems = (JArray)nodesJson["items"];
+
+                        JObject podsJson = JObject.Parse(podsResponseBody);
+                        JArray podsItems = (JArray)podsJson["items"];
+
+                        Dictionary<string, int> nodePodCounts = new Dictionary<string, int>();
+
+                        foreach (var pod in podsItems)
+                        {
+                            string nodeName = (string)pod["spec"]["nodeName"];
+                            if (!string.IsNullOrEmpty(nodeName))
+                            {
+                                if (nodePodCounts.ContainsKey(nodeName))
+                                {
+                                    nodePodCounts[nodeName]++;
+                                }
+                                else
+                                {
+                                    nodePodCounts[nodeName] = 1;
+                                }
+                            }
+                        }
+
+                        listBoxNodesDashboard.Items.Add("Name\t\tReady\tCPU Capacity (cores)\t" +
+                            "Memory Limits (bytes)\tMemory Capacity (bytes)\tPods\tCreated");
+
+                        foreach (var item in nodesItems)
+                        {
+                            string name = (string)item["metadata"]["name"];
+                            string ready = (string)item["status"]["conditions"][3]["status"];
+                            string cpuCapacity = (string)item["status"]["capacity"]["cpu"];
+                            string memoryLimits = (string)item["status"]["allocatable"]["memory"];
+                            string memoryCapacity = (string)item["status"]["capacity"]["memory"];
+                            string created = (string)item["metadata"]["creationTimestamp"];
+
+                            DateTime creationDateTime = DateTime.ParseExact(created, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                            TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
+                            string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
+
+                            int podCount = nodePodCounts.ContainsKey(name) ? nodePodCounts[name] : 0;
+
+                            string nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t" +
+                                $"{memoryLimits}\t\t{memoryCapacity}\t\t{podCount}\t{timeAgo}";
+
+                            listBoxNodesDashboard.Items.Add(nodeInfo);
+                        }
+                    }
+                    else
+                    {
+                        string errorMessage = nodesResponse.IsSuccessStatusCode ? await podsResponse.Content.ReadAsStringAsync() : await nodesResponse.Content.ReadAsStringAsync();
+                        MessageBox.Show("Failed to load nodes. Error message: " + errorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading nodes: " + ex.Message);
+            }
+        }
+
+
 
         private void buttonPods_Click_1(object sender, EventArgs e)
         {
