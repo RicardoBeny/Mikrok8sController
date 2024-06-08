@@ -15,11 +15,15 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using Renci.SshNet;
 using System.IO;
+using System.Speech.Recognition;
+using System.Speech.Synthesis;
 
 namespace AppLTI
 {
     public partial class ingressForm : Form
     {
+        SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
+        SpeechSynthesizer speech = new SpeechSynthesizer();
         private IWebDriver driver;
         private string routerIp;
         private string username;
@@ -27,9 +31,73 @@ namespace AppLTI
         private string portoSSH;
         private string portoAPI;
         private string authKey;
+        private bool isMicrophoneActive = false;
+        private bool waitForNextWord = false;
         public ingressForm()
         {
             InitializeComponent();
+            InitializeVoiceRecognition();
+        }
+
+        private void InitializeVoiceRecognition()
+        {
+            try
+            {
+                if (SpeechRecognitionEngine.InstalledRecognizers().Count > 0)
+                {
+                    recognizer = new SpeechRecognitionEngine();
+                    recognizer.SetInputToDefaultAudioDevice();
+                    recognizer.SpeechRecognized += recEngine_SpeechRecognized;
+
+                    Choices choices = new Choices();
+                    choices.Add(new string[] { "finish", "name","ingressname","examplename","nameexample" });
+                    GrammarBuilder gb = new GrammarBuilder();
+                    gb.Append(choices);
+                    gb.Culture = recognizer.RecognizerInfo.Culture;
+                    Grammar g = new Grammar(gb);
+
+                    recognizer.LoadGrammar(g);
+                    speech.SelectVoiceByHints(VoiceGender.Male);
+                }
+                else
+                {
+                    MessageBox.Show("No speech recognizers installed. Please install a speech recognizer.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Voice recognition initialization failed: {ex.Message}");
+            }
+        }
+
+        private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            string result = e.Result.Text;
+
+            Task.Run(() =>
+            {
+                Invoke(new Action(() =>
+                {
+                    if (waitForNextWord)
+                    {
+                        textBoxNomeAdd.Text  = result;
+                        waitForNextWord = false;
+                    }
+                    else
+                    {
+                        if (result == "finish")
+                        {
+                            buttonActivateMic.BringToFront();
+                            StopMicrophone();
+                            buttonCreateDeployments_Click(buttonCreateDeployments, EventArgs.Empty);
+                        }
+                        else if (result == "name")
+                        {
+                            waitForNextWord = true;
+                        }
+                    }
+                }));
+            });
         }
 
         public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
@@ -652,6 +720,44 @@ namespace AppLTI
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonActivateMic_Click(object sender, EventArgs e)
+        {
+            StartMicrophone();
+            buttonMutMic.BringToFront();
+        }
+
+        private void buttonMutMic_Click(object sender, EventArgs e)
+        {
+            StopMicrophone();
+            buttonActivateMic.BringToFront();
+        }
+
+        private void StartMicrophone()
+        {
+            try
+            {
+                recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                isMicrophoneActive = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to start microphone: {ex.Message}");
+            }
+        }
+
+        private void StopMicrophone()
+        {
+            try
+            {
+                recognizer.RecognizeAsyncStop();
+                isMicrophoneActive = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to stop microphone: {ex.Message}");
             }
         }
     }
