@@ -32,11 +32,22 @@ namespace AppLTI
         private string portoAPI;
         private string authKey;
         private bool isMicrophoneActive = false;
-        private bool waitForNextWord = false;
+        private bool waitForName = false;
+        private bool waitForUrl = false;
+        private bool waitForPort = false;
+        private bool waitForNamespace = false;
+        private bool waitForService = false;
+        private List<string> dynamicChoices = new List<string>();
         public ingressForm()
         {
             InitializeComponent();
             InitializeVoiceRecognition();
+        }
+
+        private void ShowDynamicChoices()
+        {
+            string choicesText = string.Join(", ", dynamicChoices);
+            MessageBox.Show($"Current dynamic choices: {choicesText}", "Dynamic Choices");
         }
 
         private void InitializeVoiceRecognition()
@@ -48,15 +59,7 @@ namespace AppLTI
                     recognizer = new SpeechRecognitionEngine();
                     recognizer.SetInputToDefaultAudioDevice();
                     recognizer.SpeechRecognized += recEngine_SpeechRecognized;
-
-                    Choices choices = new Choices();
-                    choices.Add(new string[] { "finish", "name","ingressname","examplename","nameexample" });
-                    GrammarBuilder gb = new GrammarBuilder();
-                    gb.Append(choices);
-                    gb.Culture = recognizer.RecognizerInfo.Culture;
-                    Grammar g = new Grammar(gb);
-
-                    recognizer.LoadGrammar(g);
+                    UpdateSpeechRecognitionChoices();
                     speech.SelectVoiceByHints(VoiceGender.Male);
                 }
                 else
@@ -70,6 +73,23 @@ namespace AppLTI
             }
         }
 
+        private void UpdateSpeechRecognitionChoices()
+        {
+            Choices choices = new Choices();
+            choices.Add(new string[] { "finish", "name", "ingressname", "examplename", "nameexample","url","namespace", "service name", "port","80","exampleurl.comm","22","443" });
+            choices.Add(dynamicChoices.ToArray());
+
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Append(choices);
+            gb.Culture = recognizer.RecognizerInfo.Culture;
+            Grammar g = new Grammar(gb);
+
+            recognizer.UnloadAllGrammars();
+            recognizer.LoadGrammar(g);
+
+            ShowDynamicChoices();
+        }
+
         private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             string result = e.Result.Text;
@@ -78,10 +98,29 @@ namespace AppLTI
             {
                 Invoke(new Action(() =>
                 {
-                    if (waitForNextWord)
+                    if (waitForName)
                     {
                         textBoxNomeAdd.Text  = result;
-                        waitForNextWord = false;
+                        waitForName = false;
+                    }else if (waitForUrl)
+                    {
+                        textBoxHost.Text = result; 
+                        waitForUrl = false;
+                    }
+                    else if (waitForPort)
+                    {
+                        textBoxPortaServico.Text = result;
+                        waitForPort = false;
+                    }
+                    else if (waitForNamespace)
+                    {
+                        comboBoxNamespaceCriar.SelectedItem = result;
+                        waitForNamespace = false;
+                    }
+                    else if (waitForService)
+                    {
+                        comboBoxNomeDoServico.SelectedItem = result;
+                        waitForService = false;
                     }
                     else
                     {
@@ -93,7 +132,23 @@ namespace AppLTI
                         }
                         else if (result == "name")
                         {
-                            waitForNextWord = true;
+                            waitForName = true;
+                        }
+                        else if (result == "url")
+                        {
+                            waitForUrl = true;
+                        }
+                        else if (result == "port")
+                        {
+                            waitForPort = true;
+                        }
+                        else if (result == "namespace")
+                        {
+                            waitForNamespace = true;
+                        }
+                        else if (result == "service name")
+                        {
+                            waitForService = true;
                         }
                     }
                 }));
@@ -261,7 +316,9 @@ namespace AppLTI
                             string name = (string)serviceObject["metadata"]["name"];
 
                             comboBoxNomeDoServico.Items.Add($"{name}");
+                            dynamicChoices.Add($"{name}");
                         }
+                        UpdateSpeechRecognitionChoices();
                     }
                     else
                     {
@@ -308,7 +365,9 @@ namespace AppLTI
                             string name = (string)namespaceObject["metadata"]["name"];
                             comboBoxNamespaces.Items.Add($"{name}");
                             comboBoxNamespaceCriar.Items.Add($"{name}");
+                            dynamicChoices.Add($"{name}");
                         }
+                        UpdateSpeechRecognitionChoices();
                     }
                     else
                     {
