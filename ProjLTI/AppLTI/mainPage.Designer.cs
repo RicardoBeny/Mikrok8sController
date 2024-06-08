@@ -68,6 +68,7 @@
             this.panelDashboard = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMainPage = new System.Windows.Forms.Panel();
+            this.buttonWizard = new System.Windows.Forms.PictureBox();
             this.chartReplicaSets = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPods = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartJobs = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -86,7 +87,6 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panelTerminal = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.buttonWizard = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -94,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).BeginInit();
             this.panelDashboard.SuspendLayout();
             this.panelMainPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReplicaSets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartJobs)).BeginInit();
@@ -102,7 +103,6 @@
             this.panelPods.SuspendLayout();
             this.panelInterfaceWeb.SuspendLayout();
             this.panelTerminal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizard)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDashboard
@@ -168,10 +168,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
             this.label4.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(186, 35);
+            this.label4.Location = new System.Drawing.Point(186, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 23);
             this.label4.TabIndex = 229;
@@ -183,7 +183,7 @@
             this.comboBoxNamespaces.FormattingEnabled = true;
             this.comboBoxNamespaces.Items.AddRange(new object[] {
             "Todos"});
-            this.comboBoxNamespaces.Location = new System.Drawing.Point(304, 37);
+            this.comboBoxNamespaces.Location = new System.Drawing.Point(304, 34);
             this.comboBoxNamespaces.Name = "comboBoxNamespaces";
             this.comboBoxNamespaces.Size = new System.Drawing.Size(295, 21);
             this.comboBoxNamespaces.TabIndex = 228;
@@ -404,6 +404,17 @@
             this.panelMainPage.Name = "panelMainPage";
             this.panelMainPage.Size = new System.Drawing.Size(991, 564);
             this.panelMainPage.TabIndex = 153;
+            // 
+            // buttonWizard
+            // 
+            this.buttonWizard.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizard.Image")));
+            this.buttonWizard.Location = new System.Drawing.Point(54, 339);
+            this.buttonWizard.Name = "buttonWizard";
+            this.buttonWizard.Size = new System.Drawing.Size(32, 34);
+            this.buttonWizard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonWizard.TabIndex = 156;
+            this.buttonWizard.TabStop = false;
+            this.buttonWizard.Click += new System.EventHandler(this.buttonWizard_Click);
             // 
             // chartReplicaSets
             // 
@@ -644,17 +655,6 @@
             this.panel13.Size = new System.Drawing.Size(180, 34);
             this.panel13.TabIndex = 153;
             // 
-            // buttonWizard
-            // 
-            this.buttonWizard.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizard.Image")));
-            this.buttonWizard.Location = new System.Drawing.Point(54, 339);
-            this.buttonWizard.Name = "buttonWizard";
-            this.buttonWizard.Size = new System.Drawing.Size(32, 34);
-            this.buttonWizard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonWizard.TabIndex = 156;
-            this.buttonWizard.TabStop = false;
-            this.buttonWizard.Click += new System.EventHandler(this.buttonWizard_Click);
-            // 
             // mainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +702,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).EndInit();
             this.panelDashboard.ResumeLayout(false);
             this.panelMainPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonWizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReplicaSets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartJobs)).EndInit();
@@ -710,7 +711,6 @@
             this.panelPods.ResumeLayout(false);
             this.panelInterfaceWeb.ResumeLayout(false);
             this.panelTerminal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

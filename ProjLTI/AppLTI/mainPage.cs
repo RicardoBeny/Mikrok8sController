@@ -77,7 +77,7 @@ namespace AppLTI
                     recognizer.SpeechRecognized += recEngine_SpeechRecognized;
 
                     Choices choices = new Choices();
-                    choices.Add(new string[] { "pods", "nodes", "terminal", "namespaces", "deployments", "services", "ingress", "web page" });
+                    choices.Add(new string[] { "pods","wizard", "nodes", "terminal", "namespaces", "deployments", "services", "ingress", "web page" });
                     GrammarBuilder gb = new GrammarBuilder();
                     gb.Append(choices);
                     gb.Culture = recognizer.RecognizerInfo.Culture;
@@ -154,6 +154,13 @@ namespace AppLTI
                         sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
                         sshConection.Show();
                         this.Dispose();
+                    }
+                    else if (result == "wizard")
+                    {
+                        StopMicrophone();
+                        deploymentNameForm deploymentNameForm = new deploymentNameForm();
+                        deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+                        deploymentNameForm.Show();
                     }
                     else if (result == "namespaces")
                     {
