@@ -45,7 +45,7 @@ namespace AppLTI
         private void buttonDeployments_Click(object sender, EventArgs e)
         {
             deploymentsForm deploymentsForm = new deploymentsForm();
-            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, deploymentsForm);
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentsForm.Show();
             this.Dispose();
         }
@@ -160,6 +160,7 @@ namespace AppLTI
 
             await LoadNamespaces(routerIp, portoAPI, authKey);
             await LoadServices(routerIp, portoAPI, authKey);
+            await LoadIngress(routerIp, portoAPI, authKey, "Todos");
         }
 
         private async Task LoadServices(string routerIp, string portoAPI, string authToken)

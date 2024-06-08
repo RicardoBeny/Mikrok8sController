@@ -20,14 +20,13 @@ namespace AppLTI
         private string authKey;
         private string namespacename;
         private string deploymentName;
-        private deploymentsForm parentForm;
 
         public deploymentPortForm()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, string namespacename, string deploymentName, deploymentsForm parentForm)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, string namespacename, string deploymentName)
         {
             this.routerIp = routerIp;
             this.username = username;
@@ -37,7 +36,6 @@ namespace AppLTI
             this.authKey = authKey;
             this.namespacename = namespacename;
             this.deploymentName = deploymentName;
-            this.parentForm = parentForm;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -55,7 +53,7 @@ namespace AppLTI
             }
 
             deploymentImageForm deploymentImageForm = new deploymentImageForm();
-            deploymentImageForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, deploymentName, textBoxReplicas.Text, textBoxPorto.Text, parentForm);
+            deploymentImageForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, deploymentName, textBoxReplicas.Text, textBoxPorto.Text);
             deploymentImageForm.Show();
             this.Dispose();
         }
@@ -63,7 +61,7 @@ namespace AppLTI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             deploymentNameForm deploymentNameForm = new deploymentNameForm();
-            deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
+            deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentNameForm.Show();
             this.Dispose();
         }

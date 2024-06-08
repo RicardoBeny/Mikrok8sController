@@ -69,7 +69,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxproposito = new System.Windows.Forms.TextBox();
-            this.buttonWizardPods = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxOwner = new System.Windows.Forms.TextBox();
@@ -79,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardPods)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxPods
@@ -475,7 +473,6 @@
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.textBoxproposito);
-            this.panel4.Controls.Add(this.buttonWizardPods);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.listBoxPods);
             this.panel4.Controls.Add(this.label11);
@@ -577,16 +574,6 @@
             this.textBoxproposito.Size = new System.Drawing.Size(239, 20);
             this.textBoxproposito.TabIndex = 273;
             // 
-            // buttonWizardPods
-            // 
-            this.buttonWizardPods.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardPods.Image")));
-            this.buttonWizardPods.Location = new System.Drawing.Point(132, 341);
-            this.buttonWizardPods.Name = "buttonWizardPods";
-            this.buttonWizardPods.Size = new System.Drawing.Size(39, 32);
-            this.buttonWizardPods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonWizardPods.TabIndex = 239;
-            this.buttonWizardPods.TabStop = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -648,7 +635,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardPods)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,7 +670,6 @@
         private System.Windows.Forms.Label buttonNodes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox buttonWizardPods;
         private System.Windows.Forms.Label buttonIngress;
         private System.Windows.Forms.ComboBox comboBoxNamespaceCriar;
         private System.Windows.Forms.Label label6;

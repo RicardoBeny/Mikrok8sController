@@ -41,7 +41,16 @@
             this.buttonIngress = new System.Windows.Forms.Label();
             this.btnTerminal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonWizardServices = new System.Windows.Forms.PictureBox();
+            this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxproposito = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxOwner = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.comboBoxProtocolo = new System.Windows.Forms.ComboBox();
             this.comboBoxNamespaceCriar = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,22 +75,11 @@
             this.buttonNameSpaces = new System.Windows.Forms.Label();
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
-            this.comboBoxProtocolo = new System.Windows.Forms.ComboBox();
-            this.comboBoxType = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBoxproposito = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxOwner = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardServices)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureUsername
@@ -238,7 +236,6 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.comboBoxType);
             this.panel4.Controls.Add(this.comboBoxProtocolo);
-            this.panel4.Controls.Add(this.buttonWizardServices);
             this.panel4.Controls.Add(this.comboBoxNamespaceCriar);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label5);
@@ -260,15 +257,111 @@
             this.panel4.Size = new System.Drawing.Size(1043, 578);
             this.panel4.TabIndex = 147;
             // 
-            // buttonWizardServices
+            // textBoxEquipaMetadata
             // 
-            this.buttonWizardServices.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardServices.Image")));
-            this.buttonWizardServices.Location = new System.Drawing.Point(384, 334);
-            this.buttonWizardServices.Name = "buttonWizardServices";
-            this.buttonWizardServices.Size = new System.Drawing.Size(39, 32);
-            this.buttonWizardServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonWizardServices.TabIndex = 241;
-            this.buttonWizardServices.TabStop = false;
+            this.textBoxEquipaMetadata.Location = new System.Drawing.Point(539, 537);
+            this.textBoxEquipaMetadata.Name = "textBoxEquipaMetadata";
+            this.textBoxEquipaMetadata.Size = new System.Drawing.Size(256, 20);
+            this.textBoxEquipaMetadata.TabIndex = 268;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(466, 534);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 23);
+            this.label15.TabIndex = 267;
+            this.label15.Text = "Equipa:";
+            // 
+            // textBoxproposito
+            // 
+            this.textBoxproposito.Location = new System.Drawing.Point(556, 486);
+            this.textBoxproposito.Name = "textBoxproposito";
+            this.textBoxproposito.Size = new System.Drawing.Size(239, 20);
+            this.textBoxproposito.TabIndex = 266;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(466, 482);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 23);
+            this.label12.TabIndex = 265;
+            this.label12.Text = "Propósito:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(582, 460);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 23);
+            this.label11.TabIndex = 264;
+            this.label11.Text = "MetaData";
+            // 
+            // textBoxOwner
+            // 
+            this.textBoxOwner.Location = new System.Drawing.Point(532, 512);
+            this.textBoxOwner.Name = "textBoxOwner";
+            this.textBoxOwner.Size = new System.Drawing.Size(263, 20);
+            this.textBoxOwner.TabIndex = 263;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(466, 506);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 23);
+            this.label8.TabIndex = 262;
+            this.label8.Text = "Owner:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(592, 348);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 23);
+            this.label7.TabIndex = 261;
+            this.label7.Text = "Portos";
+            // 
+            // comboBoxType
+            // 
+            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Items.AddRange(new object[] {
+            "LoadBalancer",
+            "ClusterIP"});
+            this.comboBoxType.Location = new System.Drawing.Point(87, 458);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(373, 21);
+            this.comboBoxType.TabIndex = 260;
+            // 
+            // comboBoxProtocolo
+            // 
+            this.comboBoxProtocolo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProtocolo.FormattingEnabled = true;
+            this.comboBoxProtocolo.Items.AddRange(new object[] {
+            "UDP",
+            "TCP",
+            "SCTP"});
+            this.comboBoxProtocolo.Location = new System.Drawing.Point(561, 381);
+            this.comboBoxProtocolo.Name = "comboBoxProtocolo";
+            this.comboBoxProtocolo.Size = new System.Drawing.Size(234, 21);
+            this.comboBoxProtocolo.TabIndex = 259;
             // 
             // comboBoxNamespaceCriar
             // 
@@ -525,112 +618,6 @@
             this.buttonNodes.Text = "Nodes";
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
             // 
-            // comboBoxProtocolo
-            // 
-            this.comboBoxProtocolo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxProtocolo.FormattingEnabled = true;
-            this.comboBoxProtocolo.Items.AddRange(new object[] {
-            "UDP",
-            "TCP",
-            "SCTP"});
-            this.comboBoxProtocolo.Location = new System.Drawing.Point(561, 381);
-            this.comboBoxProtocolo.Name = "comboBoxProtocolo";
-            this.comboBoxProtocolo.Size = new System.Drawing.Size(234, 21);
-            this.comboBoxProtocolo.TabIndex = 259;
-            // 
-            // comboBoxType
-            // 
-            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Items.AddRange(new object[] {
-            "LoadBalancer",
-            "ClusterIP"});
-            this.comboBoxType.Location = new System.Drawing.Point(87, 458);
-            this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(373, 21);
-            this.comboBoxType.TabIndex = 260;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(592, 348);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 23);
-            this.label7.TabIndex = 261;
-            this.label7.Text = "Portos";
-            // 
-            // textBoxEquipaMetadata
-            // 
-            this.textBoxEquipaMetadata.Location = new System.Drawing.Point(539, 537);
-            this.textBoxEquipaMetadata.Name = "textBoxEquipaMetadata";
-            this.textBoxEquipaMetadata.Size = new System.Drawing.Size(256, 20);
-            this.textBoxEquipaMetadata.TabIndex = 268;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(466, 534);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 23);
-            this.label15.TabIndex = 267;
-            this.label15.Text = "Equipa:";
-            // 
-            // textBoxproposito
-            // 
-            this.textBoxproposito.Location = new System.Drawing.Point(556, 486);
-            this.textBoxproposito.Name = "textBoxproposito";
-            this.textBoxproposito.Size = new System.Drawing.Size(239, 20);
-            this.textBoxproposito.TabIndex = 266;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(466, 482);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 23);
-            this.label12.TabIndex = 265;
-            this.label12.Text = "Propósito:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(582, 460);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 23);
-            this.label11.TabIndex = 264;
-            this.label11.Text = "MetaData";
-            // 
-            // textBoxOwner
-            // 
-            this.textBoxOwner.Location = new System.Drawing.Point(532, 512);
-            this.textBoxOwner.Name = "textBoxOwner";
-            this.textBoxOwner.Size = new System.Drawing.Size(263, 20);
-            this.textBoxOwner.TabIndex = 263;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(466, 506);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 23);
-            this.label8.TabIndex = 262;
-            this.label8.Text = "Owner:";
-            // 
             // servicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,7 +636,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardServices)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -690,7 +676,6 @@
         private System.Windows.Forms.TextBox textBoxTargetPort;
         private System.Windows.Forms.ComboBox comboBoxNamespaceCriar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox buttonWizardServices;
         private System.Windows.Forms.Label buttonIngress;
         private System.Windows.Forms.Label btnInterfaceWeb;
         private System.Windows.Forms.ComboBox comboBoxProtocolo;

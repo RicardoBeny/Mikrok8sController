@@ -251,7 +251,7 @@ namespace AppLTI
         private void buttonDeployments_Click(object sender, EventArgs e)
         {
             deploymentsForm deploymentsForm = new deploymentsForm();
-            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, deploymentsForm);
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentsForm.Show();
             this.Dispose();
         }

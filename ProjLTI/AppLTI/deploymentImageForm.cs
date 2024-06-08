@@ -25,14 +25,13 @@ namespace AppLTI
         private string deploymentName;
         private string replicas;
         private string porto;
-        private deploymentsForm parentForm;
 
         public deploymentImageForm()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, string namespacename, string deploymentName, string replicas, string porto, deploymentsForm parentForm)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, string namespacename, string deploymentName, string replicas, string porto)
         {
             this.routerIp = routerIp;
             this.username = username;
@@ -44,7 +43,6 @@ namespace AppLTI
             this.deploymentName = deploymentName;
             this.replicas = replicas;
             this.porto = porto;
-            this.parentForm = parentForm;
         }
 
         private async void buttonFinish_Click(object sender, EventArgs e)
@@ -143,7 +141,6 @@ namespace AppLTI
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Deployment created successfully.");
-                        await parentForm.LoadDeployments(routerIp, portoAPI, authToken, namespacename);
                         this.Dispose();
                     }
                     else
@@ -162,7 +159,7 @@ namespace AppLTI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             deploymentPortForm deploymentPortForm = new deploymentPortForm();
-            deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, deploymentName, parentForm);
+            deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, deploymentName);
             deploymentPortForm.Show();
             this.Dispose();
         }

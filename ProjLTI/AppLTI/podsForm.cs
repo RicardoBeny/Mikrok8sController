@@ -429,6 +429,7 @@ namespace AppLTI
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
 
             await LoadNamespaces(routerIp, portoAPI, authKey);
+            await LoadPods(routerIp, portoAPI, authKey, "Todos");
         }
 
         private async Task LoadDeployments(string routerIp, string portoAPI, string authToken, string namespacename)
@@ -476,7 +477,7 @@ namespace AppLTI
         private void buttonDeployments_Click(object sender, EventArgs e)
         {
             deploymentsForm deploymentsForm = new deploymentsForm();
-            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, deploymentsForm);
+            deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentsForm.Show();
             this.Dispose();
         }

@@ -26,7 +26,6 @@ namespace AppLTI
         private string portoSSH;
         private string portoAPI;
         private string authKey;
-        private deploymentsForm parentForm;
         private IWebDriver driver;
 
         public deploymentsForm()
@@ -34,7 +33,7 @@ namespace AppLTI
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, deploymentsForm parentForm)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
         {
             this.routerIp = routerIp;
             this.username = username;
@@ -42,12 +41,11 @@ namespace AppLTI
             this.portoSSH = portoSSH;
             this.portoAPI = portoAPI;
             this.authKey = authKey;
-            this.parentForm = parentForm;
         }
         public deploymentsForm(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, deploymentsForm parentForm)
         {
             InitializeComponent();
-            SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
+            SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
         }
 
         private async void deploymentsForm_Load(object sender, EventArgs e)
@@ -55,6 +53,7 @@ namespace AppLTI
             textBoxIP.Text = username + " - " + routerIp + ":" + portoSSH;
 
             await LoadNamespaces(routerIp, portoAPI, authKey);
+            await LoadDeployments(routerIp, portoAPI, authKey, "Todos");
         }
 
         private async void comboBoxNamespaces_SelectedIndexChanged(object sender, EventArgs e)
@@ -495,13 +494,6 @@ namespace AppLTI
             podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             podsForm.Show();
             this.Dispose();
-        }
-
-        private void buttonWizardDeployment_Click(object sender, EventArgs e)
-        {
-            deploymentNameForm deploymentNameForm = new deploymentNameForm();
-            deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, parentForm);
-            deploymentNameForm.Show();
         }
 
         private void listBoxDeployments_SelectedIndexChanged(object sender, EventArgs e)

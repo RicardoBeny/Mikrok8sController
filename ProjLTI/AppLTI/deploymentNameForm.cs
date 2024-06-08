@@ -21,14 +21,13 @@ namespace AppLTI
         private string portoSSH;
         private string portoAPI;
         private string authKey;
-        private deploymentsForm parentForm;
 
         public deploymentNameForm()
         {
             InitializeComponent();
         }
 
-        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey, deploymentsForm parentForm)
+        public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)
         {
             this.routerIp = routerIp;
             this.username = username;
@@ -36,7 +35,6 @@ namespace AppLTI
             this.portoSSH = portoSSH;
             this.portoAPI = portoAPI;
             this.authKey = authKey;
-            this.parentForm = parentForm;
         }
 
         private async void pictureBox1_Click(object sender, EventArgs e)
@@ -65,7 +63,7 @@ namespace AppLTI
             else
             {
                 deploymentPortForm deploymentPortForm = new deploymentPortForm();
-                deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, textBoxNameAdd.Text, parentForm);
+                deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, textBoxNameAdd.Text);
                 deploymentPortForm.Show();
                 this.Dispose();
             }

@@ -77,13 +77,11 @@
             this.textBoxOwner = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxImage = new System.Windows.Forms.ComboBox();
-            this.buttonWizardDeployment = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsername)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardDeployment)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -504,7 +502,6 @@
             this.panel4.Controls.Add(this.textBoxOwner);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.comboBoxImage);
-            this.panel4.Controls.Add(this.buttonWizardDeployment);
             this.panel4.Controls.Add(this.listBoxDeployments);
             this.panel4.Controls.Add(this.buttonCreateDeployments);
             this.panel4.Controls.Add(this.textBoxReplicas);
@@ -666,17 +663,6 @@
             this.comboBoxImage.Size = new System.Drawing.Size(350, 21);
             this.comboBoxImage.TabIndex = 239;
             // 
-            // buttonWizardDeployment
-            // 
-            this.buttonWizardDeployment.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizardDeployment.Image")));
-            this.buttonWizardDeployment.Location = new System.Drawing.Point(374, 334);
-            this.buttonWizardDeployment.Name = "buttonWizardDeployment";
-            this.buttonWizardDeployment.Size = new System.Drawing.Size(39, 32);
-            this.buttonWizardDeployment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonWizardDeployment.TabIndex = 238;
-            this.buttonWizardDeployment.TabStop = false;
-            this.buttonWizardDeployment.Click += new System.EventHandler(this.buttonWizardDeployment_Click);
-            // 
             // deploymentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,7 +681,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonWizardDeployment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -737,7 +722,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label btnTerminal;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox buttonWizardDeployment;
         private System.Windows.Forms.ComboBox comboBoxImage;
         private System.Windows.Forms.Label buttonIngress;
         private System.Windows.Forms.TextBox textBoxOwner;
