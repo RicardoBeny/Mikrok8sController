@@ -87,6 +87,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panelTerminal = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.buttonDiagramaDeRede = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -156,6 +157,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
+            this.panel1.Controls.Add(this.buttonDiagramaDeRede);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBoxNamespaces);
             this.panel1.Controls.Add(this.labelDashboard);
@@ -655,6 +657,18 @@
             this.panel13.Size = new System.Drawing.Size(180, 34);
             this.panel13.TabIndex = 153;
             // 
+            // buttonDiagramaDeRede
+            // 
+            this.buttonDiagramaDeRede.AutoSize = true;
+            this.buttonDiagramaDeRede.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDiagramaDeRede.ForeColor = System.Drawing.Color.White;
+            this.buttonDiagramaDeRede.Location = new System.Drawing.Point(643, 30);
+            this.buttonDiagramaDeRede.Name = "buttonDiagramaDeRede";
+            this.buttonDiagramaDeRede.Size = new System.Drawing.Size(159, 25);
+            this.buttonDiagramaDeRede.TabIndex = 160;
+            this.buttonDiagramaDeRede.Text = "Diagrama de Rede";
+            this.buttonDiagramaDeRede.Click += new System.EventHandler(this.buttonDiagramaDeRede_Click);
+            // 
             // mainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,5 +774,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartJobs;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDeployments;
         private System.Windows.Forms.PictureBox buttonWizard;
+        private System.Windows.Forms.Label buttonDiagramaDeRede;
     }
 }

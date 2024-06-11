@@ -1141,6 +1141,13 @@ namespace AppLTI
             deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentNameForm.Show();
         }
+
+        private void buttonDiagramaDeRede_Click(object sender, EventArgs e)
+        {
+            networkDiagramForm networkDiagramForm = new networkDiagramForm();
+            networkDiagramForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            networkDiagramForm.Show();
+        }
     }
 }
 
