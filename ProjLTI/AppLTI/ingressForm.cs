@@ -37,6 +37,8 @@ namespace AppLTI
         private bool waitForPort = false;
         private bool waitForNamespace = false;
         private bool waitForService = false;
+        private bool waitForOwner = false;
+        private bool waitForPurpose = false;
         private List<string> dynamicChoices = new List<string>();
         public ingressForm()
         {
@@ -76,7 +78,7 @@ namespace AppLTI
         private void UpdateSpeechRecognitionChoices()
         {
             Choices choices = new Choices();
-            choices.Add(new string[] { "finish", "name", "ingressname", "examplename", "nameexample","url","namespace", "service name", "port","80","exampleurl.comm","22","443" });
+            choices.Add(new string[] { "create ingress", "name", "ingressname", "examplename", "nameexample","url","namespaces", "namespace", "service name", "port","80","presentationurl.comm","22","443","owner","purpose" });
             choices.Add(dynamicChoices.ToArray());
 
             GrammarBuilder gb = new GrammarBuilder();
@@ -122,12 +124,20 @@ namespace AppLTI
                         comboBoxNomeDoServico.SelectedItem = result;
                         waitForService = false;
                     }
+                    else if (waitForOwner)
+                    {
+                        textBoxOwner.Text = result;
+                        waitForOwner = false;
+                    }
+                    else if (waitForPurpose)
+                    {
+                        textBoxproposito.Text = result;
+                        waitForPurpose = false;
+                    }
                     else
                     {
-                        if (result == "finish")
+                        if (result == "create ingress")
                         {
-                            buttonActivateMic.BringToFront();
-                            StopMicrophone();
                             buttonCreateDeployments_Click(buttonCreateDeployments, EventArgs.Empty);
                         }
                         else if (result == "name")
@@ -142,13 +152,21 @@ namespace AppLTI
                         {
                             waitForPort = true;
                         }
-                        else if (result == "namespace")
+                        else if ((result == "namespaces") || (result == "namespace"))
                         {
                             waitForNamespace = true;
                         }
                         else if (result == "service name")
                         {
                             waitForService = true;
+                        }
+                        else if (result == "owner")
+                        {
+                            waitForOwner = true;
+                        }
+                        else if (result == "purpose")
+                        {
+                            waitForPurpose = true;
                         }
                     }
                 }));
@@ -384,6 +402,7 @@ namespace AppLTI
 
         private void buttonPods_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             podsForm podsForm = new podsForm();
             podsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             podsForm.Show();
@@ -392,6 +411,7 @@ namespace AppLTI
 
         private void buttonServices_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             servicesForm servicesForm = new servicesForm();
             servicesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             servicesForm.Show();
@@ -400,6 +420,7 @@ namespace AppLTI
 
         private void buttonNameSpaces_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             namespacesForm namespacesForm = new namespacesForm();
             namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             namespacesForm.Show();
@@ -408,6 +429,7 @@ namespace AppLTI
 
         private void buttonNodes_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             nodesForm nodesForm = new nodesForm();
             nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             nodesForm.Show();
@@ -416,6 +438,7 @@ namespace AppLTI
 
         private void btnTerminal_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             sshConection sshConection = new sshConection();
             sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             sshConection.Show();
