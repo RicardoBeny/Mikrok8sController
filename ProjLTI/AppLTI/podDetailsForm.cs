@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace AppLTI
 {
@@ -22,6 +23,7 @@ namespace AppLTI
         private string portoAPI;
         private string authKey;
         private string podName;
+
         public podDetailsForm()
         {
             InitializeComponent();

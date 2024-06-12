@@ -59,9 +59,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxNamespaces = new System.Windows.Forms.ComboBox();
+            this.labelPage = new System.Windows.Forms.Label();
+            this.panelDashboard = new System.Windows.Forms.Panel();
             this.labelDashboard = new System.Windows.Forms.Label();
-            this.panelPods = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnInterfaceWeb = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonDeployments = new System.Windows.Forms.Label();
             this.buttonNameSpaces = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelPods = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelDeployments = new System.Windows.Forms.Panel();
             this.panelServices = new System.Windows.Forms.Panel();
@@ -91,8 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelDashboard.SuspendLayout();
             this.panelPods.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panelInterfaceWeb.SuspendLayout();
             this.panelTerminal.SuspendLayout();
             this.SuspendLayout();
@@ -437,7 +437,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.comboBoxNamespaces);
-            this.panel1.Controls.Add(this.labelDashboard);
+            this.panel1.Controls.Add(this.labelPage);
             this.panel1.Location = new System.Drawing.Point(0, 52);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -467,42 +467,46 @@
             this.comboBoxNamespaces.Size = new System.Drawing.Size(295, 21);
             this.comboBoxNamespaces.TabIndex = 279;
             // 
+            // labelPage
+            // 
+            this.labelPage.AutoSize = true;
+            this.labelPage.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPage.ForeColor = System.Drawing.Color.White;
+            this.labelPage.Location = new System.Drawing.Point(20, 14);
+            this.labelPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(60, 29);
+            this.labelPage.TabIndex = 1;
+            this.labelPage.Text = "Pods";
+            // 
+            // panelDashboard
+            // 
+            this.panelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panelDashboard.Controls.Add(this.labelDashboard);
+            this.panelDashboard.Controls.Add(this.panel3);
+            this.panelDashboard.Location = new System.Drawing.Point(16, 140);
+            this.panelDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.panelDashboard.Name = "panelDashboard";
+            this.panelDashboard.Size = new System.Drawing.Size(180, 34);
+            this.panelDashboard.TabIndex = 219;
+            this.panelDashboard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelDashboard_click);
+            this.panelDashboard.MouseEnter += new System.EventHandler(this.panelDashboard_MouseEnter);
+            this.panelDashboard.MouseLeave += new System.EventHandler(this.panelDashboard_MouseLeave);
+            // 
             // labelDashboard
             // 
             this.labelDashboard.AutoSize = true;
-            this.labelDashboard.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.labelDashboard.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDashboard.ForeColor = System.Drawing.Color.White;
-            this.labelDashboard.Location = new System.Drawing.Point(20, 14);
-            this.labelDashboard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDashboard.Location = new System.Drawing.Point(3, 5);
             this.labelDashboard.Name = "labelDashboard";
-            this.labelDashboard.Size = new System.Drawing.Size(60, 29);
-            this.labelDashboard.TabIndex = 1;
-            this.labelDashboard.Text = "Pods";
-            // 
-            // panelPods
-            // 
-            this.panelPods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.panelPods.Controls.Add(this.label4);
-            this.panelPods.Controls.Add(this.panel3);
-            this.panelPods.Location = new System.Drawing.Point(16, 140);
-            this.panelPods.Margin = new System.Windows.Forms.Padding(2);
-            this.panelPods.Name = "panelPods";
-            this.panelPods.Size = new System.Drawing.Size(180, 34);
-            this.panelPods.TabIndex = 219;
-            this.panelPods.Click += new System.EventHandler(this.panelDashboard_click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.label4.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 25);
-            this.label4.TabIndex = 154;
-            this.label4.Text = "Dashboard";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.labelDashboard.Size = new System.Drawing.Size(99, 25);
+            this.labelDashboard.TabIndex = 154;
+            this.labelDashboard.Text = "Dashboard";
+            this.labelDashboard.Click += new System.EventHandler(this.labelDashboard_Click);
+            this.labelDashboard.MouseEnter += new System.EventHandler(this.labelDashboard_MouseEnter);
+            this.labelDashboard.MouseLeave += new System.EventHandler(this.labelDashboard_MouseLeave);
             // 
             // panel3
             // 
@@ -665,15 +669,15 @@
             this.buttonNameSpaces.MouseEnter += new System.EventHandler(this.buttonNamespaces_MouseEnter);
             this.buttonNameSpaces.MouseLeave += new System.EventHandler(this.buttonNamespaces_MouseLeave);
             // 
-            // panel5
+            // panelPods
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(33, 210);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(164, 34);
-            this.panel5.TabIndex = 231;
+            this.panelPods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panelPods.Controls.Add(this.panel6);
+            this.panelPods.Location = new System.Drawing.Point(33, 210);
+            this.panelPods.Margin = new System.Windows.Forms.Padding(2);
+            this.panelPods.Name = "panelPods";
+            this.panelPods.Size = new System.Drawing.Size(164, 34);
+            this.panelPods.TabIndex = 231;
             // 
             // panel6
             // 
@@ -820,7 +824,7 @@
             this.Controls.Add(this.buttonPods);
             this.Controls.Add(this.buttonDeployments);
             this.Controls.Add(this.buttonNameSpaces);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panelPods);
             this.Controls.Add(this.panelDeployments);
             this.Controls.Add(this.panelServices);
             this.Controls.Add(this.panelIngress);
@@ -829,7 +833,7 @@
             this.Controls.Add(this.panelInterfaceWeb);
             this.Controls.Add(this.panelTerminal);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelPods);
+            this.Controls.Add(this.panelDashboard);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
@@ -843,9 +847,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelDashboard.ResumeLayout(false);
+            this.panelDashboard.PerformLayout();
             this.panelPods.ResumeLayout(false);
-            this.panelPods.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.panelInterfaceWeb.ResumeLayout(false);
             this.panelTerminal.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -882,11 +886,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelDashboard;
-        private System.Windows.Forms.Panel panelPods;
+        private System.Windows.Forms.Label labelPage;
+        private System.Windows.Forms.Panel panelDashboard;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelDashboard;
         private System.Windows.Forms.Label btnInterfaceWeb;
         private System.Windows.Forms.Label buttonIngress;
         private System.Windows.Forms.Label btnTerminal;
@@ -898,7 +902,7 @@
         private System.Windows.Forms.Label buttonPods;
         private System.Windows.Forms.Label buttonDeployments;
         private System.Windows.Forms.Label buttonNameSpaces;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelPods;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panelDeployments;
         private System.Windows.Forms.Panel panelServices;
