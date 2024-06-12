@@ -439,6 +439,7 @@ namespace AppLTI
 
         private void btnInterfaceWeb_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             RetrievePort();
         }
 
@@ -551,6 +552,7 @@ namespace AppLTI
 
         private void panelDeployments_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             deploymentsForm deploymentsForm = new deploymentsForm();
             deploymentsForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentsForm.Show();
@@ -587,6 +589,7 @@ namespace AppLTI
 
         private void panelServices_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             servicesForm servicesForm = new servicesForm();
             servicesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             servicesForm.Show();
@@ -623,6 +626,7 @@ namespace AppLTI
 
         private void panelIngress_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             ingressForm ingressForm = new ingressForm();
             ingressForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             ingressForm.Show();
@@ -659,6 +663,7 @@ namespace AppLTI
 
         private void panelNamespaces_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             namespacesForm namespacesForm = new namespacesForm();
             namespacesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             namespacesForm.Show();
@@ -695,6 +700,7 @@ namespace AppLTI
 
         private void panelNodes_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             nodesForm nodesForm = new nodesForm();
             nodesForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             nodesForm.Show();
@@ -731,6 +737,7 @@ namespace AppLTI
 
         private void panelInterfaceWeb_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             RetrievePort();
         }
 
@@ -764,6 +771,7 @@ namespace AppLTI
 
         private void panelTerminal_MouseClick(object sender, MouseEventArgs e)
         {
+            StopMicrophone();
             sshConection sshConection = new sshConection();
             sshConection.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             sshConection.Show();
@@ -1137,6 +1145,7 @@ namespace AppLTI
 
         private void buttonWizard_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             deploymentNameForm deploymentNameForm = new deploymentNameForm();
             deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentNameForm.Show();
@@ -1144,6 +1153,7 @@ namespace AppLTI
 
         private void buttonDiagramaDeRede_Click(object sender, EventArgs e)
         {
+            StopMicrophone();
             networkDiagramForm networkDiagramForm = new networkDiagramForm();
             networkDiagramForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             networkDiagramForm.Show();
