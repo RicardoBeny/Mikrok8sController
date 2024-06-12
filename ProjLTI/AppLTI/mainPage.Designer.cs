@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainPage));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelDashboard = new System.Windows.Forms.Label();
             this.textBoxIP = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonDiagramaDeRede = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxNamespaces = new System.Windows.Forms.ComboBox();
+            this.buttonDiagramaDeRede = new System.Windows.Forms.Label();
             this.buttonNodes = new System.Windows.Forms.Label();
             this.buttonPods = new System.Windows.Forms.Label();
             this.buttonNameSpaces = new System.Windows.Forms.Label();
@@ -69,6 +69,7 @@
             this.panelDashboard = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMainPage = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonWizard = new System.Windows.Forms.PictureBox();
             this.chartReplicaSets = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPods = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -76,6 +77,7 @@
             this.chartDeployments = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartDaemon = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.listBoxNodesDashboard = new System.Windows.Forms.ListBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelPods = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -88,6 +90,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panelTerminal = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -104,6 +107,7 @@
             this.panelPods.SuspendLayout();
             this.panelInterfaceWeb.SuspendLayout();
             this.panelTerminal.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelDashboard
@@ -157,7 +161,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
-            this.panel1.Controls.Add(this.buttonDiagramaDeRede);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBoxNamespaces);
             this.panel1.Controls.Add(this.labelDashboard);
@@ -166,18 +169,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1251, 58);
             this.panel1.TabIndex = 146;
-            // 
-            // buttonDiagramaDeRede
-            // 
-            this.buttonDiagramaDeRede.AutoSize = true;
-            this.buttonDiagramaDeRede.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDiagramaDeRede.ForeColor = System.Drawing.Color.White;
-            this.buttonDiagramaDeRede.Location = new System.Drawing.Point(227, 14);
-            this.buttonDiagramaDeRede.Name = "buttonDiagramaDeRede";
-            this.buttonDiagramaDeRede.Size = new System.Drawing.Size(159, 25);
-            this.buttonDiagramaDeRede.TabIndex = 160;
-            this.buttonDiagramaDeRede.Text = "Diagrama de Rede";
-            this.buttonDiagramaDeRede.Click += new System.EventHandler(this.buttonDiagramaDeRede_Click);
             // 
             // label4
             // 
@@ -202,6 +193,21 @@
             this.comboBoxNamespaces.Size = new System.Drawing.Size(295, 21);
             this.comboBoxNamespaces.TabIndex = 228;
             this.comboBoxNamespaces.SelectedIndexChanged += new System.EventHandler(this.comboBoxNamespaces_SelectedIndexChanged);
+            // 
+            // buttonDiagramaDeRede
+            // 
+            this.buttonDiagramaDeRede.AutoSize = true;
+            this.buttonDiagramaDeRede.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.buttonDiagramaDeRede.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDiagramaDeRede.ForeColor = System.Drawing.Color.White;
+            this.buttonDiagramaDeRede.Location = new System.Drawing.Point(10, 3);
+            this.buttonDiagramaDeRede.Name = "buttonDiagramaDeRede";
+            this.buttonDiagramaDeRede.Size = new System.Drawing.Size(159, 25);
+            this.buttonDiagramaDeRede.TabIndex = 160;
+            this.buttonDiagramaDeRede.Text = "Diagrama de Rede";
+            this.buttonDiagramaDeRede.Click += new System.EventHandler(this.buttonDiagramaDeRede_Click);
+            this.buttonDiagramaDeRede.MouseEnter += new System.EventHandler(this.buttonDiagramaRede_MouseEnter);
+            this.buttonDiagramaDeRede.MouseLeave += new System.EventHandler(this.buttonDiagramaRede_MouseLeave);
             // 
             // buttonNodes
             // 
@@ -351,7 +357,7 @@
             // buttonMutMic
             // 
             this.buttonMutMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonMutMic.Image")));
-            this.buttonMutMic.Location = new System.Drawing.Point(14, 340);
+            this.buttonMutMic.Location = new System.Drawing.Point(3, 3);
             this.buttonMutMic.Name = "buttonMutMic";
             this.buttonMutMic.Size = new System.Drawing.Size(35, 49);
             this.buttonMutMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -362,7 +368,7 @@
             // buttonActivateMic
             // 
             this.buttonActivateMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonActivateMic.Image")));
-            this.buttonActivateMic.Location = new System.Drawing.Point(14, 340);
+            this.buttonActivateMic.Location = new System.Drawing.Point(3, 3);
             this.buttonActivateMic.Name = "buttonActivateMic";
             this.buttonActivateMic.Size = new System.Drawing.Size(35, 49);
             this.buttonActivateMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -404,25 +410,39 @@
             // panelMainPage
             // 
             this.panelMainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelMainPage.Controls.Add(this.label2);
             this.panelMainPage.Controls.Add(this.buttonWizard);
             this.panelMainPage.Controls.Add(this.chartReplicaSets);
+            this.panelMainPage.Controls.Add(this.buttonMutMic);
             this.panelMainPage.Controls.Add(this.chartPods);
             this.panelMainPage.Controls.Add(this.chartJobs);
+            this.panelMainPage.Controls.Add(this.buttonActivateMic);
             this.panelMainPage.Controls.Add(this.chartDeployments);
             this.panelMainPage.Controls.Add(this.chartDaemon);
             this.panelMainPage.Controls.Add(this.listBoxNodesDashboard);
-            this.panelMainPage.Controls.Add(this.buttonActivateMic);
-            this.panelMainPage.Controls.Add(this.buttonMutMic);
+            this.panelMainPage.Controls.Add(this.panel4);
             this.panelMainPage.Location = new System.Drawing.Point(232, 140);
             this.panelMainPage.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainPage.Name = "panelMainPage";
             this.panelMainPage.Size = new System.Drawing.Size(991, 564);
             this.panelMainPage.TabIndex = 153;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(404, 416);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 25);
+            this.label2.TabIndex = 161;
+            this.label2.Text = "Recursos Nodes";
+            // 
             // buttonWizard
             // 
             this.buttonWizard.Image = ((System.Drawing.Image)(resources.GetObject("buttonWizard.Image")));
-            this.buttonWizard.Location = new System.Drawing.Point(54, 339);
+            this.buttonWizard.Location = new System.Drawing.Point(43, 2);
             this.buttonWizard.Name = "buttonWizard";
             this.buttonWizard.Size = new System.Drawing.Size(41, 50);
             this.buttonWizard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -434,16 +454,16 @@
             // 
             this.chartReplicaSets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.chartReplicaSets.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            chartArea6.Name = "ChartArea1";
-            this.chartReplicaSets.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartReplicaSets.Legends.Add(legend6);
-            this.chartReplicaSets.Location = new System.Drawing.Point(719, 11);
+            chartArea1.Name = "ChartArea1";
+            this.chartReplicaSets.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartReplicaSets.Legends.Add(legend1);
+            this.chartReplicaSets.Location = new System.Drawing.Point(719, 55);
             this.chartReplicaSets.Name = "chartReplicaSets";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartReplicaSets.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartReplicaSets.Series.Add(series1);
             this.chartReplicaSets.Size = new System.Drawing.Size(224, 170);
             this.chartReplicaSets.TabIndex = 155;
             this.chartReplicaSets.Text = "chartReplicaSets";
@@ -452,16 +472,16 @@
             // 
             this.chartPods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.chartPods.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            chartArea7.Name = "ChartArea1";
-            this.chartPods.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartPods.Legends.Add(legend7);
-            this.chartPods.Location = new System.Drawing.Point(375, 11);
+            chartArea2.Name = "ChartArea1";
+            this.chartPods.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPods.Legends.Add(legend2);
+            this.chartPods.Location = new System.Drawing.Point(375, 55);
             this.chartPods.Name = "chartPods";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartPods.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPods.Series.Add(series2);
             this.chartPods.Size = new System.Drawing.Size(224, 170);
             this.chartPods.TabIndex = 154;
             this.chartPods.Text = "chartPods";
@@ -470,16 +490,16 @@
             // 
             this.chartJobs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.chartJobs.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            chartArea8.Name = "ChartArea1";
-            this.chartJobs.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartJobs.Legends.Add(legend8);
-            this.chartJobs.Location = new System.Drawing.Point(543, 189);
+            chartArea3.Name = "ChartArea1";
+            this.chartJobs.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartJobs.Legends.Add(legend3);
+            this.chartJobs.Location = new System.Drawing.Point(543, 233);
             this.chartJobs.Name = "chartJobs";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartJobs.Series.Add(series8);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartJobs.Series.Add(series3);
             this.chartJobs.Size = new System.Drawing.Size(224, 170);
             this.chartJobs.TabIndex = 153;
             this.chartJobs.Text = "chartJobs";
@@ -488,16 +508,16 @@
             // 
             this.chartDeployments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.chartDeployments.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            chartArea9.Name = "ChartArea1";
-            this.chartDeployments.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartDeployments.Legends.Add(legend9);
-            this.chartDeployments.Location = new System.Drawing.Point(54, 11);
+            chartArea4.Name = "ChartArea1";
+            this.chartDeployments.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartDeployments.Legends.Add(legend4);
+            this.chartDeployments.Location = new System.Drawing.Point(54, 55);
             this.chartDeployments.Name = "chartDeployments";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartDeployments.Series.Add(series9);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartDeployments.Series.Add(series4);
             this.chartDeployments.Size = new System.Drawing.Size(224, 170);
             this.chartDeployments.TabIndex = 152;
             this.chartDeployments.Text = "chartDeployments";
@@ -506,33 +526,41 @@
             // 
             this.chartDaemon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.chartDaemon.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            chartArea10.Name = "ChartArea1";
-            this.chartDaemon.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chartDaemon.Legends.Add(legend10);
-            this.chartDaemon.Location = new System.Drawing.Point(206, 189);
+            chartArea5.Name = "ChartArea1";
+            this.chartDaemon.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartDaemon.Legends.Add(legend5);
+            this.chartDaemon.Location = new System.Drawing.Point(206, 233);
             this.chartDaemon.Name = "chartDaemon";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chartDaemon.Series.Add(series10);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartDaemon.Series.Add(series5);
             this.chartDaemon.Size = new System.Drawing.Size(224, 170);
             this.chartDaemon.TabIndex = 151;
             this.chartDaemon.Text = "chartDaemon";
             // 
             // listBoxNodesDashboard
             // 
-            this.listBoxNodesDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.listBoxNodesDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.listBoxNodesDashboard.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxNodesDashboard.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxNodesDashboard.ForeColor = System.Drawing.Color.White;
             this.listBoxNodesDashboard.FormattingEnabled = true;
             this.listBoxNodesDashboard.ItemHeight = 18;
-            this.listBoxNodesDashboard.Location = new System.Drawing.Point(54, 400);
+            this.listBoxNodesDashboard.Location = new System.Drawing.Point(43, 442);
             this.listBoxNodesDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxNodesDashboard.Name = "listBoxNodesDashboard";
-            this.listBoxNodesDashboard.Size = new System.Drawing.Size(880, 144);
+            this.listBoxNodesDashboard.Size = new System.Drawing.Size(900, 108);
             this.listBoxNodesDashboard.TabIndex = 150;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Location = new System.Drawing.Point(43, 415);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(900, 34);
+            this.panel4.TabIndex = 162;
             // 
             // panel2
             // 
@@ -669,14 +697,26 @@
             this.panel13.Size = new System.Drawing.Size(180, 34);
             this.panel13.TabIndex = 153;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.panel6.Controls.Add(this.buttonDiagramaDeRede);
+            this.panel6.Location = new System.Drawing.Point(16, 641);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(180, 33);
+            this.panel6.TabIndex = 161;
+            this.panel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelDiagramaRede_Click);
+            this.panel6.MouseEnter += new System.EventHandler(this.panelDiagramaRede_MouseEnter);
+            this.panel6.MouseLeave += new System.EventHandler(this.panelDiagramaRede_MouseLeave);
+            // 
             // mainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1250, 729);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelMainPage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInterfaceWeb);
             this.Controls.Add(this.buttonIngress);
@@ -702,6 +742,7 @@
             this.Controls.Add(this.panelNodes);
             this.Controls.Add(this.panelInterfaceWeb);
             this.Controls.Add(this.panelTerminal);
+            this.Controls.Add(this.panelMainPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -716,6 +757,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonActivateMic)).EndInit();
             this.panelDashboard.ResumeLayout(false);
             this.panelMainPage.ResumeLayout(false);
+            this.panelMainPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonWizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReplicaSets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPods)).EndInit();
@@ -725,6 +767,8 @@
             this.panelPods.ResumeLayout(false);
             this.panelInterfaceWeb.ResumeLayout(false);
             this.panelTerminal.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -765,7 +809,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panelTerminal;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.ListBox listBoxNodesDashboard;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDaemon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxNamespaces;
@@ -775,5 +818,9 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDeployments;
         private System.Windows.Forms.PictureBox buttonWizard;
         private System.Windows.Forms.Label buttonDiagramaDeRede;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBoxNodesDashboard;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
     }
 }

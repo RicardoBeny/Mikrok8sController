@@ -63,6 +63,7 @@ namespace AppLTI
             panelNodes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelNodes.Width, panelNodes.Height, 20, 20));
             panelInterfaceWeb.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelInterfaceWeb.Width, panelInterfaceWeb.Height, 20, 20));
             panelTerminal.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelTerminal.Width, panelTerminal.Height, 20, 20));
+            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 5, 5));
             InitializeVoiceRecognition();
         }
 
@@ -1157,6 +1158,43 @@ namespace AppLTI
             networkDiagramForm networkDiagramForm = new networkDiagramForm();
             networkDiagramForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             networkDiagramForm.Show();
+        }
+
+        private void panelDiagramaRede_Click(object sender, MouseEventArgs e)
+        {
+            StopMicrophone();
+            networkDiagramForm networkDiagramForm = new networkDiagramForm();
+            networkDiagramForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
+            networkDiagramForm.Show();
+        }
+
+        private void panelDiagramaRede_MouseEnter(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.FromArgb(38, 38, 38);
+            buttonDiagramaDeRede.ForeColor = Color.FromArgb(64, 132, 204);
+            buttonDiagramaDeRede.BackColor = Color.FromArgb(38, 38, 38);
+        }
+
+        private void panelDiagramaRede_MouseLeave(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.FromArgb(29, 29, 29);
+            buttonDiagramaDeRede.ForeColor = Color.White;
+            buttonDiagramaDeRede.BackColor = Color.FromArgb(29, 29, 29);
+        }
+
+        private void buttonDiagramaRede_MouseEnter(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.FromArgb(38, 38, 38);
+            buttonDiagramaDeRede.ForeColor = Color.FromArgb(64, 132, 204);
+            buttonDiagramaDeRede.BackColor = Color.FromArgb(38, 38, 38);
+
+        }
+
+        private void buttonDiagramaRede_MouseLeave(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.FromArgb(29, 29, 29);
+            buttonDiagramaDeRede.ForeColor = Color.White;
+            buttonDiagramaDeRede.BackColor = Color.FromArgb(29, 29, 29);
         }
     }
 }
