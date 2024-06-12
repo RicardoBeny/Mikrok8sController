@@ -331,7 +331,13 @@ namespace AppLTI
                             string name = (string)podObject["metadata"]["name"];
                             string phase = (string)podObject["status"]["phase"];
                             string created = (string)podObject["metadata"]["creationTimestamp"];
-                            string containerImage = (podObject["status"]["containerStatuses"].FirstOrDefault()?["image"] ?? "").ToString();
+
+                            var containerStatuses = podObject["status"]["containerStatuses"] as JArray;
+                            string containerImage = "No Image";
+                            if (containerStatuses != null && containerStatuses.Count > 0)
+                            {
+                                containerImage = containerStatuses[0]?["image"]?.ToString() ?? "No Image";
+                            }
 
                             DateTime creationDateTime = DateTime.ParseExact(created, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                             TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
@@ -383,21 +389,6 @@ namespace AppLTI
             {
                 MessageBox.Show("Ocorreu um erro ao carregar os pods: " + ex.Message);
             }
-        }
-
-        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxNamespaces.SelectedIndex == -1)
-            {
-                MessageBox.Show("Namespace tem de ser selecionada.");
-                return;
-            }
-
-            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
-            string namespacename = selectedItemText.Trim();
-
-            await LoadDeployments(routerIp, portoAPI, authKey, namespacename);
-            await LoadPods(routerIp, portoAPI, authKey, namespacename);
         }
 
         private async Task LoadNamespaces(string routerIp, string portoAPI, string authToken)
@@ -453,48 +444,6 @@ namespace AppLTI
 
             await LoadNamespaces(routerIp, portoAPI, authKey);
             await LoadPods(routerIp, portoAPI, authKey, "Todos");
-        }
-
-        private async Task LoadDeployments(string routerIp, string portoAPI, string authToken, string namespacename)
-        {
-            try
-            {
-                string url;
-
-                url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/deployments";
-                
-                var handler = new HttpClientHandler();
-                handler.ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-
-                using (HttpClient client = new HttpClient(handler))
-                {
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
-
-                    HttpResponseMessage response = await client.GetAsync(url);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string responseBody = await response.Content.ReadAsStringAsync();
-
-                        JObject deploymentsData = JObject.Parse(responseBody);
-                        JArray deploymentsArray = (JArray)deploymentsData["items"];
-
-                        foreach (JObject deploymentObject in deploymentsArray)
-                        {
-                            string containerImage = (string)deploymentObject["spec"]["template"]["spec"]["containers"][0]["image"];
-                        }
-                    }
-                    else
-                    {
-                        string errorMessage = await response.Content.ReadAsStringAsync();
-                        MessageBox.Show("Failed to load deployments. Error message: " + errorMessage);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while loading deployments: " + ex.Message);
-            }
         }
 
         private void buttonDeployments_Click(object sender, EventArgs e)
@@ -937,6 +886,20 @@ namespace AppLTI
             panelTerminal.BackColor = Color.FromArgb(29, 29, 29);
             btnTerminal.ForeColor = Color.White;
             btnTerminal.BackColor = Color.FromArgb(29, 29, 29);
+        }
+
+        private async void comboBoxNamespaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxNamespaces.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
+            string namespacename = selectedItemText.Trim();
+
+            await LoadPods(routerIp, portoAPI, authKey, namespacename);
         }
     }
 }
