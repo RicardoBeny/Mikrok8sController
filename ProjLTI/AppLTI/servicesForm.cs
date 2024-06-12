@@ -217,21 +217,6 @@ namespace AppLTI
             }
         }
 
-
-        private async void comboBoxNamespaces_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxNamespaces.SelectedIndex == -1)
-            {
-                MessageBox.Show("Namespace tem de ser selecionada.");
-                return;
-            }
-
-            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
-            string namespacename = selectedItemText.Trim();
-
-            await LoadServices(routerIp, portoAPI, authKey, namespacename);
-        }
-
         private async Task LoadServices(string routerIp, string portoAPI, string authToken, string namespacename)
         {
             try
@@ -263,6 +248,12 @@ namespace AppLTI
 
                         JObject servicesData = JObject.Parse(responseBody);
                         JArray servicesArray = (JArray)servicesData["items"];
+
+                        if (servicesArray.Count == 0)
+                        {
+                            listBoxService.Items.Add("Não existe nenhum service");
+                            return;
+                        }
 
                         int maxNameLength = 0;
                         foreach (JObject serviceObject in servicesArray)
@@ -848,6 +839,20 @@ namespace AppLTI
             panelTerminal.BackColor = Color.FromArgb(29, 29, 29);
             btnTerminal.ForeColor = Color.White;
             btnTerminal.BackColor = Color.FromArgb(29, 29, 29);
+        }
+
+        private async void comboBoxNamespaces_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBoxNamespaces.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            string selectedItemText = comboBoxNamespaces.Items[comboBoxNamespaces.SelectedIndex].ToString();
+            string namespacename = selectedItemText.Trim();
+
+            await LoadServices(routerIp, portoAPI, authKey, namespacename);
         }
     }
 }

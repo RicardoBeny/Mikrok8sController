@@ -16,7 +16,7 @@ namespace AppLTI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new servicesForm());
+            Application.Run(new loginForm());
         }
     }
 }

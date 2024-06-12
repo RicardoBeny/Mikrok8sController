@@ -453,6 +453,7 @@
             this.comboBoxNamespaces.Name = "comboBoxNamespaces";
             this.comboBoxNamespaces.Size = new System.Drawing.Size(295, 21);
             this.comboBoxNamespaces.TabIndex = 279;
+            this.comboBoxNamespaces.SelectedIndexChanged += new System.EventHandler(this.comboBoxNamespaces_SelectedIndexChanged_1);
             // 
             // labelPage
             // 

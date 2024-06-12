@@ -317,6 +317,12 @@ namespace AppLTI
                         JObject podsData = JObject.Parse(responseBody);
                         JArray podsArray = (JArray)podsData["items"];
 
+                        if (podsArray.Count == 0)
+                        {
+                            listBoxPods.Items.Add("Não existe nenhum pod");
+                            return;
+                        }
+
                         int maxNameLength = 0;
                         foreach (JObject podObject in podsArray)
                         {
@@ -495,7 +501,7 @@ namespace AppLTI
                 string selectedItem = listBoxPods.SelectedItem.ToString();
 
                 string[] parts = selectedItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                if (parts.Length > 0)
+                if (parts.Length > 0 && selectedItem != "Não existe nenhum pod")
                 {
                     string podName = parts[0].Trim();
                     podDetailsForm podDetailsForm = new podDetailsForm();
