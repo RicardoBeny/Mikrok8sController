@@ -128,7 +128,7 @@
             // buttonActivateMic
             // 
             this.buttonActivateMic.Image = ((System.Drawing.Image)(resources.GetObject("buttonActivateMic.Image")));
-            this.buttonActivateMic.Location = new System.Drawing.Point(171, 330);
+            this.buttonActivateMic.Location = new System.Drawing.Point(171, 329);
             this.buttonActivateMic.Name = "buttonActivateMic";
             this.buttonActivateMic.Size = new System.Drawing.Size(39, 46);
             this.buttonActivateMic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -395,6 +395,12 @@ namespace AppLTI
                         JObject deploymentsData = JObject.Parse(responseBody);
                         JArray deploymentsArray = (JArray)deploymentsData["items"];
 
+                        if (deploymentsArray.Count == 0)
+                        {
+                            listBoxDeployments.Items.Add("Não existe nenhum deployment");
+                            return;
+                        }
+
                         int maxNameLength = 0;
                         foreach (JObject deploymentObject in deploymentsArray)
                         {
@@ -528,7 +534,7 @@ namespace AppLTI
                 string selectedItem = listBoxDeployments.SelectedItem.ToString();
 
                 string[] parts = selectedItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                if (parts.Length > 0)
+                if (parts.Length > 0 && selectedItem != "Não existe nenhum deployment")
                 {
                     string deploymentName = parts[0].Trim();
                     deploymentDetailsForm deploymentDetailsForm = new deploymentDetailsForm();

@@ -71,12 +71,6 @@ namespace AppLTI
             InitializeVoiceRecognition();
         }
 
-        private void ShowDynamicChoices()
-        {
-            string choicesText = string.Join(", ", dynamicChoices);
-            MessageBox.Show($"Current dynamic choices: {choicesText}", "Dynamic Choices");
-        }
-
         private void InitializeVoiceRecognition()
         {
             try
@@ -113,8 +107,6 @@ namespace AppLTI
 
             recognizer.UnloadAllGrammars();
             recognizer.LoadGrammar(g);
-
-            ShowDynamicChoices();
         }
 
         private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
