@@ -49,6 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonDiagramaDeRede = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxNamespaces = new System.Windows.Forms.ComboBox();
             this.buttonNodes = new System.Windows.Forms.Label();
@@ -87,7 +88,6 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panelTerminal = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.buttonDiagramaDeRede = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -111,7 +111,7 @@
             this.labelDashboard.AutoSize = true;
             this.labelDashboard.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDashboard.ForeColor = System.Drawing.Color.White;
-            this.labelDashboard.Location = new System.Drawing.Point(20, 14);
+            this.labelDashboard.Location = new System.Drawing.Point(11, 14);
             this.labelDashboard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDashboard.Name = "labelDashboard";
             this.labelDashboard.Size = new System.Drawing.Size(119, 29);
@@ -167,13 +167,25 @@
             this.panel1.Size = new System.Drawing.Size(1251, 58);
             this.panel1.TabIndex = 146;
             // 
+            // buttonDiagramaDeRede
+            // 
+            this.buttonDiagramaDeRede.AutoSize = true;
+            this.buttonDiagramaDeRede.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDiagramaDeRede.ForeColor = System.Drawing.Color.White;
+            this.buttonDiagramaDeRede.Location = new System.Drawing.Point(227, 14);
+            this.buttonDiagramaDeRede.Name = "buttonDiagramaDeRede";
+            this.buttonDiagramaDeRede.Size = new System.Drawing.Size(159, 25);
+            this.buttonDiagramaDeRede.TabIndex = 160;
+            this.buttonDiagramaDeRede.Text = "Diagrama de Rede";
+            this.buttonDiagramaDeRede.Click += new System.EventHandler(this.buttonDiagramaDeRede_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
             this.label4.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(186, 32);
+            this.label4.Location = new System.Drawing.Point(812, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 23);
             this.label4.TabIndex = 229;
@@ -185,7 +197,7 @@
             this.comboBoxNamespaces.FormattingEnabled = true;
             this.comboBoxNamespaces.Items.AddRange(new object[] {
             "Todos"});
-            this.comboBoxNamespaces.Location = new System.Drawing.Point(304, 34);
+            this.comboBoxNamespaces.Location = new System.Drawing.Point(930, 22);
             this.comboBoxNamespaces.Name = "comboBoxNamespaces";
             this.comboBoxNamespaces.Size = new System.Drawing.Size(295, 21);
             this.comboBoxNamespaces.TabIndex = 228;
@@ -656,18 +668,6 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(180, 34);
             this.panel13.TabIndex = 153;
-            // 
-            // buttonDiagramaDeRede
-            // 
-            this.buttonDiagramaDeRede.AutoSize = true;
-            this.buttonDiagramaDeRede.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDiagramaDeRede.ForeColor = System.Drawing.Color.White;
-            this.buttonDiagramaDeRede.Location = new System.Drawing.Point(643, 30);
-            this.buttonDiagramaDeRede.Name = "buttonDiagramaDeRede";
-            this.buttonDiagramaDeRede.Size = new System.Drawing.Size(159, 25);
-            this.buttonDiagramaDeRede.TabIndex = 160;
-            this.buttonDiagramaDeRede.Text = "Diagrama de Rede";
-            this.buttonDiagramaDeRede.Click += new System.EventHandler(this.buttonDiagramaDeRede_Click);
             // 
             // mainPage
             // 
