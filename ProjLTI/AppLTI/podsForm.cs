@@ -54,6 +54,8 @@ namespace AppLTI
             panelNodes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelNodes.Width, panelNodes.Height, 20, 20));
             panelInterfaceWeb.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelInterfaceWeb.Width, panelInterfaceWeb.Height, 20, 20));
             panelTerminal.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelTerminal.Width, panelTerminal.Height, 20, 20));
+            buttonCreateNamespace.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonCreateNamespace.Width, buttonCreateNamespace.Height, 5, 5));
+            buttonDeletePods.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonDeletePods.Width, buttonDeletePods.Height, 5, 5));
         }
 
         public void SetCredentials(string routerIp, string username, string password, string portoSSH, string portoAPI, string authKey)

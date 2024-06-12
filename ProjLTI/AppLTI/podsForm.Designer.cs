@@ -524,7 +524,7 @@
             this.panel2.Location = new System.Drawing.Point(214, 139);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 563);
+            this.panel2.Size = new System.Drawing.Size(2, 578);
             this.panel2.TabIndex = 155;
             // 
             // btnInterfaceWeb

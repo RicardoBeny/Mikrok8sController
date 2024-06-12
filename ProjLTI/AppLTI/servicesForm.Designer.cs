@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(servicesForm));
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxEquipaMetadata = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxproposito = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.listBoxService = new System.Windows.Forms.ListBox();
             this.buttonCreateService = new System.Windows.Forms.Button();
             this.buttonDeleteService = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxNamespaces = new System.Windows.Forms.ComboBox();
@@ -132,15 +132,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1001, 578);
             this.panel4.TabIndex = 147;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.panel2.Location = new System.Drawing.Point(214, 139);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 563);
-            this.panel2.TabIndex = 269;
             // 
             // textBoxEquipaMetadata
             // 
@@ -375,7 +366,7 @@
             // 
             this.comboBoxService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxService.FormattingEnabled = true;
-            this.comboBoxService.Location = new System.Drawing.Point(805, 381);
+            this.comboBoxService.Location = new System.Drawing.Point(802, 442);
             this.comboBoxService.Name = "comboBoxService";
             this.comboBoxService.Size = new System.Drawing.Size(179, 21);
             this.comboBoxService.TabIndex = 244;
@@ -411,13 +402,22 @@
             this.buttonDeleteService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteService.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteService.ForeColor = System.Drawing.Color.White;
-            this.buttonDeleteService.Location = new System.Drawing.Point(827, 411);
+            this.buttonDeleteService.Location = new System.Drawing.Point(827, 469);
             this.buttonDeleteService.Name = "buttonDeleteService";
             this.buttonDeleteService.Size = new System.Drawing.Size(140, 32);
             this.buttonDeleteService.TabIndex = 243;
             this.buttonDeleteService.Text = "Apagar Serviço";
             this.buttonDeleteService.UseVisualStyleBackColor = false;
             this.buttonDeleteService.Click += new System.EventHandler(this.buttonDeleteService_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.panel2.Location = new System.Drawing.Point(214, 139);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(2, 578);
+            this.panel2.TabIndex = 269;
             // 
             // panel1
             // 

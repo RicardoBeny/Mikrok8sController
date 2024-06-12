@@ -91,12 +91,12 @@
             // phaselabel
             // 
             this.phaselabel.AutoSize = true;
-            this.phaselabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.phaselabel.ForeColor = System.Drawing.Color.White;
+            this.phaselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.phaselabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.phaselabel.Location = new System.Drawing.Point(74, 265);
             this.phaselabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.phaselabel.Name = "phaselabel";
-            this.phaselabel.Size = new System.Drawing.Size(72, 18);
+            this.phaselabel.Size = new System.Drawing.Size(86, 20);
             this.phaselabel.TabIndex = 59;
             this.phaselabel.Text = "phaselabel";
             // 
@@ -139,12 +139,12 @@
             // serviceAccountNamelabel
             // 
             this.serviceAccountNamelabel.AutoSize = true;
-            this.serviceAccountNamelabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.serviceAccountNamelabel.ForeColor = System.Drawing.Color.White;
+            this.serviceAccountNamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.serviceAccountNamelabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.serviceAccountNamelabel.Location = new System.Drawing.Point(152, 237);
             this.serviceAccountNamelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.serviceAccountNamelabel.Name = "serviceAccountNamelabel";
-            this.serviceAccountNamelabel.Size = new System.Drawing.Size(130, 18);
+            this.serviceAccountNamelabel.Size = new System.Drawing.Size(159, 20);
             this.serviceAccountNamelabel.TabIndex = 55;
             this.serviceAccountNamelabel.Text = "serviceAccountName";
             // 
@@ -163,12 +163,12 @@
             // dnsPolicylabel
             // 
             this.dnsPolicylabel.AutoSize = true;
-            this.dnsPolicylabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.dnsPolicylabel.ForeColor = System.Drawing.Color.White;
+            this.dnsPolicylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dnsPolicylabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.dnsPolicylabel.Location = new System.Drawing.Point(108, 210);
             this.dnsPolicylabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnsPolicylabel.Name = "dnsPolicylabel";
-            this.dnsPolicylabel.Size = new System.Drawing.Size(93, 18);
+            this.dnsPolicylabel.Size = new System.Drawing.Size(108, 20);
             this.dnsPolicylabel.TabIndex = 53;
             this.dnsPolicylabel.Text = "dnsPolicylabel";
             // 
@@ -187,12 +187,12 @@
             // terminationGracePeriodSecondslabel
             // 
             this.terminationGracePeriodSecondslabel.AutoSize = true;
-            this.terminationGracePeriodSecondslabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.terminationGracePeriodSecondslabel.ForeColor = System.Drawing.Color.White;
+            this.terminationGracePeriodSecondslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.terminationGracePeriodSecondslabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.terminationGracePeriodSecondslabel.Location = new System.Drawing.Point(124, 182);
             this.terminationGracePeriodSecondslabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.terminationGracePeriodSecondslabel.Name = "terminationGracePeriodSecondslabel";
-            this.terminationGracePeriodSecondslabel.Size = new System.Drawing.Size(223, 18);
+            this.terminationGracePeriodSecondslabel.Size = new System.Drawing.Size(273, 20);
             this.terminationGracePeriodSecondslabel.TabIndex = 51;
             this.terminationGracePeriodSecondslabel.Text = "terminationGracePeriodSecondslabel";
             // 
@@ -211,12 +211,12 @@
             // restartpolicylabel
             // 
             this.restartpolicylabel.AutoSize = true;
-            this.restartpolicylabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.restartpolicylabel.ForeColor = System.Drawing.Color.White;
+            this.restartpolicylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.restartpolicylabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.restartpolicylabel.Location = new System.Drawing.Point(134, 155);
             this.restartpolicylabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.restartpolicylabel.Name = "restartpolicylabel";
-            this.restartpolicylabel.Size = new System.Drawing.Size(111, 18);
+            this.restartpolicylabel.Size = new System.Drawing.Size(127, 20);
             this.restartpolicylabel.TabIndex = 49;
             this.restartpolicylabel.Text = "restartpolicylabel";
             // 
@@ -235,12 +235,12 @@
             // managerlabel
             // 
             this.managerlabel.AutoSize = true;
-            this.managerlabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.managerlabel.ForeColor = System.Drawing.Color.White;
+            this.managerlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.managerlabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.managerlabel.Location = new System.Drawing.Point(437, 324);
             this.managerlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.managerlabel.Name = "managerlabel";
-            this.managerlabel.Size = new System.Drawing.Size(58, 18);
+            this.managerlabel.Size = new System.Drawing.Size(72, 20);
             this.managerlabel.TabIndex = 47;
             this.managerlabel.Text = "manager";
             // 
@@ -259,12 +259,12 @@
             // labeltemplatehash
             // 
             this.labeltemplatehash.AutoSize = true;
-            this.labeltemplatehash.Font = new System.Drawing.Font("Impact", 10F);
-            this.labeltemplatehash.ForeColor = System.Drawing.Color.White;
+            this.labeltemplatehash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labeltemplatehash.ForeColor = System.Drawing.Color.Gainsboro;
             this.labeltemplatehash.Location = new System.Drawing.Point(139, 125);
             this.labeltemplatehash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labeltemplatehash.Name = "labeltemplatehash";
-            this.labeltemplatehash.Size = new System.Drawing.Size(86, 18);
+            this.labeltemplatehash.Size = new System.Drawing.Size(106, 20);
             this.labeltemplatehash.TabIndex = 45;
             this.labeltemplatehash.Text = "templatehash";
             // 
@@ -283,12 +283,12 @@
             // uidlabel
             // 
             this.uidlabel.AutoSize = true;
-            this.uidlabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.uidlabel.ForeColor = System.Drawing.Color.White;
+            this.uidlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uidlabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.uidlabel.Location = new System.Drawing.Point(46, 101);
             this.uidlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uidlabel.Name = "uidlabel";
-            this.uidlabel.Size = new System.Drawing.Size(55, 18);
+            this.uidlabel.Size = new System.Drawing.Size(63, 20);
             this.uidlabel.TabIndex = 39;
             this.uidlabel.Text = "uidlabel";
             // 
@@ -307,12 +307,12 @@
             // labelnamespacename
             // 
             this.labelnamespacename.AutoSize = true;
-            this.labelnamespacename.Font = new System.Drawing.Font("Impact", 10F);
-            this.labelnamespacename.ForeColor = System.Drawing.Color.White;
+            this.labelnamespacename.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelnamespacename.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelnamespacename.Location = new System.Drawing.Point(118, 74);
             this.labelnamespacename.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelnamespacename.Name = "labelnamespacename";
-            this.labelnamespacename.Size = new System.Drawing.Size(105, 18);
+            this.labelnamespacename.Size = new System.Drawing.Size(132, 20);
             this.labelnamespacename.TabIndex = 37;
             this.labelnamespacename.Text = "namespacename";
             // 
@@ -351,12 +351,12 @@
             // hostIPlabel
             // 
             this.hostIPlabel.AutoSize = true;
-            this.hostIPlabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.hostIPlabel.ForeColor = System.Drawing.Color.White;
+            this.hostIPlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.hostIPlabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.hostIPlabel.Location = new System.Drawing.Point(79, 294);
             this.hostIPlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.hostIPlabel.Name = "hostIPlabel";
-            this.hostIPlabel.Size = new System.Drawing.Size(73, 18);
+            this.hostIPlabel.Size = new System.Drawing.Size(88, 20);
             this.hostIPlabel.TabIndex = 60;
             this.hostIPlabel.Text = "hostIPlabel";
             // 
@@ -375,12 +375,12 @@
             // podIPlabel
             // 
             this.podIPlabel.AutoSize = true;
-            this.podIPlabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.podIPlabel.ForeColor = System.Drawing.Color.White;
+            this.podIPlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.podIPlabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.podIPlabel.Location = new System.Drawing.Point(73, 321);
             this.podIPlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.podIPlabel.Name = "podIPlabel";
-            this.podIPlabel.Size = new System.Drawing.Size(69, 18);
+            this.podIPlabel.Size = new System.Drawing.Size(84, 20);
             this.podIPlabel.TabIndex = 63;
             this.podIPlabel.Text = "podIPlabel";
             // 
@@ -399,12 +399,12 @@
             // labelproposito
             // 
             this.labelproposito.AutoSize = true;
-            this.labelproposito.Font = new System.Drawing.Font("Impact", 10F);
-            this.labelproposito.ForeColor = System.Drawing.Color.White;
+            this.labelproposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelproposito.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelproposito.Location = new System.Drawing.Point(443, 266);
             this.labelproposito.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelproposito.Name = "labelproposito";
-            this.labelproposito.Size = new System.Drawing.Size(63, 18);
+            this.labelproposito.Size = new System.Drawing.Size(75, 20);
             this.labelproposito.TabIndex = 69;
             this.labelproposito.Text = "proposito";
             // 
@@ -423,12 +423,12 @@
             // labelteam
             // 
             this.labelteam.AutoSize = true;
-            this.labelteam.Font = new System.Drawing.Font("Impact", 10F);
-            this.labelteam.ForeColor = System.Drawing.Color.White;
+            this.labelteam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelteam.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelteam.Location = new System.Drawing.Point(408, 237);
             this.labelteam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelteam.Name = "labelteam";
-            this.labelteam.Size = new System.Drawing.Size(36, 18);
+            this.labelteam.Size = new System.Drawing.Size(45, 20);
             this.labelteam.TabIndex = 67;
             this.labelteam.Text = "team";
             // 
@@ -447,12 +447,12 @@
             // ownerlabel
             // 
             this.ownerlabel.AutoSize = true;
-            this.ownerlabel.Font = new System.Drawing.Font("Impact", 10F);
-            this.ownerlabel.ForeColor = System.Drawing.Color.White;
+            this.ownerlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ownerlabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.ownerlabel.Location = new System.Drawing.Point(419, 295);
             this.ownerlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ownerlabel.Name = "ownerlabel";
-            this.ownerlabel.Size = new System.Drawing.Size(58, 18);
+            this.ownerlabel.Size = new System.Drawing.Size(72, 20);
             this.ownerlabel.TabIndex = 65;
             this.ownerlabel.Text = "manager";
             // 
