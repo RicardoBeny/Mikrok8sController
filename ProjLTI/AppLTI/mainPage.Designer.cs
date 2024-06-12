@@ -507,6 +507,7 @@
             // chartDeployments
             // 
             this.chartDeployments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.chartDeployments.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.chartDeployments.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             chartArea4.Name = "ChartArea1";
             this.chartDeployments.ChartAreas.Add(chartArea4);
@@ -557,9 +558,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel4.Location = new System.Drawing.Point(43, 415);
+            this.panel4.Location = new System.Drawing.Point(25, 415);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(900, 34);
+            this.panel4.Size = new System.Drawing.Size(936, 135);
             this.panel4.TabIndex = 162;
             // 
             // panel2
