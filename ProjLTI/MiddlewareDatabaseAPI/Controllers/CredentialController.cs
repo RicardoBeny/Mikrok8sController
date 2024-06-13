@@ -84,7 +84,7 @@ namespace MiddlewareDatabaseAPI.Controllers
                     command.Parameters.AddWithValue("@ip", value.Ip);
                     command.Parameters.AddWithValue("@username", value.Username);
                     command.Parameters.AddWithValue("@porto_ssh", value.Porto_ssh);
-                    command.Parameters.AddWithValue("@porto_api", value.Porto_ssh);
+                    command.Parameters.AddWithValue("@porto_api", value.Porto_api);
                     if (credential.Password != null)
                     {
                         command.Parameters.AddWithValue("@password", value.Password);
