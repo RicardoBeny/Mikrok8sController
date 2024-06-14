@@ -152,6 +152,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 253;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // pictureBox1
             // 
@@ -162,6 +163,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 252;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // buttonFinish
             // 
@@ -174,6 +176,7 @@
             this.buttonFinish.Size = new System.Drawing.Size(59, 25);
             this.buttonFinish.TabIndex = 254;
             this.buttonFinish.Text = "Finish";
+            this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click_1);
             // 
             // deploymentImageForm
             // 

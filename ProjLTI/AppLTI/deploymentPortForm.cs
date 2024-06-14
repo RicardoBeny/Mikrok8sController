@@ -38,7 +38,7 @@ namespace AppLTI
             this.deploymentName = deploymentName;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBoxPorto.Text))
             {
@@ -58,8 +58,9 @@ namespace AppLTI
             this.Dispose();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
+
             deploymentNameForm deploymentNameForm = new deploymentNameForm();
             deploymentNameForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey);
             deploymentNameForm.Show();

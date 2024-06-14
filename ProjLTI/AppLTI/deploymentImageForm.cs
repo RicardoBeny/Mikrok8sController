@@ -45,29 +45,6 @@ namespace AppLTI
             this.porto = porto;
         }
 
-        private async void buttonFinish_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBoxContainerName.Text))
-            {
-                MessageBox.Show("Campo container name tem de ser preenchido.");
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(textBoxLabelApp.Text))
-            {
-                MessageBox.Show("Campo label app tem de ser preenchido.");
-                return;
-            }
-            if (comboBoxImage.SelectedIndex == -1)
-            {
-                MessageBox.Show("Imagem tem de ser selecionada.");
-                return;
-            }
-
-            string selectedItemText = comboBoxImage.Items[comboBoxImage.SelectedIndex].ToString();
-            string imagem = selectedItemText.Trim();
-
-            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto, imagem);
-        }
         private async Task CreateDeployment(string routerIp, string portoAPI, string authToken, string namespacename, string deploymentName, string replicas, string porto, string imagem)
         {
             int portonovo = int.Parse(porto);
@@ -122,7 +99,7 @@ namespace AppLTI
                     }
                 }
             };
-            MessageBox.Show(requestBody.ToString());
+
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespacename}/deployments";
@@ -156,7 +133,7 @@ namespace AppLTI
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             deploymentPortForm deploymentPortForm = new deploymentPortForm();
             deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, deploymentName);
@@ -164,7 +141,7 @@ namespace AppLTI
             this.Dispose();
         }
 
-        private async void pictureBox2_Click(object sender, EventArgs e)
+        private async void pictureBox1_Click_1(object sender, EventArgs e)
         {
             bool flag = false;
             string imagem;
@@ -200,13 +177,37 @@ namespace AppLTI
                 string selectedItemText = comboBoxImage.Items[comboBoxImage.SelectedIndex].ToString();
                 imagem = selectedItemText.Trim();
             }
-    
+
             await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto, imagem);
 
             serviceNameForm serviceNameForm = new serviceNameForm();
             serviceNameForm.SetCredentials(routerIp, portoAPI, authKey, label, namespacename, porto);
             serviceNameForm.Show();
             this.Dispose();
+        }
+
+        private async void buttonFinish_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxContainerName.Text))
+            {
+                MessageBox.Show("Campo container name tem de ser preenchido.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxLabelApp.Text))
+            {
+                MessageBox.Show("Campo label app tem de ser preenchido.");
+                return;
+            }
+            if (comboBoxImage.SelectedIndex == -1)
+            {
+                MessageBox.Show("Imagem tem de ser selecionada.");
+                return;
+            }
+
+            string selectedItemText = comboBoxImage.Items[comboBoxImage.SelectedIndex].ToString();
+            string imagem = selectedItemText.Trim();
+
+            await CreateDeployment(routerIp, portoAPI, authKey, namespacename, deploymentName, replicas, porto, imagem);
         }
     }
 }

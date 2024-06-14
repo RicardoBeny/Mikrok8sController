@@ -46,9 +46,9 @@ namespace AppLTI
                 return;
             }
 
-            bool deploymentExists = await LoadServices(routerIp, portoAPI, authKey, namespacename, textBoxNome.Text);
+            bool serviceExists = await LoadServices(routerIp, portoAPI, authKey, namespacename, textBoxNome.Text);
 
-            if (deploymentExists)
+            if (serviceExists)
             {
                 MessageBox.Show("O serviço já existe nesse namaspace.");
             }

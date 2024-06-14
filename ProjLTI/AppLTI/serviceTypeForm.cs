@@ -40,33 +40,6 @@ namespace AppLTI
             this.targetport = targetport;
         }
 
-        private async void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (comboBoxProtocolo.SelectedIndex == -1)
-            {
-                MessageBox.Show("Protocolo tem de ser selecionada.");
-                return;
-            }
-
-            if (comboBoxType.SelectedIndex == -1)
-            {
-                MessageBox.Show("Tipo tem de ser selecionado.");
-                return;
-            }
-
-            string selectedItemText = comboBoxProtocolo.Items[comboBoxProtocolo.SelectedIndex].ToString();
-            string protocolo = selectedItemText.Trim();
-
-            string selectedItemText1 = comboBoxType.Items[comboBoxType.SelectedIndex].ToString();
-            string tipo = selectedItemText1.Trim();
-
-            await CreateService(routerIp, portoAPI, authKey, namespacename, protocolo, tipo);
-
-            ingressWizardForm ingressWizardForm = new ingressWizardForm();
-            ingressWizardForm.SetCredentials(routerIp, portoAPI, authKey, servicename, namespacename, porto);
-            ingressWizardForm.Show();
-            this.Dispose();
-        }
 
         private async void buttonFinish_Click(object sender, EventArgs e)
         {
@@ -127,7 +100,7 @@ namespace AppLTI
                     ["type"] = tipo
                 }
             };
-            MessageBox.Show(requestBody.ToString());
+
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces/{namespacename}/services";
@@ -160,10 +133,38 @@ namespace AppLTI
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private async void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            if (comboBoxProtocolo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Protocolo tem de ser selecionada.");
+                return;
+            }
+
+            if (comboBoxType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Tipo tem de ser selecionado.");
+                return;
+            }
+
+            string selectedItemText = comboBoxProtocolo.Items[comboBoxProtocolo.SelectedIndex].ToString();
+            string protocolo = selectedItemText.Trim();
+
+            string selectedItemText1 = comboBoxType.Items[comboBoxType.SelectedIndex].ToString();
+            string tipo = selectedItemText1.Trim();
+
+            await CreateService(routerIp, portoAPI, authKey, namespacename, protocolo, tipo);
+
+            ingressWizardForm ingressWizardForm = new ingressWizardForm();
+            ingressWizardForm.SetCredentials(routerIp, portoAPI, authKey, servicename, namespacename, porto);
+            ingressWizardForm.Show();
+            this.Dispose();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             servicePortForm servicePortForm = new servicePortForm();
-            servicePortForm.SetCredentials(routerIp, portoAPI, authKey,label, servicename, namespacename, targetport);
+            servicePortForm.SetCredentials(routerIp, portoAPI, authKey, label, servicename, namespacename, targetport);
             servicePortForm.Show();
             this.Dispose();
         }

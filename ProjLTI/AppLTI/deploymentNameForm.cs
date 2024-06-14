@@ -37,38 +37,6 @@ namespace AppLTI
             this.authKey = authKey;
         }
 
-        private async void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBoxNameAdd.Text))
-            {
-                MessageBox.Show("Campo nome tem de ser preenchido.");
-                return;
-            }
-
-            if (comboBoxNamespaceCriar.SelectedIndex == -1)
-            {
-                MessageBox.Show("Namespace tem de ser selecionada.");
-                return;
-            }
-
-            string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
-            string namespacename = selectedItemText.Trim();
-
-            bool deploymentExists = await LoadDeployments(routerIp, portoAPI, authKey, namespacename, textBoxNameAdd.Text);
-
-            if (deploymentExists)
-            {
-                MessageBox.Show("O deployment já existe nesse namaspace.");
-            }
-            else
-            {
-                deploymentPortForm deploymentPortForm = new deploymentPortForm();
-                deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, textBoxNameAdd.Text);
-                deploymentPortForm.Show();
-                this.Dispose();
-            }
-        }
-
         private async void deploymentNameForm_Load(object sender, EventArgs e)
         {
             await LoadNamespaces(routerIp, portoAPI, authKey);
@@ -163,6 +131,38 @@ namespace AppLTI
             {
                 MessageBox.Show("An error occurred while loading deployments: " + ex.Message);
                 return false;
+            }
+        }
+
+        private async void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxNameAdd.Text))
+            {
+                MessageBox.Show("Campo nome tem de ser preenchido.");
+                return;
+            }
+
+            if (comboBoxNamespaceCriar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Namespace tem de ser selecionada.");
+                return;
+            }
+
+            string selectedItemText = comboBoxNamespaceCriar.Items[comboBoxNamespaceCriar.SelectedIndex].ToString();
+            string namespacename = selectedItemText.Trim();
+
+            bool deploymentExists = await LoadDeployments(routerIp, portoAPI, authKey, namespacename, textBoxNameAdd.Text);
+
+            if (deploymentExists)
+            {
+                MessageBox.Show("O deployment já existe nesse namaspace.");
+            }
+            else
+            {
+                deploymentPortForm deploymentPortForm = new deploymentPortForm();
+                deploymentPortForm.SetCredentials(routerIp, username, password, portoSSH, portoAPI, authKey, namespacename, textBoxNameAdd.Text);
+                deploymentPortForm.Show();
+                this.Dispose();
             }
         }
     }
