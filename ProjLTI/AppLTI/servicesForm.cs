@@ -264,7 +264,7 @@ namespace AppLTI
 
                         string nameHeader = "Service  Name".PadRight(maxNameLength);
 
-                        listBoxService.Items.Add($"{nameHeader}\t\tCluster IP\t\tType\t\tNamespace\t\t\tCreated");
+                        listBoxService.Items.Add($"{nameHeader}\tCluster IP\t\t\tType\t\tNamespace\t\t\tCreated");
 
                         foreach (JObject serviceObject in servicesArray)
                         {
@@ -278,7 +278,28 @@ namespace AppLTI
                             TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
-                            listBoxService.Items.Add($"{name.PadRight(maxNameLength)}\t\t{clusterIP}\t\t{type}\t\t{namespaceName}\t\t{timeAgo}");
+                            if(name.Length < 9)
+                            {
+                                listBoxService.Items.Add($"{name}\t\t\t{clusterIP}\t\t{type}\t\t{namespaceName}\t\t{timeAgo}");
+                            }
+                            else if(name.Length > 19)
+                            {
+                                listBoxService.Items.Add($"{name}\t{clusterIP}\t\t{type}\t\t{namespaceName}\t\t{timeAgo}");
+                            }
+                            else
+                            {
+                                if (clusterIP.Length > 9)
+                                {
+                                    listBoxService.Items.Add($"{name}\t\t{clusterIP}\t\t{type}\t\t{namespaceName}\t\t{timeAgo}");
+                                }
+                                else
+                                {
+                                    listBoxService.Items.Add($"{name}\t\t{clusterIP}\t\t\t{type}\t\t{namespaceName}\t\t{timeAgo}");
+                                }
+                            }
+
+
+                            
                             comboBoxService.Items.Add($"Nome: {name}");
                         }
                     }
@@ -420,8 +441,6 @@ namespace AppLTI
                 }
             };
 
-            MessageBox.Show(requestBody.ToString());
-
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/api/v1/namespaces/{namespacename}/services";
@@ -441,6 +460,7 @@ namespace AppLTI
                     {
                         MessageBox.Show("Service created successfully.");
                         await LoadServices(routerIp, portoAPI, authToken, namespacename);
+                        ClearFormFields();
                     }
                     else
                     {
@@ -454,6 +474,21 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while creating Service: " + ex.Message);
             }
         }
+
+        public void ClearFormFields()
+        {
+            textBoxNome.Text = string.Empty;
+            comboBoxNamespaceCriar.SelectedIndex = -1;
+            textBoxLabelApp.Text = string.Empty;
+            comboBoxType.SelectedIndex = -1;
+            comboBoxProtocolo.SelectedIndex = -1;
+            textBoxPorto.Text = string.Empty;
+            textBoxTargetPort.Text = string.Empty;
+            textBoxproposito.Text = string.Empty;
+            textBoxOwner.Text = string.Empty;
+            textBoxEquipaMetadata.Text = string.Empty;
+        }
+
 
         private void buttonIngress_Click(object sender, EventArgs e)
         {

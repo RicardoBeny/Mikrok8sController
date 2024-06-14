@@ -77,7 +77,7 @@ namespace AppLTI
             try
             {
                 listBoxNodes.Items.Clear();
-
+                string nodeInfo;
                 string url = $"https://{routerIp}:{portoAPI}/api/v1/nodes";
 
                 var handler = new HttpClientHandler();
@@ -98,7 +98,7 @@ namespace AppLTI
 
                         listBoxNodes.Items.Add("Name\t\tReady\tCPU Capacity (cores)\t" +
                             "Memory Limits (bytes)\tMemory Capacity (bytes)\tPods \t"
-                            +"          "+ "Created\t\tEndereço");
+                            + "Created\t\tEndereço");
 
                         foreach (var item in items)
                         {
@@ -126,10 +126,22 @@ namespace AppLTI
                             TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
-                            string nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t"+"          "+
-                                $"{memoryLimits}\t\t\t{memoryCapacity}\t\t{pods}\t{timeAgo}\t\t{ipAddress}";
+                            if (name.Length > 9)
+                            {
+                                nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t"+
+                                $"{memoryLimits}\t\t{memoryCapacity}\t\t{pods}\t{timeAgo}{ipAddress}";
+                                listBoxNodes.Items.Add(nodeInfo);
+                            }
+                            else
+                            {
+                                nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t"+
+                                $"{memoryLimits}\t\t{memoryCapacity}\t\t{pods}\t{timeAgo}\t{ipAddress}";
+                                listBoxNodes.Items.Add(nodeInfo);
+                            }
+                            
 
-                            listBoxNodes.Items.Add(nodeInfo);
+
+                            
                         }
                     }
                     else

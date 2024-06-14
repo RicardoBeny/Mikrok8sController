@@ -44,7 +44,7 @@ namespace AppLTI
                 Pen pen = new Pen(Color.Black, 2);
                 int centerX = pictureBox1.Width / 2;
 
-                int nodeVerticalSpacing = 240;
+                int nodeVerticalSpacing = 280;
 
                 if (nodeNames.Count > 0)
                 {
@@ -97,12 +97,12 @@ namespace AppLTI
             if (nodePods.ContainsKey(nodeName))
             {
                 List<string> pods = nodePods[nodeName];
-                int diameter = 90;
+                int diameter = 80;
                 int podSpacingX = 80;
                 int podSpacingY = 80;
 
                 int startX = nodePosition.X - (pods.Count * podSpacingX) / 2;
-                int startY = nodePosition.Y + 60;
+                int startY = nodePosition.Y + 100;
 
                 for (int i = 0; i < pods.Count; i++)
                 {

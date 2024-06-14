@@ -410,13 +410,13 @@
             // panelMainPage
             // 
             this.panelMainPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelMainPage.Controls.Add(this.buttonActivateMic);
             this.panelMainPage.Controls.Add(this.label2);
             this.panelMainPage.Controls.Add(this.buttonWizard);
             this.panelMainPage.Controls.Add(this.chartReplicaSets);
             this.panelMainPage.Controls.Add(this.buttonMutMic);
             this.panelMainPage.Controls.Add(this.chartPods);
             this.panelMainPage.Controls.Add(this.chartJobs);
-            this.panelMainPage.Controls.Add(this.buttonActivateMic);
             this.panelMainPage.Controls.Add(this.chartDeployments);
             this.panelMainPage.Controls.Add(this.chartDaemon);
             this.panelMainPage.Controls.Add(this.listBoxNodesDashboard);

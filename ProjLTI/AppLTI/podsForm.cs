@@ -236,6 +236,7 @@ namespace AppLTI
                     {
                         MessageBox.Show("Pod adicionado com sucesso.");
                         await LoadPods(routerIp, portoAPI, authToken, namespacename);
+                        ClearFormControls();
                     }
                     else
                     {
@@ -248,6 +249,19 @@ namespace AppLTI
             {
                 MessageBox.Show("Ocorreu um erro ao adicionar o Pod: " + ex.Message);
             }
+        }
+
+        private void ClearFormControls()
+        {
+            textBoxNomeAdd.Clear();
+            textBoxPorto.Clear();
+            textBoxContainerName.Clear();
+            textBoxncontainers.Clear();
+            textBoxproposito.Clear();
+            textBoxOwner.Clear();
+            textBoxEquipaMetadata.Clear();
+            comboBoxNamespaceCriar.SelectedIndex = -1;
+            comboBoxImage.SelectedIndex = -1;
         }
 
 
@@ -355,7 +369,7 @@ namespace AppLTI
 
                             int nameColumn = name.Length;
 
-                            if(nameColumn > 32)
+                            if(nameColumn > 30)
                             {
                                 if(phase == "Succeeded")
                                 {

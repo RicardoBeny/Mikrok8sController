@@ -599,6 +599,7 @@ namespace AppLTI
                         MessageBox.Show("Ingress created successfully.");
                         escreverNoHosts(textBoxHost.Text,routerIp);
                         await LoadIngress(routerIp, portoAPI, authToken, namespacename);
+                        ClearFormFields();
                     }
                     else
                     {
@@ -612,6 +613,20 @@ namespace AppLTI
                 MessageBox.Show("An error occurred while creating Ingress: " + ex.Message);
             }
         }
+
+        private void ClearFormFields()
+        {
+            comboBoxNamespaceCriar.SelectedIndex = -1;
+            comboBoxNamespaceCriar.Text = "";
+            textBoxNomeAdd.Clear();
+            textBoxHost.Clear();
+            comboBoxNomeDoServico.SelectedIndex = -1;
+            comboBoxNomeDoServico.Text = "";
+            textBoxPortaServico.Clear();
+            textBoxproposito.Clear();
+            textBoxOwner.Clear();
+        }
+
 
         private void escreverNoHosts(string host, string routerIp)
         {

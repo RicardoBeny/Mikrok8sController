@@ -265,7 +265,7 @@ namespace AppLTI
                     ["manager"] = owner
                 }
             };
-            MessageBox.Show(requestBody.ToString());
+
             try
             {
                 string url = $"https://{routerIp}:{portoAPI}/apis/apps/v1/namespaces/{namespacename}/deployments";
@@ -285,6 +285,7 @@ namespace AppLTI
                     {
                         MessageBox.Show("Deployment created successfully.");
                         await LoadDeployments(routerIp, portoAPI, authToken, namespacename);
+                        clearBoxes();
                     }
                     else
                     {
@@ -297,6 +298,22 @@ namespace AppLTI
             {
                 MessageBox.Show("An error occurred while creating Deployment: " + ex.Message);
             }
+        }
+
+        private void clearBoxes()
+        {
+            textBoxNomeAdd.Text = string.Empty;
+            textBoxPorto.Text = string.Empty;
+            textBoxReplicas.Text = string.Empty;
+            textBoxLabelApp.Text = string.Empty;
+            textBoxproposito.Text = string.Empty;
+            textBoxOwner.Text = string.Empty;
+            textBoxEquipaMetadata.Text = string.Empty;
+            textBoxContainerName.Text = string.Empty;
+            textBoxncontainers.Text = string.Empty;
+
+            comboBoxNamespaceCriar.SelectedIndex = -1;
+            comboBoxImage.SelectedIndex = -1;
         }
 
         private JArray GetContainerDefinitions(int? nContainers, string containerNameBase, string image, int containerPort)
@@ -401,16 +418,7 @@ namespace AppLTI
                             return;
                         }
 
-                        int maxNameLength = 0;
-                        foreach (JObject deploymentObject in deploymentsArray)
-                        {
-                            string name = (string)deploymentObject["metadata"]["name"];
-                            maxNameLength = Math.Max(maxNameLength, name.Length);
-                        }
-
-                        string nameHeader = "Deployment Name".PadRight(maxNameLength);
-
-                        listBoxDeployments.Items.Add($"{nameHeader}\t\tPods\t\tAge\t\tImagem");
+                        listBoxDeployments.Items.Add($"Deployment Name\t\t\tPods\t\tAge\t\t\tImagem");
 
                         foreach (JObject deploymentObject in deploymentsArray)
                         {
@@ -423,7 +431,23 @@ namespace AppLTI
                             TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
                             string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
 
-                            listBoxDeployments.Items.Add($"{name.PadRight(maxNameLength)}\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
+                            if (name.Length < 8)
+                            {
+                                listBoxDeployments.Items.Add($"{name}\t\t\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
+                            }else if (name.Length < 17 && name.Length >= 8)
+                            {
+                                listBoxDeployments.Items.Add($"{name}\t\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
+                            }
+                            else if (name.Length > 19)
+                            {
+                                listBoxDeployments.Items.Add($"{name}\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
+                            }
+                            else
+                            {
+                                listBoxDeployments.Items.Add($"{name}\t\t\t{replicas}\t\t{timeAgo}\t\t{containerImage}");
+                            }
+
+                            
                             comboBoxDeployments.Items.Add($"Nome: {name}");
                         }
                     }

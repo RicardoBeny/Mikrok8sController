@@ -149,6 +149,7 @@ namespace AppLTI
                                 if (string.IsNullOrEmpty(owner))
                                 {
                                     labelmanager.Visible = false;
+                                    labelAvailableReplicas.Visible = false;
                                 }
 
                                 if (string.IsNullOrEmpty(team))
