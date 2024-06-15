@@ -299,6 +299,8 @@ namespace AppLTI
                 //textBoxRouterIP.Text = selectedRouter.Ip;
                 textBoxRouterIP.Text = selectedCredential.Ip;
                 textBoxUsername.Text = selectedCredential.Username;
+                textBoxPortoSSH.Text = selectedCredential.Porto_ssh;
+                textBoxPortoAPI.Text = selectedCredential.Porto_api;
                 textBoxPassword.Text = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(selectedCredential.Password));
             }
         }
