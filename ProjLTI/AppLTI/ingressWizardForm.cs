@@ -130,6 +130,7 @@ namespace AppLTI
                         MessageBox.Show("Ingress created successfully.");
                         escreverNoHosts(textBoxHost.Text, routerIp);
                         OpenIngressPage(textBoxHost.Text);
+                        this.Dispose();
                     }
                     else
                     {
