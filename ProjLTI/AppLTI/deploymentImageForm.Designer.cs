@@ -51,9 +51,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(20, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 243;
-            this.label3.Text = "Imagem:";
+            this.label3.Text = "Imagem*:";
             // 
             // label1
             // 
@@ -79,11 +79,11 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label6.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(20, 73);
+            this.label6.Location = new System.Drawing.Point(15, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 247;
-            this.label6.Text = "Label app:";
+            this.label6.Text = "Label app*:";
             // 
             // textBoxContainerName
             // 
@@ -100,9 +100,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(20, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.Size = new System.Drawing.Size(140, 20);
             this.label5.TabIndex = 245;
-            this.label5.Text = "Nome do Container:";
+            this.label5.Text = "Nome do Container*:";
             // 
             // comboBoxImage
             // 
@@ -169,11 +169,12 @@
             // 
             this.buttonFinish.AutoSize = true;
             this.buttonFinish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.buttonFinish.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonFinish.Font = new System.Drawing.Font("Impact", 15F);
             this.buttonFinish.ForeColor = System.Drawing.Color.White;
             this.buttonFinish.Location = new System.Drawing.Point(12, 127);
             this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.Size = new System.Drawing.Size(59, 25);
+            this.buttonFinish.Size = new System.Drawing.Size(61, 27);
             this.buttonFinish.TabIndex = 254;
             this.buttonFinish.Text = "Finish";
             this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click_1);
@@ -194,8 +195,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "deploymentImageForm";
-            this.Text = "deploymentImageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Wizard";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -840,8 +840,11 @@
             this.Controls.Add(this.panelServices);
             this.Controls.Add(this.panelDeployments);
             this.Controls.Add(this.panelNamespaces);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "servicesForm";
-            this.Text = "servicesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Services";
             this.Load += new System.EventHandler(this.servicesForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

@@ -44,11 +44,12 @@
             // buttonFinish
             // 
             this.buttonFinish.AutoSize = true;
+            this.buttonFinish.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonFinish.Font = new System.Drawing.Font("Impact", 15F);
             this.buttonFinish.ForeColor = System.Drawing.Color.White;
             this.buttonFinish.Location = new System.Drawing.Point(12, 127);
             this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.Size = new System.Drawing.Size(59, 25);
+            this.buttonFinish.Size = new System.Drawing.Size(61, 27);
             this.buttonFinish.TabIndex = 253;
             this.buttonFinish.Text = "Finish";
             this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
@@ -61,9 +62,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(18, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 20);
+            this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 258;
-            this.label6.Text = "Tipo:";
+            this.label6.Text = "Tipo*:";
             // 
             // label5
             // 
@@ -73,9 +74,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(18, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(80, 20);
             this.label5.TabIndex = 256;
-            this.label5.Text = "Protocolo:";
+            this.label5.Text = "Protocolo*:";
             // 
             // label1
             // 
@@ -149,9 +150,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonFinish);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "serviceTypeForm";
-            this.Text = "serviceTypeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Wizard";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

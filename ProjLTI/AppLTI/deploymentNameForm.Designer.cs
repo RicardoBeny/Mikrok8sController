@@ -63,9 +63,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(20, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome*:";
             // 
             // comboBoxNamespaceCriar
             // 
@@ -86,9 +86,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(20, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 231;
-            this.label3.Text = "Namespaces:";
+            this.label3.Text = "Namespaces*:";
             // 
             // pictureBox1
             // 
@@ -113,8 +113,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNameAdd);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "deploymentNameForm";
-            this.Text = "deploymentNameForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Wizard";
             this.Load += new System.EventHandler(this.deploymentNameForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

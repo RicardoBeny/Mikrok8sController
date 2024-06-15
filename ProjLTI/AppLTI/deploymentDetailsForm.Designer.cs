@@ -508,9 +508,12 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.envNamesListBox);
             this.Controls.Add(this.containerNamesListBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
             this.Name = "deploymentDetailsForm";
-            this.Text = "deploymentDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Deployment Details";
             this.Load += new System.EventHandler(this.deploymentDetailsForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

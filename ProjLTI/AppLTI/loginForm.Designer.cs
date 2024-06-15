@@ -67,10 +67,10 @@
             this.textBoxRouterIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRouterIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRouterIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxRouterIP.Location = new System.Drawing.Point(165, 185);
-            this.textBoxRouterIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRouterIP.Location = new System.Drawing.Point(124, 150);
+            this.textBoxRouterIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxRouterIP.Name = "textBoxRouterIP";
-            this.textBoxRouterIP.Size = new System.Drawing.Size(322, 27);
+            this.textBoxRouterIP.Size = new System.Drawing.Size(242, 23);
             this.textBoxRouterIP.TabIndex = 5;
             this.textBoxRouterIP.Text = "127.0.0.1";
             this.textBoxRouterIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -84,10 +84,10 @@
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxUsername.Location = new System.Drawing.Point(521, 319);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxUsername.Location = new System.Drawing.Point(391, 259);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(322, 27);
+            this.textBoxUsername.Size = new System.Drawing.Size(242, 23);
             this.textBoxUsername.TabIndex = 10;
             this.textBoxUsername.Text = "k3smaster";
             this.textBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -101,11 +101,11 @@
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(521, 370);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPassword.Location = new System.Drawing.Point(391, 301);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
-            this.textBoxPassword.Size = new System.Drawing.Size(289, 27);
+            this.textBoxPassword.Size = new System.Drawing.Size(217, 23);
             this.textBoxPassword.TabIndex = 11;
             this.textBoxPassword.Text = "123";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -120,10 +120,10 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Impact", 18.8F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(565, 485);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(424, 394);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(225, 58);
+            this.btnLogin.Size = new System.Drawing.Size(169, 47);
             this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseCompatibleTextRendering = true;
@@ -137,10 +137,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxRoutersIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRoutersIP.FormattingEnabled = true;
-            this.comboBoxRoutersIP.Location = new System.Drawing.Point(571, 249);
-            this.comboBoxRoutersIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxRoutersIP.Location = new System.Drawing.Point(428, 202);
+            this.comboBoxRoutersIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxRoutersIP.Name = "comboBoxRoutersIP";
-            this.comboBoxRoutersIP.Size = new System.Drawing.Size(224, 28);
+            this.comboBoxRoutersIP.Size = new System.Drawing.Size(169, 25);
             this.comboBoxRoutersIP.TabIndex = 13;
             this.comboBoxRoutersIP.Text = "Acessos Recentes";
             this.comboBoxRoutersIP.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoutersIP_SelectedIndexChanged);
@@ -154,11 +154,11 @@
             this.checkBoxGuardarPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.checkBoxGuardarPassword.Font = new System.Drawing.Font("Impact", 14F);
             this.checkBoxGuardarPassword.ForeColor = System.Drawing.Color.White;
-            this.checkBoxGuardarPassword.Location = new System.Drawing.Point(569, 433);
-            this.checkBoxGuardarPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxGuardarPassword.Location = new System.Drawing.Point(427, 352);
+            this.checkBoxGuardarPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxGuardarPassword.Name = "checkBoxGuardarPassword";
             this.checkBoxGuardarPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxGuardarPassword.Size = new System.Drawing.Size(213, 33);
+            this.checkBoxGuardarPassword.Size = new System.Drawing.Size(174, 27);
             this.checkBoxGuardarPassword.TabIndex = 14;
             this.checkBoxGuardarPassword.Text = "Guardar Password";
             this.checkBoxGuardarPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,11 +172,11 @@
             this.buttonHidePassword.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.buttonHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHidePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.buttonHidePassword.Location = new System.Drawing.Point(812, 370);
-            this.buttonHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHidePassword.Location = new System.Drawing.Point(609, 301);
+            this.buttonHidePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonHidePassword.Name = "buttonHidePassword";
             this.buttonHidePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonHidePassword.Size = new System.Drawing.Size(32, 27);
+            this.buttonHidePassword.Size = new System.Drawing.Size(24, 22);
             this.buttonHidePassword.TabIndex = 18;
             this.buttonHidePassword.UseVisualStyleBackColor = false;
             this.buttonHidePassword.Click += new System.EventHandler(this.buttonHidePassword_Click);
@@ -190,10 +190,10 @@
             this.textBoxPortoSSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPortoSSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPortoSSH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPortoSSH.Location = new System.Drawing.Point(521, 185);
-            this.textBoxPortoSSH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPortoSSH.Location = new System.Drawing.Point(391, 150);
+            this.textBoxPortoSSH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPortoSSH.Name = "textBoxPortoSSH";
-            this.textBoxPortoSSH.Size = new System.Drawing.Size(322, 27);
+            this.textBoxPortoSSH.Size = new System.Drawing.Size(242, 23);
             this.textBoxPortoSSH.TabIndex = 20;
             this.textBoxPortoSSH.Text = "1022";
             this.textBoxPortoSSH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -207,10 +207,10 @@
             this.textBoxPortoAPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPortoAPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPortoAPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxPortoAPI.Location = new System.Drawing.Point(889, 185);
-            this.textBoxPortoAPI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPortoAPI.Location = new System.Drawing.Point(667, 150);
+            this.textBoxPortoAPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPortoAPI.Name = "textBoxPortoAPI";
-            this.textBoxPortoAPI.Size = new System.Drawing.Size(322, 27);
+            this.textBoxPortoAPI.Size = new System.Drawing.Size(242, 23);
             this.textBoxPortoAPI.TabIndex = 22;
             this.textBoxPortoAPI.Text = "6443";
             this.textBoxPortoAPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -220,10 +220,9 @@
             this.labelIP.AutoSize = true;
             this.labelIP.Font = new System.Drawing.Font("Impact", 16F);
             this.labelIP.ForeColor = System.Drawing.Color.White;
-            this.labelIP.Location = new System.Drawing.Point(243, 127);
-            this.labelIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelIP.Location = new System.Drawing.Point(182, 103);
             this.labelIP.Name = "labelIP";
-            this.labelIP.Size = new System.Drawing.Size(170, 34);
+            this.labelIP.Size = new System.Drawing.Size(133, 27);
             this.labelIP.TabIndex = 23;
             this.labelIP.Text = "IP do servidor";
             // 
@@ -232,10 +231,9 @@
             this.labelSSH.AutoSize = true;
             this.labelSSH.Font = new System.Drawing.Font("Impact", 16F);
             this.labelSSH.ForeColor = System.Drawing.Color.White;
-            this.labelSSH.Location = new System.Drawing.Point(621, 127);
-            this.labelSSH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSSH.Location = new System.Drawing.Point(466, 103);
             this.labelSSH.Name = "labelSSH";
-            this.labelSSH.Size = new System.Drawing.Size(123, 34);
+            this.labelSSH.Size = new System.Drawing.Size(98, 27);
             this.labelSSH.TabIndex = 24;
             this.labelSSH.Text = "Porto SSH";
             // 
@@ -244,10 +242,9 @@
             this.labelAPI.AutoSize = true;
             this.labelAPI.Font = new System.Drawing.Font("Impact", 16F);
             this.labelAPI.ForeColor = System.Drawing.Color.White;
-            this.labelAPI.Location = new System.Drawing.Point(981, 127);
-            this.labelAPI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelAPI.Location = new System.Drawing.Point(736, 103);
             this.labelAPI.Name = "labelAPI";
-            this.labelAPI.Size = new System.Drawing.Size(116, 34);
+            this.labelAPI.Size = new System.Drawing.Size(92, 27);
             this.labelAPI.TabIndex = 25;
             this.labelAPI.Text = "Porto API";
             // 
@@ -255,10 +252,10 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(579, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(434, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(396, 132);
+            this.pictureBox2.Size = new System.Drawing.Size(297, 107);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -282,20 +279,19 @@
             this.panel1.Controls.Add(this.buttonSeePassword);
             this.panel1.Controls.Add(this.textBoxPortoSSH);
             this.panel1.Controls.Add(this.buttonHidePassword);
-            this.panel1.Location = new System.Drawing.Point(91, 148);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(68, 120);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(1363, 569);
+            this.panel1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Size = new System.Drawing.Size(1022, 462);
             this.panel1.TabIndex = 32;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(468, 367);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(351, 298);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 30;
             this.pictureBox3.TabStop = false;
@@ -303,10 +299,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(468, 314);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(351, 255);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
@@ -316,9 +311,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1363, 82);
+            this.panel2.Size = new System.Drawing.Size(1022, 67);
             this.panel2.TabIndex = 28;
             // 
             // label1
@@ -327,9 +322,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(125)))), ((int)(((byte)(244)))));
             this.label1.Font = new System.Drawing.Font("Impact", 29.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(612, 12);
+            this.label1.Location = new System.Drawing.Point(459, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 61);
+            this.label1.Size = new System.Drawing.Size(113, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             // 
@@ -344,27 +340,28 @@
             this.buttonSeePassword.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.buttonSeePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSeePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.buttonSeePassword.Location = new System.Drawing.Point(812, 370);
-            this.buttonSeePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSeePassword.Location = new System.Drawing.Point(609, 301);
+            this.buttonSeePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSeePassword.Name = "buttonSeePassword";
-            this.buttonSeePassword.Size = new System.Drawing.Size(32, 27);
+            this.buttonSeePassword.Size = new System.Drawing.Size(24, 22);
             this.buttonSeePassword.TabIndex = 17;
             this.buttonSeePassword.UseVisualStyleBackColor = false;
             this.buttonSeePassword.Click += new System.EventHandler(this.buttonSeePassword_Click);
             // 
             // loginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.ClientSize = new System.Drawing.Size(1540, 846);
+            this.ClientSize = new System.Drawing.Size(1155, 687);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "loginForm";
-            this.Text = "SDNController - MikroTik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);

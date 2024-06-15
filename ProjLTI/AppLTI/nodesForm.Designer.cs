@@ -129,9 +129,9 @@
             this.labelPage.Location = new System.Drawing.Point(20, 14);
             this.labelPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPage.Name = "labelPage";
-            this.labelPage.Size = new System.Drawing.Size(60, 29);
+            this.labelPage.Size = new System.Drawing.Size(73, 29);
             this.labelPage.TabIndex = 1;
-            this.labelPage.Text = "Pods";
+            this.labelPage.Text = "Nodes";
             // 
             // textBoxIP
             // 
@@ -515,8 +515,11 @@
             this.Controls.Add(this.panelIngress);
             this.Controls.Add(this.panelServices);
             this.Controls.Add(this.panelDeployments);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "nodesForm";
-            this.Text = "nodesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nodes";
             this.Load += new System.EventHandler(this.nodesForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

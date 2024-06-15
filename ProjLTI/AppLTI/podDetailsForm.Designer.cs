@@ -508,9 +508,12 @@
             this.Controls.Add(this.containerNamesListBox);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
             this.Name = "podDetailsForm";
-            this.Text = "podDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pod Details";
             this.Load += new System.EventHandler(this.podDetailsForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

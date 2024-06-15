@@ -839,8 +839,11 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "podsForm";
-            this.Text = "podsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pods";
             this.Load += new System.EventHandler(this.podsForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

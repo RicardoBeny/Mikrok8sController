@@ -77,11 +77,12 @@
             // buttonFinish
             // 
             this.buttonFinish.AutoSize = true;
+            this.buttonFinish.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonFinish.Font = new System.Drawing.Font("Impact", 15F);
             this.buttonFinish.ForeColor = System.Drawing.Color.White;
             this.buttonFinish.Location = new System.Drawing.Point(161, 127);
             this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.Size = new System.Drawing.Size(59, 25);
+            this.buttonFinish.Size = new System.Drawing.Size(61, 27);
             this.buttonFinish.TabIndex = 254;
             this.buttonFinish.Text = "Finish";
             this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
@@ -111,7 +112,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ingressWizardForm";
-            this.Text = "ingressWizardForm";
+            this.Text = "Wizard";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -579,8 +579,11 @@
             this.Controls.Add(this.panelIngress);
             this.Controls.Add(this.panelServices);
             this.Controls.Add(this.panelDeployments);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "namespacesForm";
-            this.Text = "namespacesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Namespaces";
             this.Load += new System.EventHandler(this.namespacesForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

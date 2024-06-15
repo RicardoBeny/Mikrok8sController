@@ -885,8 +885,11 @@
             this.Controls.Add(this.panelIngress);
             this.Controls.Add(this.panelDeployments);
             this.Controls.Add(this.panelServices);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "deploymentsForm";
-            this.Text = "deploymentsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Deployments";
             this.Load += new System.EventHandler(this.deploymentsForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

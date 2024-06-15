@@ -779,9 +779,12 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelDeployments);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "ingressForm";
-            this.Text = "ingressForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ingress";
             this.Load += new System.EventHandler(this.ingressForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
