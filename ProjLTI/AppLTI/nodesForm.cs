@@ -124,12 +124,12 @@ namespace AppLTI
 
                             DateTime creationDateTime = DateTime.ParseExact(created, "MM/dd/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                             TimeSpan timeSinceCreation = DateTime.Now - creationDateTime;
-                            string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m ago";
+                            string timeAgo = $"{(int)timeSinceCreation.TotalDays} d, {(int)timeSinceCreation.Hours} h, {(int)timeSinceCreation.Minutes} m";
 
                             if (name.Length > 9)
                             {
                                 nodeInfo = $"{name}\t{ready}\t\t{cpuCapacity}\t\t"+
-                                $"{memoryLimits}\t\t{memoryCapacity}\t\t{pods}\t{timeAgo}{ipAddress}";
+                                $"{memoryLimits}\t\t{memoryCapacity}\t\t{pods}\t{timeAgo}\t{ipAddress}";
                                 listBoxNodes.Items.Add(nodeInfo);
                             }
                             else
