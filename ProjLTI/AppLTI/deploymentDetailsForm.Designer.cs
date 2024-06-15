@@ -367,7 +367,7 @@
             this.labelcontainerNamesListBox.AutoSize = true;
             this.labelcontainerNamesListBox.Font = new System.Drawing.Font("Impact", 15F);
             this.labelcontainerNamesListBox.ForeColor = System.Drawing.Color.White;
-            this.labelcontainerNamesListBox.Location = new System.Drawing.Point(10, 340);
+            this.labelcontainerNamesListBox.Location = new System.Drawing.Point(10, 334);
             this.labelcontainerNamesListBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelcontainerNamesListBox.Name = "labelcontainerNamesListBox";
             this.labelcontainerNamesListBox.Size = new System.Drawing.Size(169, 25);
@@ -379,7 +379,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 504);
+            this.label1.Location = new System.Drawing.Point(11, 498);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 25);
